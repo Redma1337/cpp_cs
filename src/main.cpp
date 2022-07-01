@@ -1,10 +1,14 @@
 #include <SFML/Graphics.hpp>
-#include <iostream>
+#include "game/model/Model.h"
+#include "game/view/TestView.h"
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+    Model<int> model;
+    TestView view("Test View", model);
 
+
+    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
     while (window.isOpen())
     {
         sf::Event event;
@@ -14,7 +18,7 @@ int main()
                 window.close();
             else if (event.type == sf::Event::MouseButtonPressed) {
                 if (event.mouseButton.button == sf::Mouse::Right) {
-
+                    model.setData(10);
                 }
             }
         }
@@ -22,6 +26,5 @@ int main()
         window.clear(sf::Color::Black);
         window.display();
     }
-
     return 0;
 }
