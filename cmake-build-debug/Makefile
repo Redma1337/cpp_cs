@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -E rm
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\weser\CLionProjects\sfml_test02
+CMAKE_SOURCE_DIR = C:\Users\weser\CLionProjects\cpp\cpp_sfml_test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\weser\CLionProjects\sfml_test02\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\weser\CLionProjects\sfml_test02\cmake-build-debug\CMakeFiles C:\Users\weser\CLionProjects\sfml_test02\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\cmake-build-debug\CMakeFiles C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\weser\CLionProjects\sfml_test02\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,29 +128,77 @@ sfml_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/build
 .PHONY : sfml_test/fast
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
+src/game/event/Observable.obj: src/game/event/Observable.cpp.obj
+.PHONY : src/game/event/Observable.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+src/game/event/Observable.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj
+.PHONY : src/game/event/Observable.cpp.obj
 
-main.i: main.cpp.i
-.PHONY : main.i
+src/game/event/Observable.i: src/game/event/Observable.cpp.i
+.PHONY : src/game/event/Observable.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/game/event/Observable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.i
+.PHONY : src/game/event/Observable.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+src/game/event/Observable.s: src/game/event/Observable.cpp.s
+.PHONY : src/game/event/Observable.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/game/event/Observable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.s
+.PHONY : src/game/event/Observable.cpp.s
+
+src/game/view/TestView.obj: src/game/view/TestView.cpp.obj
+.PHONY : src/game/view/TestView.obj
+
+# target to build an object file
+src/game/view/TestView.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.obj
+.PHONY : src/game/view/TestView.cpp.obj
+
+src/game/view/TestView.i: src/game/view/TestView.cpp.i
+.PHONY : src/game/view/TestView.i
+
+# target to preprocess a source file
+src/game/view/TestView.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.i
+.PHONY : src/game/view/TestView.cpp.i
+
+src/game/view/TestView.s: src/game/view/TestView.cpp.s
+.PHONY : src/game/view/TestView.s
+
+# target to generate assembly for a file
+src/game/view/TestView.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.s
+.PHONY : src/game/view/TestView.cpp.s
+
+src/main.obj: src/main.cpp.obj
+.PHONY : src/main.obj
+
+# target to build an object file
+src/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -161,9 +209,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... sfml_test
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... src/game/event/Observable.obj
+	@echo ... src/game/event/Observable.i
+	@echo ... src/game/event/Observable.s
+	@echo ... src/game/view/TestView.obj
+	@echo ... src/game/view/TestView.i
+	@echo ... src/game/view/TestView.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
 .PHONY : help
 
 

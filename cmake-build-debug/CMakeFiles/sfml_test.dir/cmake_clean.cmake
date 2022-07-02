@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sfml_test.dir/main.cpp.obj"
-  "CMakeFiles/sfml_test.dir/main.cpp.obj.d"
+  "CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj"
+  "CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj.d"
+  "CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.obj"
+  "CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.obj.d"
+  "CMakeFiles/sfml_test.dir/src/main.cpp.obj"
+  "CMakeFiles/sfml_test.dir/src/main.cpp.obj.d"
   "libsfml_test.dll.a"
   "sfml_test.exe"
   "sfml_test.exe.manifest"

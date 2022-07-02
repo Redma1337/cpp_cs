@@ -1,1 +1,1 @@
-CMakeFiles/sfml_test.dir/main.cpp.obj
+CMakeFiles/sfml_test.dir/src/main.cpp.obj CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.obj CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj
