@@ -9,10 +9,10 @@
 
 template <typename T>
 class View : public IObserver {
-    T m_model;
+    T& m_model;
     std::string m_name;
 public:
-    explicit View(std::string name, const T& model)
+    explicit View(std::string name, T& model)
         : m_model{ model }, m_name{ name }
     {
         m_model.addObserver(*this);
