@@ -128,6 +128,30 @@ sfml_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/build
 .PHONY : sfml_test/fast
 
+src/game/CantStop.obj: src/game/CantStop.cpp.obj
+.PHONY : src/game/CantStop.obj
+
+# target to build an object file
+src/game/CantStop.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj
+.PHONY : src/game/CantStop.cpp.obj
+
+src/game/CantStop.i: src/game/CantStop.cpp.i
+.PHONY : src/game/CantStop.i
+
+# target to preprocess a source file
+src/game/CantStop.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.i
+.PHONY : src/game/CantStop.cpp.i
+
+src/game/CantStop.s: src/game/CantStop.cpp.s
+.PHONY : src/game/CantStop.s
+
+# target to generate assembly for a file
+src/game/CantStop.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.s
+.PHONY : src/game/CantStop.cpp.s
+
 src/game/event/Observable.obj: src/game/event/Observable.cpp.obj
 .PHONY : src/game/event/Observable.obj
 
@@ -152,29 +176,29 @@ src/game/event/Observable.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.s
 .PHONY : src/game/event/Observable.cpp.s
 
-src/game/view/TestView.obj: src/game/view/TestView.cpp.obj
-.PHONY : src/game/view/TestView.obj
+src/game/view/GameView.obj: src/game/view/GameView.cpp.obj
+.PHONY : src/game/view/GameView.obj
 
 # target to build an object file
-src/game/view/TestView.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.obj
-.PHONY : src/game/view/TestView.cpp.obj
+src/game/view/GameView.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.obj
+.PHONY : src/game/view/GameView.cpp.obj
 
-src/game/view/TestView.i: src/game/view/TestView.cpp.i
-.PHONY : src/game/view/TestView.i
+src/game/view/GameView.i: src/game/view/GameView.cpp.i
+.PHONY : src/game/view/GameView.i
 
 # target to preprocess a source file
-src/game/view/TestView.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.i
-.PHONY : src/game/view/TestView.cpp.i
+src/game/view/GameView.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.i
+.PHONY : src/game/view/GameView.cpp.i
 
-src/game/view/TestView.s: src/game/view/TestView.cpp.s
-.PHONY : src/game/view/TestView.s
+src/game/view/GameView.s: src/game/view/GameView.cpp.s
+.PHONY : src/game/view/GameView.s
 
 # target to generate assembly for a file
-src/game/view/TestView.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.s
-.PHONY : src/game/view/TestView.cpp.s
+src/game/view/GameView.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.s
+.PHONY : src/game/view/GameView.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -209,12 +233,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... sfml_test
+	@echo ... src/game/CantStop.obj
+	@echo ... src/game/CantStop.i
+	@echo ... src/game/CantStop.s
 	@echo ... src/game/event/Observable.obj
 	@echo ... src/game/event/Observable.i
 	@echo ... src/game/event/Observable.s
-	@echo ... src/game/view/TestView.obj
-	@echo ... src/game/view/TestView.i
-	@echo ... src/game/view/TestView.s
+	@echo ... src/game/view/GameView.obj
+	@echo ... src/game/view/GameView.i
+	@echo ... src/game/view/GameView.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

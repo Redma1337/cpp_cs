@@ -5,7 +5,7 @@
 #include "CantStop.h"
 
 CantStop::CantStop()
-    : m_gameView("Game View", m_boardModel)
+    : m_boardModel{ 0 }, m_gameView{ "Game View", m_boardModel }
 {
     //TODO: potential setup Code
 }

@@ -4,7 +4,7 @@
 
 #include "GameView.h"
 
-GameView::TestView(std::string name, TestViewType &model)
+GameView::GameView(std::string name, TestViewType &model)
     : View<TestViewType>::View(name, model)
 {}
 

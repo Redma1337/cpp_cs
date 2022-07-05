@@ -83,20 +83,20 @@ CMakeFiles/sfml_test.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml_test.dir/src/main.cpp.s"
 	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\main.cpp -o CMakeFiles\sfml_test.dir\src\main.cpp.s
 
-CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.obj: CMakeFiles/sfml_test.dir/flags.make
-CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.obj: CMakeFiles/sfml_test.dir/includes_CXX.rsp
-CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.obj: ../src/game/view/TestView.cpp
-CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.obj: CMakeFiles/sfml_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.obj"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.obj -MF CMakeFiles\sfml_test.dir\src\game\view\TestView.cpp.obj.d -o CMakeFiles\sfml_test.dir\src\game\view\TestView.cpp.obj -c C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\view\TestView.cpp
+CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.obj: CMakeFiles/sfml_test.dir/flags.make
+CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.obj: CMakeFiles/sfml_test.dir/includes_CXX.rsp
+CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.obj: ../src/game/view/GameView.cpp
+CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.obj: CMakeFiles/sfml_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.obj"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.obj -MF CMakeFiles\sfml_test.dir\src\game\view\GameView.cpp.obj.d -o CMakeFiles\sfml_test.dir\src\game\view\GameView.cpp.obj -c C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\view\GameView.cpp
 
-CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.i"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\view\TestView.cpp > CMakeFiles\sfml_test.dir\src\game\view\TestView.cpp.i
+CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.i"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\view\GameView.cpp > CMakeFiles\sfml_test.dir\src\game\view\GameView.cpp.i
 
-CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.s"
-	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\view\TestView.cpp -o CMakeFiles\sfml_test.dir\src\game\view\TestView.cpp.s
+CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.s"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\view\GameView.cpp -o CMakeFiles\sfml_test.dir\src\game\view\GameView.cpp.s
 
 CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj: CMakeFiles/sfml_test.dir/flags.make
 CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj: CMakeFiles/sfml_test.dir/includes_CXX.rsp
@@ -113,37 +113,54 @@ CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.s"
 	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\event\Observable.cpp -o CMakeFiles\sfml_test.dir\src\game\event\Observable.cpp.s
 
+CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj: CMakeFiles/sfml_test.dir/flags.make
+CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj: CMakeFiles/sfml_test.dir/includes_CXX.rsp
+CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj: ../src/game/CantStop.cpp
+CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj: CMakeFiles/sfml_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj -MF CMakeFiles\sfml_test.dir\src\game\CantStop.cpp.obj.d -o CMakeFiles\sfml_test.dir\src\game\CantStop.cpp.obj -c C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\CantStop.cpp
+
+CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.i"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\CantStop.cpp > CMakeFiles\sfml_test.dir\src\game\CantStop.cpp.i
+
+CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.s"
+	C:\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\CantStop.cpp -o CMakeFiles\sfml_test.dir\src\game\CantStop.cpp.s
+
 # Object files for target sfml_test
 sfml_test_OBJECTS = \
 "CMakeFiles/sfml_test.dir/src/main.cpp.obj" \
-"CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.obj" \
-"CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj"
+"CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.obj" \
+"CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj" \
+"CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj"
 
 # External object files for target sfml_test
 sfml_test_EXTERNAL_OBJECTS =
 
 sfml_test.exe: CMakeFiles/sfml_test.dir/src/main.cpp.obj
-sfml_test.exe: CMakeFiles/sfml_test.dir/src/game/view/TestView.cpp.obj
+sfml_test.exe: CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.obj
 sfml_test.exe: CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj
+sfml_test.exe: CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj
 sfml_test.exe: CMakeFiles/sfml_test.dir/build.make
-sfml_test.exe: ../cmake_modules/SFML/lib/libsfml-system-s-d.a
-sfml_test.exe: ../cmake_modules/SFML/lib/libsfml-window-s-d.a
-sfml_test.exe: ../cmake_modules/SFML/lib/libsfml-graphics-s-d.a
-sfml_test.exe: ../cmake_modules/SFML/lib/libsfml-audio-s-d.a
-sfml_test.exe: ../cmake_modules/SFML/lib/libsfml-network-s-d.a
-sfml_test.exe: ../cmake_modules/SFML/lib/libsfml-window-s-d.a
-sfml_test.exe: ../cmake_modules/SFML/lib/libfreetype.a
-sfml_test.exe: ../cmake_modules/SFML/lib/libopenal32.a
-sfml_test.exe: ../cmake_modules/SFML/lib/libvorbisfile.a
-sfml_test.exe: ../cmake_modules/SFML/lib/libvorbisenc.a
-sfml_test.exe: ../cmake_modules/SFML/lib/libvorbis.a
-sfml_test.exe: ../cmake_modules/SFML/lib/libogg.a
-sfml_test.exe: ../cmake_modules/SFML/lib/libFLAC.a
-sfml_test.exe: ../cmake_modules/SFML/lib/libsfml-system-s-d.a
+sfml_test.exe: ../cmake-modules/SFML/lib/libsfml-system-s-d.a
+sfml_test.exe: ../cmake-modules/SFML/lib/libsfml-window-s-d.a
+sfml_test.exe: ../cmake-modules/SFML/lib/libsfml-graphics-s-d.a
+sfml_test.exe: ../cmake-modules/SFML/lib/libsfml-audio-s-d.a
+sfml_test.exe: ../cmake-modules/SFML/lib/libsfml-network-s-d.a
+sfml_test.exe: ../cmake-modules/SFML/lib/libsfml-window-s-d.a
+sfml_test.exe: ../cmake-modules/SFML/lib/libfreetype.a
+sfml_test.exe: ../cmake-modules/SFML/lib/libopenal32.a
+sfml_test.exe: ../cmake-modules/SFML/lib/libvorbisfile.a
+sfml_test.exe: ../cmake-modules/SFML/lib/libvorbisenc.a
+sfml_test.exe: ../cmake-modules/SFML/lib/libvorbis.a
+sfml_test.exe: ../cmake-modules/SFML/lib/libogg.a
+sfml_test.exe: ../cmake-modules/SFML/lib/libFLAC.a
+sfml_test.exe: ../cmake-modules/SFML/lib/libsfml-system-s-d.a
 sfml_test.exe: CMakeFiles/sfml_test.dir/linklibs.rsp
 sfml_test.exe: CMakeFiles/sfml_test.dir/objects1.rsp
 sfml_test.exe: CMakeFiles/sfml_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable sfml_test.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable sfml_test.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\sfml_test.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
