@@ -3,6 +3,7 @@
 //
 
 #include "CantStop.h"
+#include "controller/DiceController.h"
 
 CantStop::CantStop()
     : m_boardModel{ 0 }, m_gameView{ "Game View", m_boardModel }
