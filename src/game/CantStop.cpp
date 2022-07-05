@@ -3,10 +3,11 @@
 //
 
 #include "CantStop.h"
-#include "controller/DiceController.h"
 
-CantStop::CantStop()
-    : m_boardModel{ 0 }, m_gameView{ "Game View", m_boardModel }
+CantStop::CantStop(Player &one, Player &two)
+    :   m_boardModel{ 0 },
+        m_gameView{ "Game View", m_boardModel },
+        m_playerController{ one, two }
 {
     //TODO: potential setup Code
 }
