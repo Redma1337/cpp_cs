@@ -15,5 +15,6 @@ public:
     void removeObserver(IObserver& o);
     void fireEvent();
 private:
+    //we use raw pointer since we don't pass ownership
     std::list<IObserver*> m_observers;
 };

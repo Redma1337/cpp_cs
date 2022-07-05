@@ -9,11 +9,11 @@
 
 typedef Model<int> TestViewType;
 
-class TestView : public View<TestViewType> {
+class GameView : public View<TestViewType> {
 public:
-    explicit TestView(std::string name, TestViewType &model);
+    explicit GameView(std::string name, TestViewType &model);
 
-    ~TestView() {}
+    ~GameView() {}
 
     void onUpdate(Observable& target) override;
 };
