@@ -11,10 +11,13 @@ template <typename T>
 class View : public IObserver {
     T& m_model;
     std::string m_name;
+    sf::RenderTexture m_renderTexture;
 public:
     explicit View(std::string name, T& model)
         : m_model{ model }, m_name{ name }
     {
+        if (!m_renderTexture.create())
+
         m_model.addObserver(*this);
     }
 

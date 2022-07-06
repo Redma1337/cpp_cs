@@ -4,8 +4,8 @@
 
 #include "GameView.h"
 
-GameView::GameView(std::string name, TestViewType &model)
-    : View<TestViewType>::View(name, model)
+GameView::GameView(std::string name, Model<BoardModelType> &model)
+    : View<Model<BoardModelType>>::View(name, model)
 {}
 
 void GameView::onUpdate(Observable &target) {

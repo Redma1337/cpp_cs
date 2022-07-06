@@ -4,8 +4,12 @@
 
 #include "CantStop.h"
 
+size_t CantStop::WINDOW_WIDTH = 800;
+size_t CantStop::WINDOW_HEIGHT = 600;
+
 CantStop::CantStop(Player &one, Player &two)
-    :   m_boardModel{ 0 },
+    :
+        m_boardController{ m_boardModel },
         m_gameView{ "Game View", m_boardModel },
         m_playerController{ one, two }
 {
@@ -32,13 +36,11 @@ CantStop::start() {
     }
 }
 
-//this function will connect our observer system with the sfml internal event system
 void
 CantStop::onEvent(sf::Event emitter) {
     if (emitter.type == sf::Event::MouseButtonPressed) {
         if (emitter.mouseButton.button == sf::Mouse::Right) {
             //TODO: Spread Event
-            m_boardModel.setData(10);
         }
     }
 }

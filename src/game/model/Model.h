@@ -12,17 +12,18 @@ class Model : public Observable {
 public:
     virtual ~Model() = default;
 
-    Model();
+    Model() {}
 
     //this will not trigger an event
     Model(const T& initialValue) : m_data(initialValue) {}
 
-    void setData(const T& newData) {
+    void setData(const T &newData) {
         m_data = newData;
 
         fireEvent();
     }
 
+    //we give out copies, because we want to force setData use
     T getData() const {
         return m_data;
     }

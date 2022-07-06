@@ -5,13 +5,11 @@
 #pragma once
 #include <iostream>
 #include "View.h"
-#include "../model/Model.h"
+#include "../controller/BoardController.h"
 
-typedef Model<int> TestViewType;
-
-class GameView : public View<TestViewType> {
+class GameView : public View<Model<BoardModelType>> {
 public:
-    explicit GameView(std::string name, TestViewType &model);
+    explicit GameView(std::string name, Model<BoardModelType> &model);
 
     ~GameView() {}
 
