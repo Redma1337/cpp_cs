@@ -4,9 +4,6 @@
 
 #include "CantStop.h"
 
-size_t CantStop::WINDOW_WIDTH = 800;
-size_t CantStop::WINDOW_HEIGHT = 600;
-
 CantStop::CantStop(Player &one, Player &two)
     :
         m_boardController{ m_boardModel },
@@ -18,7 +15,14 @@ CantStop::CantStop(Player &one, Player &two)
 
 void
 CantStop::start() {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Can't Stop Game");
+    sf::ContextSettings settings;
+    settings.antialiasingLevel = 8; //this is gpu dependent
+    sf::RenderWindow window(
+        sf::VideoMode(800, 600),
+        "Can't Stop Game",
+        sf::Style::Default,
+        settings
+    );
 
     while (window.isOpen()) {
         sf::Event event;
@@ -32,6 +36,11 @@ CantStop::start() {
 
         window.clear(sf::Color::Black);
 
+        //TODO: potentially implement several screen support using view controller
+        const sf::Texture& viewDrawCtx(m_gameView.getTexture());
+        sf::Sprite view(viewDrawCtx);
+        window.draw(view);
+
         window.display();
     }
 }
@@ -41,6 +50,7 @@ CantStop::onEvent(sf::Event emitter) {
     if (emitter.type == sf::Event::MouseButtonPressed) {
         if (emitter.mouseButton.button == sf::Mouse::Right) {
             //TODO: Spread Event
+            m_boardModel.fireEvent();
         }
     }
 }

@@ -8,6 +8,14 @@ GameView::GameView(std::string name, Model<BoardModelType> &model)
     : View<Model<BoardModelType>>::View(name, model)
 {}
 
+bool test = true;
 void GameView::onUpdate(Observable &target) {
-    std::cout << "target data updated on view!" << std::endl;
+    m_renderTexture.clear();
+
+    sf::CircleShape shape(80.f, 8);
+    shape.setFillColor(test ? sf::Color::Cyan : sf::Color::Red);
+    test = !test;
+    m_renderTexture.draw(shape);
+
+    m_renderTexture.display();
 }
