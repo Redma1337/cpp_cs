@@ -16,9 +16,11 @@ GameView::~GameView() {
 
 void
 GameView::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-    sf::CircleShape shape(80.f, 8);
-    shape.setFillColor(sf::Color::Cyan);
-    target.draw(shape);
+    const sf::Vector2f collDim = { 50, 50 };
+    for (auto const& pair : m_model.getData()) {
+        Column col = pair.second;
+        col.draw(target, states);
+    }
 }
 
 void GameView::onModelUpdate(Observable &target) {
