@@ -5,17 +5,22 @@
 #include "GameView.h"
 
 GameView::GameView(std::string name, Model<BoardModelType> &model)
-    : View<Model<BoardModelType>>::View(name, model)
-{}
+    : View::View(name), m_model{ model }
+{
+    m_model.addObserver(*this);
+}
 
-bool test = true;
-void GameView::onUpdate(Observable &target) {
-    m_renderTexture.clear();
+GameView::~GameView() {
+    m_model.removeObserver(*this);
+}
 
+void
+GameView::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     sf::CircleShape shape(80.f, 8);
-    shape.setFillColor(test ? sf::Color::Cyan : sf::Color::Red);
-    test = !test;
-    m_renderTexture.draw(shape);
+    shape.setFillColor(sf::Color::Cyan);
+    target.draw(shape);
+}
 
-    m_renderTexture.display();
+void GameView::onModelUpdate(Observable &target) {
+    std::cout << m_model.getData().size() << std::endl;
 }

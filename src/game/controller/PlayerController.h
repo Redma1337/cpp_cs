@@ -7,6 +7,8 @@
 
 #include "../player/Player.h"
 
+typedef std::pair<Player&, Player&> PlayerMatchUpModel;
+
 class PlayerController {
     Player& m_playerOne;
     Player& m_playerTwo;

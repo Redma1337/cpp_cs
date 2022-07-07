@@ -8,7 +8,6 @@
 
 void Observable::addObserver(IObserver& o) {
     m_observers.push_back(&o);
-    int x = m_observers.size();
 }
 
 void Observable::removeObserver(IObserver& o) {
@@ -16,8 +15,7 @@ void Observable::removeObserver(IObserver& o) {
 }
 
 void Observable::fireEvent() {
-    int x = m_observers.size();
     for (auto* o : m_observers) {
-        o->onUpdate(*this);
+        o->onModelUpdate(*this);
     }
 }

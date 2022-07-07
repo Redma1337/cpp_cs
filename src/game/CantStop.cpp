@@ -7,10 +7,10 @@
 CantStop::CantStop(Player &one, Player &two)
     :
         m_boardController{ m_boardModel },
-        m_gameView{ "Game View", m_boardModel },
         m_playerController{ one, two }
 {
-    //TODO: potential setup Code
+    std::shared_ptr<GameView> view = std::make_shared<GameView>("Cant Stop Game", m_boardModel);
+    m_viewController.addView(Menu::GAME_VIEW, view);
 }
 
 void
@@ -36,10 +36,7 @@ CantStop::start() {
 
         window.clear(sf::Color::Black);
 
-        //TODO: potentially implement several screen support using view controller
-        const sf::Texture& viewDrawCtx(m_gameView.getTexture());
-        sf::Sprite view(viewDrawCtx);
-        window.draw(view);
+        m_viewController.drawView(window);
 
         window.display();
     }

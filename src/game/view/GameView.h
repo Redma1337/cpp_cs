@@ -7,11 +7,14 @@
 #include "View.h"
 #include "../controller/BoardController.h"
 
-class GameView : public View<Model<BoardModelType>> {
+class GameView : public View, IObserver {
+    Model<BoardModelType>& m_model;
 public:
     explicit GameView(std::string name, Model<BoardModelType> &model);
 
-    ~GameView() {}
+    ~GameView();
 
-    void onUpdate(Observable& target) override;
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+
+    void onModelUpdate(Observable& target) override;
 };

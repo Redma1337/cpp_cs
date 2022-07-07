@@ -10,5 +10,5 @@ class Observable;
 class IObserver {
 public:
     virtual ~IObserver() = default;
-    virtual void onUpdate(Observable&) = 0;
+    virtual void onModelUpdate(Observable&) = 0;
 };

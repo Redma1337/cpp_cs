@@ -8,13 +8,14 @@
 #include "view/GameView.h"
 #include "controller/PlayerController.h"
 #include "controller/BoardController.h"
+#include "controller/ViewController.h"
 
 class CantStop {
     Model<BoardModelType> m_boardModel;
-    const GameView m_gameView;
 
     BoardController m_boardController;
-    const PlayerController m_playerController;
+    PlayerController m_playerController;
+    ViewController m_viewController;
 
     void onEvent(sf::Event emitter);
 public:

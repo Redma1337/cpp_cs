@@ -11,7 +11,7 @@
 typedef std::map<int, Column> BoardModelType;
 
 class BoardController {
-    Model<BoardModelType> m_model; //board should just wrap access functionality of model
+    Model<BoardModelType>& m_model; //board should just wrap access functionality of model
 public:
     BoardController(Model<BoardModelType> &model);
     void setupBoard();
