@@ -4,16 +4,19 @@
 
 #pragma once
 #include <map>
-#include "../board/Column.h"
-#include "../board/EBoardOperation.h"
+#include <memory>
+#include "../components/Column.h"
+#include "../components/EBoardOperation.h"
 #include "../model/Model.h"
-
-typedef std::map<int, Column> BoardModelType;
+#include "../components/Board.h"
 
 class BoardController {
-    Model<BoardModelType>& m_model; //board should just wrap access functionality of model
+    typedef std::shared_ptr<Board> SharedBoard;
+
+    SharedBoard m_sharedBoard;
 public:
-    BoardController(Model<BoardModelType> &model);
     void setupBoard();
+    void setBoard(const std::shared_ptr<Board> &board);
     void executeMove(int index, BoardOperation operation);
 };
+

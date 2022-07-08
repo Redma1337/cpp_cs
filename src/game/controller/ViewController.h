@@ -10,9 +10,9 @@
 #include "../view/EMenu.h"
 
 class ViewController {
-    typedef std::map<Menu, std::shared_ptr<View>> ViewMap;
+    typedef std::map<Menu, std::shared_ptr<View>> SharedViewMap;
 
-    ViewMap m_viewMap;
+    SharedViewMap m_viewMap;
     Menu m_currentView;
 public:
     ViewController();

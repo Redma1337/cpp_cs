@@ -4,21 +4,13 @@
 
 #include "BoardController.h"
 
-BoardController::BoardController(Model<BoardModelType> &model)
-    : m_model{ model }
-{
-    setupBoard();
+void BoardController::setBoard(const std::shared_ptr<Board> &board) {
+    m_sharedBoard = board;
 }
 
 void
 BoardController::setupBoard() {
-    BoardModelType mapCopy = m_model.getData();
-    size_t lengths[] = { 3, 5, 7, 9, 11, 13, 11, 9, 7, 5, 3 };
-    for (int i = 2; i <= 12; i++) {
-        Column col(lengths[i-2]);
-        mapCopy.insert(BoardModelType::value_type(i, col));
-    }
-    m_model.setData(mapCopy);
+    m_sharedBoard->setup();
 }
 
 void
@@ -41,3 +33,4 @@ BoardController::executeMove(int index, BoardOperation operation) {
             break;
     }
 }
+

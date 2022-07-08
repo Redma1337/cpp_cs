@@ -5,13 +5,8 @@
 #include "Cell.h"
 
 Cell::Cell(const sf::Vector2f &dim)
-    : m_dimension{ dim }, m_position{ 0, 0 }
+    : Component{ dim }
 {}
-
-void
-Cell::setPos(const sf::Vector2f pos) {
-    m_position = pos;
-}
 
 void
 Cell::setPieceType(PieceColor color, PieceType newType) {

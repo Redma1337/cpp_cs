@@ -7,7 +7,7 @@
 #include "../event/Observable.h"
 
 template <typename T>
-class Model : public Observable {
+class Model {
     T m_data;
 public:
     virtual ~Model() = default;
@@ -19,8 +19,6 @@ public:
 
     void setData(const T &newData) {
         m_data = newData;
-
-        fireEvent();
     }
 
     //we give out copies, because we want to force setData use

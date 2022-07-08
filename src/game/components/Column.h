@@ -6,16 +6,16 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include "Cell.h"
+#include "Component.h"
 
-class Column : sf::Drawable {
-    sf::Vector2f m_position;
+class Column : public Component {
     const size_t m_length;
 
     std::vector<Cell> m_cells;
 public:
     Column(const size_t length);
 
-    void setPos(const sf::Vector2f pos);
+    void pack();
 
-    void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 };

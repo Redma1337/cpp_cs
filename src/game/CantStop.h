@@ -11,8 +11,6 @@
 #include "controller/ViewController.h"
 
 class CantStop {
-    Model<BoardModelType> m_boardModel;
-
     BoardController m_boardController;
     PlayerController m_playerController;
     ViewController m_viewController;

@@ -6,11 +6,14 @@
 
 CantStop::CantStop(Player &one, Player &two)
     :
-        m_boardController{ m_boardModel },
         m_playerController{ one, two }
 {
-    std::shared_ptr<GameView> view = std::make_shared<GameView>("Cant Stop Game", m_boardModel);
+    std::shared_ptr<Board> board = std::make_shared<Board>();
+    m_boardController.setBoard(board);
+
+    std::shared_ptr<GameView> view = std::make_shared<GameView>("Cant Stop Game", board);
     m_viewController.addView(Menu::GAME_VIEW, view);
+
 }
 
 void
@@ -47,7 +50,7 @@ CantStop::onEvent(sf::Event emitter) {
     if (emitter.type == sf::Event::MouseButtonPressed) {
         if (emitter.mouseButton.button == sf::Mouse::Right) {
             //TODO: Spread Event
-            m_boardModel.fireEvent();
+
         }
     }
 }

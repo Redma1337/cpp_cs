@@ -33,6 +33,6 @@ ViewController::addView(Menu pageIndex, std::shared_ptr<View> sharedView) {
     }
 
     m_viewMap.insert(
-            ViewMap::value_type(pageIndex, sharedView)
+            SharedViewMap::value_type(pageIndex, sharedView)
         );
 }

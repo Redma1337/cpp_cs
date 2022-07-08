@@ -5,22 +5,23 @@
 #include "Column.h"
 
 Column::Column(const size_t length)
-    : m_length{ length }, m_position{ 0, 0 }
-{
-    int yOff = 0;
+    : m_length{ length },
+        Component{{50, (float) length * 50}}
+{}
+
+void
+Column::pack() {
+    float yOff = 0;
+    int bottomMargin = 10;
     const sf::Vector2f cellDim = { 50, 50 };
-    for (int i = 0; i < length; i++) {
+
+    for (int i = 0; i < m_length; i++) {
         Cell cell(cellDim);
         cell.setPos({ m_position.x, m_position.y + yOff });
 
         m_cells.push_back(cell);
-        yOff += cellDim.y;
+        yOff += cellDim.y + bottomMargin;
     }
-}
-
-void
-Column::setPos(const sf::Vector2f pos) {
-    m_position = pos;
 }
 
 void

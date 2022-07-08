@@ -13,7 +13,7 @@ protected:
     std::string m_name;
 public:
     View(std::string name, int width = 800, int height = 600)
-        : m_name{ name }
+        : m_name{ std::move(name) }
     {}
 
     View() {};
