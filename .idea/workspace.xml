@@ -19,18 +19,19 @@
   <component name="ChangeListManager">
     <list default="true" id="0baa877b-8070-44f2-ac6d-f81cae353eb9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/sfml_test.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sfml_test.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/components/Cell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Cell.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/components/Cell.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Cell.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Column.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Column.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Column.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Column.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ClangdSettings">
-    <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
@@ -53,35 +54,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cmake.loaded.for.project&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/weser/CLionProjects/cpp/cpp_sfml_test&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CPPToolchains&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.advertisement.text.overridden": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "cmake.loaded.for.project": "true",
+    "last_opened_file_path": "C:/Users/weser/CLionProjects/cpp/cpp_sfml_test",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C/C++"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="sfml_test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sfml_test" TARGET_NAME="sfml_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sfml_test" RUN_TARGET_NAME="sfml_test">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -235,7 +232,8 @@
       <workItem from="1656764459733" duration="1050000" />
       <workItem from="1657098468530" duration="443000" />
       <workItem from="1657099434546" duration="1130000" />
-      <workItem from="1657364643500" duration="14506000" />
+      <workItem from="1657364643500" duration="15444000" />
+      <workItem from="1657380240433" duration="11212000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1656663662329</created>
@@ -286,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657373357411</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: draw camps and runners">
+      <created>1657379252054</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657379252054</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +316,8 @@
     <MESSAGE value="revert: revert previous revert" />
     <MESSAGE value="fix: made calculation for centering based on variables" />
     <MESSAGE value="fix: avoid narrowing conversion" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: avoid narrowing conversion" />
+    <MESSAGE value="feat: draw camps and runners" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: draw camps and runners" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
