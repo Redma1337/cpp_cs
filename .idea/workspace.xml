@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
       <config projectName="sfml_test" targetName="sfml_test" />
@@ -12,188 +18,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0baa877b-8070-44f2-ac6d-f81cae353eb9" name="Changes" comment="feat: game main class">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/GitLink.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-31d74ee393d74e820308.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-5a0c60a74290b848b789.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-07-01T08-28-54-0395.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-sfml_test-Debug-43fc25bffb1d9b5e68a6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/compiler_depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/compiler_depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/compiler_depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/compiler_depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/includes_CXX.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/includes_CXX.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/linklibs.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/linklibs.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/objects1.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-c64f0bf43a29ae369c8b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdCXX/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/compiler_depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/compiler_depend.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/includes_CXX.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/linklibs.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/objects.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/objects1.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/progress.make" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj.d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj.d" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/main.cpp.obj.d" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/main.cpp.obj.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/sfml_test.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sfml_test.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/bin/openal32.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/bin/sfml-audio-2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/bin/sfml-audio-d-2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/bin/sfml-graphics-2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/bin/sfml-graphics-d-2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/bin/sfml-network-2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/bin/sfml-network-d-2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/bin/sfml-system-2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/bin/sfml-system-d-2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/bin/sfml-window-2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/bin/sfml-window-d-2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/AlResource.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/Export.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/InputSoundFile.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/Listener.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/Music.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/OutputSoundFile.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/Sound.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/SoundBuffer.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/SoundBufferRecorder.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/SoundFileFactory.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/SoundFileFactory.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/SoundFileReader.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/SoundFileWriter.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/SoundRecorder.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/SoundSource.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Audio/SoundStream.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Config.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/GpuPreference.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/BlendMode.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/CircleShape.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Color.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/ConvexShape.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Drawable.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Export.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Font.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Glsl.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Glsl.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Glyph.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Image.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/PrimitiveType.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Rect.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Rect.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/RectangleShape.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/RenderStates.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/RenderTarget.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/RenderTexture.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/RenderWindow.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Shader.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Shape.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Sprite.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Text.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Texture.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Transform.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Transformable.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/Vertex.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/VertexArray.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/VertexBuffer.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Graphics/View.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Main.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Network.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Network/Export.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Network/Ftp.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Network/Http.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Network/IpAddress.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Network/Packet.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Network/Socket.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Network/SocketHandle.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Network/SocketSelector.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Network/TcpListener.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Network/TcpSocket.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Network/UdpSocket.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/OpenGL.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Clock.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Err.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Export.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/FileInputStream.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/InputStream.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Lock.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/MemoryInputStream.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Mutex.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/NativeActivity.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/NonCopyable.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Sleep.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/String.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/String.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Thread.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Thread.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/ThreadLocal.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/ThreadLocalPtr.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/ThreadLocalPtr.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Time.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Utf.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Utf.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Vector2.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Vector2.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Vector3.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/System/Vector3.inl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/Clipboard.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/Context.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/ContextSettings.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/Cursor.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/Event.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/Export.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/GlResource.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/Joystick.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/Keyboard.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/Mouse.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/Sensor.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/Touch.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/VideoMode.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/Window.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/WindowHandle.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/include/SFML/Window/WindowStyle.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/cmake/SFML/SFMLConfig.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/cmake/SFML/SFMLConfigDependencies.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/cmake/SFML/SFMLConfigVersion.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/cmake/SFML/SFMLSharedTargets-debug.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/cmake/SFML/SFMLSharedTargets-release.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/cmake/SFML/SFMLSharedTargets.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/cmake/SFML/SFMLStaticTargets-debug.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/cmake/SFML/SFMLStaticTargets-release.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/cmake/SFML/SFMLStaticTargets.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libFLAC.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libfreetype.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libogg.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libopenal32.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-audio-d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-audio-s-d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-audio-s.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-audio.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-graphics-d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-graphics-s-d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-graphics-s.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-graphics.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-main-d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-main.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-network-d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-network-s-d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-network-s.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-network.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-system-d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-system-s-d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-system-s.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-system.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-window-d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-window-s-d.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-window-s.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libsfml-window.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libvorbis.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libvorbisenc.a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake_modules/SFML/lib/libvorbisfile.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/main.cpp.obj.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/sfml_test.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sfml_test.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/CantStop.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/CantStop.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/view/GameView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/view/GameView.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Board.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Cell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Cell.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Cell.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Cell.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Column.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Column.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Column.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Column.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Component.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/view/View.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/view/View.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,6 +79,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -228,11 +102,16 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;cmake.loaded.for.project&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/weser/CLionProjects/cpp/cpp_sfml_test&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;CPPToolchains&quot;
   }
 }</component>
@@ -242,15 +121,138 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="sfml_test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sfml_test" TARGET_NAME="sfml_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sfml_test" RUN_TARGET_NAME="sfml_test">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="cpp_cs" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="cpp_cs" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="cpp_cs" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="cpp_cs" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <module name="cpp_cs" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Twisted Trial">
+      <module name="cpp_cs" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="cpp_cs" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <module name="cpp_cs" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -275,6 +277,9 @@
       <workItem from="1656666009147" duration="6000" />
       <workItem from="1656681328981" duration="9000" />
       <workItem from="1656764459733" duration="1050000" />
+      <workItem from="1657098468530" duration="443000" />
+      <workItem from="1657099434546" duration="1130000" />
+      <workItem from="1657364643500" duration="3831000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1656663662329</created>
@@ -321,12 +326,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/game/event/Observable.cpp</url>
-          <line>19</line>
+          <line>17</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/game/event/Observable.cpp</url>
-          <line>14</line>
+          <line>13</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>

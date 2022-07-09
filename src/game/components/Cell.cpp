@@ -13,7 +13,7 @@ Cell::setPieceType(PieceColor color, PieceType newType) {
     m_occupiers[color] = newType;
 }
 
-const PieceType
+PieceType
 Cell::getPieceType(PieceColor color) {
     return m_occupiers[color];
 }

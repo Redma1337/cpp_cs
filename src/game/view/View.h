@@ -12,15 +12,15 @@ class View : sf::Drawable {
 protected:
     std::string m_name;
 public:
-    View(std::string name, int width = 800, int height = 600)
+    explicit View(std::string name, int width = 800, int height = 800)
         : m_name{ std::move(name) }
     {}
 
-    View() {};
+    View() = default;;
 
-    virtual ~View() = default;
+    ~View() override = default;
 
-    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const = 0;
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const override = 0;
 
     std::string getName() const{
         return m_name;

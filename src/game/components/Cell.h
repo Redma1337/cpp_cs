@@ -16,5 +16,5 @@ public:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
     void setPieceType(PieceColor color, PieceType type);
-    const PieceType getPieceType(PieceColor color);
+    PieceType getPieceType(PieceColor color);
 };

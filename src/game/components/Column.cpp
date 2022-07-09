@@ -12,7 +12,7 @@ Column::Column(const size_t length)
 void
 Column::pack() {
     float yOff = 0;
-    int bottomMargin = 10;
+    float bottomMargin = 10;
     const sf::Vector2f cellDim = { 50, 50 };
 
     for (int i = 0; i < m_length; i++) {
@@ -26,7 +26,7 @@ Column::pack() {
 
 void
 Column::draw(sf::RenderTarget &target, sf::RenderStates states) const {
-    for(Cell c : m_cells) {
+    for(Cell const &c : m_cells) {
         c.draw(target, states);
     }
 }

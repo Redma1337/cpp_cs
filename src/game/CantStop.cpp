@@ -21,7 +21,7 @@ CantStop::start() {
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8; //this is gpu dependent
     sf::RenderWindow window(
-        sf::VideoMode(800, 600),
+        sf::VideoMode(800, 800),
         "Can't Stop Game",
         sf::Style::Default,
         settings

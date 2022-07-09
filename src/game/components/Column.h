@@ -13,7 +13,7 @@ class Column : public Component {
 
     std::vector<Cell> m_cells;
 public:
-    Column(const size_t length);
+    explicit Column(size_t length);
 
     void pack();
 
