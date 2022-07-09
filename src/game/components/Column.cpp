@@ -29,10 +29,12 @@ Column::draw(sf::RenderTarget &target, sf::RenderStates states) const {
     }
 }
 
-void Column::setCellMargin(float margin) {
+void
+Column::setCellMargin(float margin) {
     m_bottomMargin = margin;
 }
 
-void Column::setCellSize(sf::Vector2f dim) {
+void
+Column::setCellSize(sf::Vector2f dim) {
     m_cellDim = dim;
 }

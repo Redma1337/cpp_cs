@@ -9,9 +9,9 @@ Board::Board()
     this->setup();
 }
 
-int
-CalculateYPos(int length, int margin, int cellHeight, int maxHeight){
-    return (int)((maxHeight-(length*cellHeight+(length-1)*margin))/2);
+float
+CalculateYPos(float length, float margin, float cellHeight, float maxHeight){
+    return ((maxHeight-(length*cellHeight+(length-1.0f)*margin))/2.0f);
 }
 
 void
@@ -32,12 +32,12 @@ Board::setup() {
     float marginRight = 10;
     float cellMargin = 10;
     sf::Vector2f cellDims = {50,50};
-    int maxHeight = 13*cellDims.y + 12*cellMargin;
+    float maxHeight = 13*cellDims.y + 12*cellMargin;
     for (int i = 2; i <= 12; i++) {
         Column col(lengths[i-2]);
         col.setCellMargin(cellMargin);
         col.setCellSize(cellDims);
-        col.setPos({ m_position.x + xOff, m_position.y + CalculateYPos((int)lengths[i-2], (int)cellMargin, (int)cellDims.y, maxHeight)});
+        col.setPos({ m_position.x + xOff, m_position.y + CalculateYPos((float)lengths[i-2], cellMargin, cellDims.y, maxHeight)});
         col.pack();
 
         mapCopy.insert(BoardModelType::value_type(i, col));
