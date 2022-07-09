@@ -21,8 +21,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/sfml_test.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sfml_test.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/components/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Board.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/components/Column.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Column.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Cell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Cell.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Cell.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Cell.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +235,7 @@
       <workItem from="1656764459733" duration="1050000" />
       <workItem from="1657098468530" duration="443000" />
       <workItem from="1657099434546" duration="1130000" />
-      <workItem from="1657364643500" duration="8636000" />
+      <workItem from="1657364643500" duration="14506000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1656663662329</created>
@@ -279,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657372130697</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix: avoid narrowing conversion">
+      <created>1657373357411</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657373357411</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +310,8 @@
     <MESSAGE value="revert: override to virtual" />
     <MESSAGE value="revert: revert previous revert" />
     <MESSAGE value="fix: made calculation for centering based on variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: made calculation for centering based on variables" />
+    <MESSAGE value="fix: avoid narrowing conversion" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: avoid narrowing conversion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
