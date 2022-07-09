@@ -18,9 +18,9 @@ public:
 
     View() = default;;
 
-    virtual ~View() = default;
+    ~View() override = default;
 
-    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const = 0;
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const override = 0;
 
     std::string getName() const{
         return m_name;

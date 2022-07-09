@@ -21,11 +21,11 @@ public:
 
     Component() = default;
 
-    virtual ~Component() = default;
+    ~Component() override = default;
 
     virtual void setPos(const sf::Vector2f &pos) {
         m_position = pos;
     }
 
-    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const = 0;
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const override = 0;
 };
