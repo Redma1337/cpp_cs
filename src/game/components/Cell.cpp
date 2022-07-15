@@ -6,11 +6,7 @@
 
 Cell::Cell(const sf::Vector2f &dim)
     : Component{ dim }
-{
-    setPieceType(PieceColor::COLOR_RED, PieceType::TYPE_CAMP);
-    setPieceType(PieceColor::COLOR_GREEN,PieceType::TYPE_CAMP);
-    setPieceType(PieceColor::COLOR_RED,PieceType::TYPE_RUNNER);
-}
+{}
 
 void
 Cell::setPieceType(PieceColor color, PieceType newType) {
@@ -22,10 +18,11 @@ Cell::setPieceType(PieceColor color, PieceType newType) {
     }
     else{
         m_runner.erase(color);
+        m_camps.erase(color);
     }
 }
 
-PieceType
+[[maybe_unused]] PieceType
 Cell::getPieceType(PieceColor color) {
     return m_camps[color];
 }
