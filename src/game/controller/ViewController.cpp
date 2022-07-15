@@ -21,6 +21,12 @@ ViewController::drawView(sf::RenderTarget &target) const {
     currentView->draw(target, sf::RenderStates::Default);
 }
 
+void
+ViewController::onClick(const sf::Vector2i &cords) const {
+    std::shared_ptr<View> currentView = getCurrentView();
+    currentView->onClick(cords);
+}
+
 const std::shared_ptr<View>
 ViewController::getCurrentView() const {
     return m_viewMap.at(m_currentView);

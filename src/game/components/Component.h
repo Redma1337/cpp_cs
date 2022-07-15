@@ -27,5 +27,14 @@ public:
         m_position = pos;
     }
 
+    bool isCordInBounds(const sf::Vector2i &pos) {
+        return (
+            pos.x >= m_position.x
+            && pos.y >= m_position.y
+            && pos.x <= (m_position.x + m_dimension.x)
+            && pos.y <= (m_position.y + m_dimension.y)
+        );
+    }
+
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override = 0;
 };

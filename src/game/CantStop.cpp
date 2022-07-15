@@ -6,7 +6,7 @@
 
 CantStop::CantStop(Player &one, Player &two)
     :
-        m_playerController{ one, two }
+        m_playerController{ one, two }, m_window(sf::VideoMode(800, 800), "Can't Stop Game", sf::Style::Default)
 {
     std::shared_ptr<Board> board = std::make_shared<Board>();
     m_boardController.setBoard(board);
@@ -18,39 +18,30 @@ CantStop::CantStop(Player &one, Player &two)
 
 void
 CantStop::start() {
-    sf::ContextSettings settings;
-    settings.antialiasingLevel = 8; //this is gpu dependent
-    sf::RenderWindow window(
-        sf::VideoMode(800, 800),
-        "Can't Stop Game",
-        sf::Style::Default,
-        settings
-    );
-
-    while (window.isOpen()) {
+    while (m_window.isOpen()) {
         sf::Event event;
-        while (window.pollEvent(event)) {
+        while (m_window.pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
-                window.close();
+                m_window.close();
             }
 
             onEvent(event);
         }
 
-        window.clear(sf::Color::Black);
+        m_window.clear(sf::Color::Black);
 
-        m_viewController.drawView(window);
+        m_viewController.drawView(m_window);
 
-        window.display();
+        m_window.display();
     }
 }
 
 void
 CantStop::onEvent(sf::Event emitter) {
     if (emitter.type == sf::Event::MouseButtonPressed) {
-        if (emitter.mouseButton.button == sf::Mouse::Right) {
-            //TODO: Spread Event
-
+        if (emitter.mouseButton.button == sf::Mouse::Left) {
+            sf::Vector2i mousePos = sf::Mouse::getPosition(m_window);
+            m_viewController.onClick(mousePos);
         }
     }
 }

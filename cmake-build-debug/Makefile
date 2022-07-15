@@ -152,6 +152,198 @@ src/game/CantStop.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.s
 .PHONY : src/game/CantStop.cpp.s
 
+src/game/components/Board.obj: src/game/components/Board.cpp.obj
+.PHONY : src/game/components/Board.obj
+
+# target to build an object file
+src/game/components/Board.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Board.cpp.obj
+.PHONY : src/game/components/Board.cpp.obj
+
+src/game/components/Board.i: src/game/components/Board.cpp.i
+.PHONY : src/game/components/Board.i
+
+# target to preprocess a source file
+src/game/components/Board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Board.cpp.i
+.PHONY : src/game/components/Board.cpp.i
+
+src/game/components/Board.s: src/game/components/Board.cpp.s
+.PHONY : src/game/components/Board.s
+
+# target to generate assembly for a file
+src/game/components/Board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Board.cpp.s
+.PHONY : src/game/components/Board.cpp.s
+
+src/game/components/Button.obj: src/game/components/Button.cpp.obj
+.PHONY : src/game/components/Button.obj
+
+# target to build an object file
+src/game/components/Button.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Button.cpp.obj
+.PHONY : src/game/components/Button.cpp.obj
+
+src/game/components/Button.i: src/game/components/Button.cpp.i
+.PHONY : src/game/components/Button.i
+
+# target to preprocess a source file
+src/game/components/Button.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Button.cpp.i
+.PHONY : src/game/components/Button.cpp.i
+
+src/game/components/Button.s: src/game/components/Button.cpp.s
+.PHONY : src/game/components/Button.s
+
+# target to generate assembly for a file
+src/game/components/Button.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Button.cpp.s
+.PHONY : src/game/components/Button.cpp.s
+
+src/game/components/Cell.obj: src/game/components/Cell.cpp.obj
+.PHONY : src/game/components/Cell.obj
+
+# target to build an object file
+src/game/components/Cell.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Cell.cpp.obj
+.PHONY : src/game/components/Cell.cpp.obj
+
+src/game/components/Cell.i: src/game/components/Cell.cpp.i
+.PHONY : src/game/components/Cell.i
+
+# target to preprocess a source file
+src/game/components/Cell.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Cell.cpp.i
+.PHONY : src/game/components/Cell.cpp.i
+
+src/game/components/Cell.s: src/game/components/Cell.cpp.s
+.PHONY : src/game/components/Cell.s
+
+# target to generate assembly for a file
+src/game/components/Cell.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Cell.cpp.s
+.PHONY : src/game/components/Cell.cpp.s
+
+src/game/components/Column.obj: src/game/components/Column.cpp.obj
+.PHONY : src/game/components/Column.obj
+
+# target to build an object file
+src/game/components/Column.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Column.cpp.obj
+.PHONY : src/game/components/Column.cpp.obj
+
+src/game/components/Column.i: src/game/components/Column.cpp.i
+.PHONY : src/game/components/Column.i
+
+# target to preprocess a source file
+src/game/components/Column.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Column.cpp.i
+.PHONY : src/game/components/Column.cpp.i
+
+src/game/components/Column.s: src/game/components/Column.cpp.s
+.PHONY : src/game/components/Column.s
+
+# target to generate assembly for a file
+src/game/components/Column.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Column.cpp.s
+.PHONY : src/game/components/Column.cpp.s
+
+src/game/controller/BoardController.obj: src/game/controller/BoardController.cpp.obj
+.PHONY : src/game/controller/BoardController.obj
+
+# target to build an object file
+src/game/controller/BoardController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/BoardController.cpp.obj
+.PHONY : src/game/controller/BoardController.cpp.obj
+
+src/game/controller/BoardController.i: src/game/controller/BoardController.cpp.i
+.PHONY : src/game/controller/BoardController.i
+
+# target to preprocess a source file
+src/game/controller/BoardController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/BoardController.cpp.i
+.PHONY : src/game/controller/BoardController.cpp.i
+
+src/game/controller/BoardController.s: src/game/controller/BoardController.cpp.s
+.PHONY : src/game/controller/BoardController.s
+
+# target to generate assembly for a file
+src/game/controller/BoardController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/BoardController.cpp.s
+.PHONY : src/game/controller/BoardController.cpp.s
+
+src/game/controller/DiceController.obj: src/game/controller/DiceController.cpp.obj
+.PHONY : src/game/controller/DiceController.obj
+
+# target to build an object file
+src/game/controller/DiceController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/DiceController.cpp.obj
+.PHONY : src/game/controller/DiceController.cpp.obj
+
+src/game/controller/DiceController.i: src/game/controller/DiceController.cpp.i
+.PHONY : src/game/controller/DiceController.i
+
+# target to preprocess a source file
+src/game/controller/DiceController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/DiceController.cpp.i
+.PHONY : src/game/controller/DiceController.cpp.i
+
+src/game/controller/DiceController.s: src/game/controller/DiceController.cpp.s
+.PHONY : src/game/controller/DiceController.s
+
+# target to generate assembly for a file
+src/game/controller/DiceController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/DiceController.cpp.s
+.PHONY : src/game/controller/DiceController.cpp.s
+
+src/game/controller/PlayerController.obj: src/game/controller/PlayerController.cpp.obj
+.PHONY : src/game/controller/PlayerController.obj
+
+# target to build an object file
+src/game/controller/PlayerController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/PlayerController.cpp.obj
+.PHONY : src/game/controller/PlayerController.cpp.obj
+
+src/game/controller/PlayerController.i: src/game/controller/PlayerController.cpp.i
+.PHONY : src/game/controller/PlayerController.i
+
+# target to preprocess a source file
+src/game/controller/PlayerController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/PlayerController.cpp.i
+.PHONY : src/game/controller/PlayerController.cpp.i
+
+src/game/controller/PlayerController.s: src/game/controller/PlayerController.cpp.s
+.PHONY : src/game/controller/PlayerController.s
+
+# target to generate assembly for a file
+src/game/controller/PlayerController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/PlayerController.cpp.s
+.PHONY : src/game/controller/PlayerController.cpp.s
+
+src/game/controller/ViewController.obj: src/game/controller/ViewController.cpp.obj
+.PHONY : src/game/controller/ViewController.obj
+
+# target to build an object file
+src/game/controller/ViewController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/ViewController.cpp.obj
+.PHONY : src/game/controller/ViewController.cpp.obj
+
+src/game/controller/ViewController.i: src/game/controller/ViewController.cpp.i
+.PHONY : src/game/controller/ViewController.i
+
+# target to preprocess a source file
+src/game/controller/ViewController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/ViewController.cpp.i
+.PHONY : src/game/controller/ViewController.cpp.i
+
+src/game/controller/ViewController.s: src/game/controller/ViewController.cpp.s
+.PHONY : src/game/controller/ViewController.s
+
+# target to generate assembly for a file
+src/game/controller/ViewController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/ViewController.cpp.s
+.PHONY : src/game/controller/ViewController.cpp.s
+
 src/game/event/Observable.obj: src/game/event/Observable.cpp.obj
 .PHONY : src/game/event/Observable.obj
 
@@ -175,6 +367,78 @@ src/game/event/Observable.s: src/game/event/Observable.cpp.s
 src/game/event/Observable.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.s
 .PHONY : src/game/event/Observable.cpp.s
+
+src/game/player/ComputerPlayer.obj: src/game/player/ComputerPlayer.cpp.obj
+.PHONY : src/game/player/ComputerPlayer.obj
+
+# target to build an object file
+src/game/player/ComputerPlayer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/ComputerPlayer.cpp.obj
+.PHONY : src/game/player/ComputerPlayer.cpp.obj
+
+src/game/player/ComputerPlayer.i: src/game/player/ComputerPlayer.cpp.i
+.PHONY : src/game/player/ComputerPlayer.i
+
+# target to preprocess a source file
+src/game/player/ComputerPlayer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/ComputerPlayer.cpp.i
+.PHONY : src/game/player/ComputerPlayer.cpp.i
+
+src/game/player/ComputerPlayer.s: src/game/player/ComputerPlayer.cpp.s
+.PHONY : src/game/player/ComputerPlayer.s
+
+# target to generate assembly for a file
+src/game/player/ComputerPlayer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/ComputerPlayer.cpp.s
+.PHONY : src/game/player/ComputerPlayer.cpp.s
+
+src/game/player/HumanPlayer.obj: src/game/player/HumanPlayer.cpp.obj
+.PHONY : src/game/player/HumanPlayer.obj
+
+# target to build an object file
+src/game/player/HumanPlayer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/HumanPlayer.cpp.obj
+.PHONY : src/game/player/HumanPlayer.cpp.obj
+
+src/game/player/HumanPlayer.i: src/game/player/HumanPlayer.cpp.i
+.PHONY : src/game/player/HumanPlayer.i
+
+# target to preprocess a source file
+src/game/player/HumanPlayer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/HumanPlayer.cpp.i
+.PHONY : src/game/player/HumanPlayer.cpp.i
+
+src/game/player/HumanPlayer.s: src/game/player/HumanPlayer.cpp.s
+.PHONY : src/game/player/HumanPlayer.s
+
+# target to generate assembly for a file
+src/game/player/HumanPlayer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/HumanPlayer.cpp.s
+.PHONY : src/game/player/HumanPlayer.cpp.s
+
+src/game/player/Player.obj: src/game/player/Player.cpp.obj
+.PHONY : src/game/player/Player.obj
+
+# target to build an object file
+src/game/player/Player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/Player.cpp.obj
+.PHONY : src/game/player/Player.cpp.obj
+
+src/game/player/Player.i: src/game/player/Player.cpp.i
+.PHONY : src/game/player/Player.i
+
+# target to preprocess a source file
+src/game/player/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/Player.cpp.i
+.PHONY : src/game/player/Player.cpp.i
+
+src/game/player/Player.s: src/game/player/Player.cpp.s
+.PHONY : src/game/player/Player.s
+
+# target to generate assembly for a file
+src/game/player/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/Player.cpp.s
+.PHONY : src/game/player/Player.cpp.s
 
 src/game/view/GameView.obj: src/game/view/GameView.cpp.obj
 .PHONY : src/game/view/GameView.obj
@@ -236,9 +500,42 @@ help:
 	@echo ... src/game/CantStop.obj
 	@echo ... src/game/CantStop.i
 	@echo ... src/game/CantStop.s
+	@echo ... src/game/components/Board.obj
+	@echo ... src/game/components/Board.i
+	@echo ... src/game/components/Board.s
+	@echo ... src/game/components/Button.obj
+	@echo ... src/game/components/Button.i
+	@echo ... src/game/components/Button.s
+	@echo ... src/game/components/Cell.obj
+	@echo ... src/game/components/Cell.i
+	@echo ... src/game/components/Cell.s
+	@echo ... src/game/components/Column.obj
+	@echo ... src/game/components/Column.i
+	@echo ... src/game/components/Column.s
+	@echo ... src/game/controller/BoardController.obj
+	@echo ... src/game/controller/BoardController.i
+	@echo ... src/game/controller/BoardController.s
+	@echo ... src/game/controller/DiceController.obj
+	@echo ... src/game/controller/DiceController.i
+	@echo ... src/game/controller/DiceController.s
+	@echo ... src/game/controller/PlayerController.obj
+	@echo ... src/game/controller/PlayerController.i
+	@echo ... src/game/controller/PlayerController.s
+	@echo ... src/game/controller/ViewController.obj
+	@echo ... src/game/controller/ViewController.i
+	@echo ... src/game/controller/ViewController.s
 	@echo ... src/game/event/Observable.obj
 	@echo ... src/game/event/Observable.i
 	@echo ... src/game/event/Observable.s
+	@echo ... src/game/player/ComputerPlayer.obj
+	@echo ... src/game/player/ComputerPlayer.i
+	@echo ... src/game/player/ComputerPlayer.s
+	@echo ... src/game/player/HumanPlayer.obj
+	@echo ... src/game/player/HumanPlayer.i
+	@echo ... src/game/player/HumanPlayer.s
+	@echo ... src/game/player/Player.obj
+	@echo ... src/game/player/Player.i
+	@echo ... src/game/player/Player.s
 	@echo ... src/game/view/GameView.obj
 	@echo ... src/game/view/GameView.i
 	@echo ... src/game/view/GameView.s

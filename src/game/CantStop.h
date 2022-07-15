@@ -14,6 +14,7 @@ class CantStop {
     BoardController m_boardController;
     PlayerController m_playerController;
     ViewController m_viewController;
+    sf::RenderWindow m_window;
 
     void onEvent(sf::Event emitter);
 public:

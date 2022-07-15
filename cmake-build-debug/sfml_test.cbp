@@ -90,6 +90,60 @@
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/CantStop.h">
 			<Option target="sfml_test"/>
 		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/components/Board.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/components/Board.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/components/Button.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/components/Button.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/components/Cell.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/components/Cell.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/components/Column.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/components/Column.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/components/Component.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/components/EBoardOperation.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/controller/BoardController.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/controller/BoardController.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/controller/DiceController.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/controller/DiceController.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/controller/PlayerController.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/controller/PlayerController.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/controller/ViewController.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/controller/ViewController.h">
+			<Option target="sfml_test"/>
+		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/event/IObserver.h">
 			<Option target="sfml_test"/>
 		</Unit>
@@ -102,10 +156,40 @@
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/model/Model.h">
 			<Option target="sfml_test"/>
 		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/player/ComputerPlayer.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/player/ComputerPlayer.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/player/EPieceColor.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/player/EPieceType.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/player/HumanPlayer.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/player/HumanPlayer.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/player/Player.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/player/Player.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/view/EMenu.h">
+			<Option target="sfml_test"/>
+		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/view/GameView.cpp">
 			<Option target="sfml_test"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/view/GameView.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/view/IClickable.h">
 			<Option target="sfml_test"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/view/View.h">

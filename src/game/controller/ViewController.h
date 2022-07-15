@@ -23,4 +23,5 @@ public:
     void addView(Menu pageIndex, std::shared_ptr<View> sharedView);
 
     void drawView(sf::RenderTarget& target) const;
+    void onClick(const sf::Vector2i &cords) const;
 };

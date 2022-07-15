@@ -1,3 +1,3 @@
-C:/Users/moman/Videos/cpp_cs/cmake-build-debug/CMakeFiles/sfml_test.dir
-C:/Users/moman/Videos/cpp_cs/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/moman/Videos/cpp_cs/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/cmake-build-debug/CMakeFiles/sfml_test.dir
+C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
