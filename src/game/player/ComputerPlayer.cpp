@@ -9,6 +9,6 @@ ComputerPlayer::ComputerPlayer(std::string name)
 {}
 
 std::array<int, 2>
-ComputerPlayer::generateTurn(std::array<int, 4> dices) {
+ComputerPlayer::generateTurn(PairSelector& pairSelector) {
     //TODO: implement move logic
 }

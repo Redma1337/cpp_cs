@@ -6,7 +6,7 @@
 
 Column::Column(const size_t length)
     : m_length{ length },
-        Component{{static_cast<float>(50), static_cast<float>(length * static_cast<unsigned int>(50))}}
+        Component{{50, length * 50}}
 {}
 
 void

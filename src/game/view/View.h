@@ -6,7 +6,6 @@
 #include <string>
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "../event/IObserver.h"
 #include "IClickable.h"
 
 class View : sf::Drawable, IClickable {

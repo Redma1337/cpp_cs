@@ -5,15 +5,16 @@
 #include "Player.h"
 
 Player::Player(std::string name, bool human)
-    : m_name{ std::move(name) }, m_isHuman{ human }
+    :   m_name{ std::move(name) },
+        m_isHuman{ human }
 {}
 
-const std::string
+std::string
 Player::getName() const {
     return m_name;
 }
 
-const PieceColor
+PieceColor
 Player::getColor() const {
     return m_color;
 }
@@ -23,7 +24,7 @@ Player::setColor(PieceColor color) {
     m_color = color;
 }
 
-const bool
+bool
 Player::isHuman() const {
     return m_isHuman;
 }

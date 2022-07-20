@@ -4,8 +4,10 @@
 
 #pragma once
 #include "EPieceColor.h"
+#include "../components/PairSelector.h"
 #include <string>
 #include <array>
+#include <memory>
 
 class Player {
 protected:
@@ -17,10 +19,12 @@ public:
 
     Player(std::string name, bool human); //pass string by value because we will std::move it
 
-    virtual std::array<int, 2> generateTurn(std::array<int, 4> dices) = 0;
+    virtual std::array<int, 2> generateTurn(PairSelector& pairSelector) = 0;
 
-    const PieceColor getColor() const;
+    PieceColor getColor() const;
     void setColor(PieceColor color);
-    const std::string getName() const;
-    const bool isHuman() const;
+
+    std::string getName() const;
+
+    bool isHuman() const;
 };

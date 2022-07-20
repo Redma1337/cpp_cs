@@ -9,6 +9,6 @@ HumanPlayer::HumanPlayer(std::string name)
 {}
 
 std::array<int, 2>
-HumanPlayer::generateTurn(std::array<int, 4> dices) {
+HumanPlayer::generateTurn(PairSelector& pairSelector) {
     //TODO: implement move logic
 }

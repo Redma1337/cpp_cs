@@ -4,8 +4,6 @@
 
 #pragma once
 
-#include "../event/Observable.h"
-
 template <typename T>
 class Model {
     T m_data;

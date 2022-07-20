@@ -12,8 +12,8 @@ PlayerController::PlayerController(Player &one, Player &two)
 }
 
 bool
-PlayerController::doTurn() {
-
+PlayerController::doTurn(PairSelector& selector) {
+    std::array<int, 2> turnPair = m_currentPlayer->generateTurn(selector);
 }
 
 void

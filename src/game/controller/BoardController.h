@@ -6,7 +6,7 @@
 #include <map>
 #include <memory>
 #include "../components/Column.h"
-#include "../components/EBoardOperation.h"
+#include "../model/EBoardOperation.h"
 #include "../model/Model.h"
 #include "../components/Board.h"
 

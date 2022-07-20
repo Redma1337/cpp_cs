@@ -4,8 +4,8 @@
 
 #pragma once
 
-
 #include "../player/Player.h"
+#include "DiceController.h"
 
 typedef std::pair<Player&, Player&> PlayerMatchUpModel;
 
@@ -15,6 +15,6 @@ class PlayerController {
     Player* m_currentPlayer;
 public:
     PlayerController(Player& one, Player& two);
-    bool doTurn();
+    bool doTurn(PairSelector& selector);
     void switchPlayer();
 };

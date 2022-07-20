@@ -6,12 +6,12 @@
 
 CantStop::CantStop(Player &one, Player &two)
     :
-        m_playerController{ one, two }, m_window(sf::VideoMode(800, 800), "Can't Stop Game", sf::Style::Default)
+        m_playerController{ one, two }, m_window(sf::VideoMode(1000, 800), "Can't Stop Game", sf::Style::Default)
 {
     std::shared_ptr<Board> board = std::make_shared<Board>();
     m_boardController.setBoard(board);
 
-    std::shared_ptr<GameView> view = std::make_shared<GameView>("Cant Stop Game", board);
+    std::shared_ptr<GameView> view = std::make_shared<GameView>("Cant Stop Game", board, m_playerController);
     m_viewController.addView(Menu::GAME_VIEW, view);
 
 }

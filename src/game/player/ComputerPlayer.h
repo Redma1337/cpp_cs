@@ -10,5 +10,6 @@
 class ComputerPlayer : public Player {
 public:
     ComputerPlayer(std::string name);
-    std::array<int, 2> generateTurn(std::array<int, 4> dices) override;
+
+    std::array<int, 2> generateTurn(PairSelector& pairSelector) override;
 };
