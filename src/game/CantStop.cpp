@@ -3,6 +3,8 @@
 //
 
 #include "CantStop.h"
+#include "wrapper/RenderWrapper.h"
+
 
 CantStop::CantStop(Player &one, Player &two)
     :
@@ -14,6 +16,8 @@ CantStop::CantStop(Player &one, Player &two)
     std::shared_ptr<GameView> view = std::make_shared<GameView>("Cant Stop Game", board, m_playerController);
     m_viewController.addView(Menu::GAME_VIEW, view);
 
+    //relative to cmake-build-debug/sfml_test.exe
+    RenderWrapper::loadFont("../resources/fonts/Segoe UI.ttf");
 }
 
 void

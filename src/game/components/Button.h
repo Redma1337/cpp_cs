@@ -7,6 +7,7 @@
 #include <functional>
 #include "Component.h"
 #include "../view/IClickable.h"
+#include "../wrapper/RenderWrapper.h"
 
 class Button : public Component, IClickable {
     std::function<void(const sf::Vector2i)> m_callback;

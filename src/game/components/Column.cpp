@@ -6,7 +6,7 @@
 
 Column::Column(const size_t length)
     : m_length{ length },
-        Component{{50, length * 50}}
+        Component({ 50, length * 50.0f })
 {}
 
 void

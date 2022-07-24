@@ -29,6 +29,8 @@ Button::draw(sf::RenderTarget &target, sf::RenderStates states) const {
     cellRect.setPosition(m_position);
     cellRect.setFillColor(m_color);
     target.draw(cellRect);
+
+    RenderWrapper::drawString(target, "Test", m_position, 20, sf::Color::White);
 }
 
 void
