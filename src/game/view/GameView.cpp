@@ -8,12 +8,14 @@ GameView::GameView(std::string name, const std::shared_ptr<Board> &board, Player
     : View(name),
         m_boardComponent{ board },
         m_playerController{ playerController },
-        m_doTurnBtn({200, 50}, {700, 650}),
+        m_doTurnBtn("Roll dice", {200, 50}, {700, 650}),
         m_pairSelector{ { 110, 110 }, {740, 300}, 50 }
 {
     m_doTurnBtn.addActionListener([this](const sf::Vector2i &cord) {
         m_pairSelector.reRoll();
+        m_pairSelector.setVisible(true);
     });
+    m_pairSelector.setVisible(false);
 }
 
 void

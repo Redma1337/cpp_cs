@@ -248,6 +248,30 @@ src/game/components/Column.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Column.cpp.s
 .PHONY : src/game/components/Column.cpp.s
 
+src/game/components/PairSelector.obj: src/game/components/PairSelector.cpp.obj
+.PHONY : src/game/components/PairSelector.obj
+
+# target to build an object file
+src/game/components/PairSelector.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/PairSelector.cpp.obj
+.PHONY : src/game/components/PairSelector.cpp.obj
+
+src/game/components/PairSelector.i: src/game/components/PairSelector.cpp.i
+.PHONY : src/game/components/PairSelector.i
+
+# target to preprocess a source file
+src/game/components/PairSelector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/PairSelector.cpp.i
+.PHONY : src/game/components/PairSelector.cpp.i
+
+src/game/components/PairSelector.s: src/game/components/PairSelector.cpp.s
+.PHONY : src/game/components/PairSelector.s
+
+# target to generate assembly for a file
+src/game/components/PairSelector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/PairSelector.cpp.s
+.PHONY : src/game/components/PairSelector.cpp.s
+
 src/game/controller/BoardController.obj: src/game/controller/BoardController.cpp.obj
 .PHONY : src/game/controller/BoardController.obj
 
@@ -343,30 +367,6 @@ src/game/controller/ViewController.s: src/game/controller/ViewController.cpp.s
 src/game/controller/ViewController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/ViewController.cpp.s
 .PHONY : src/game/controller/ViewController.cpp.s
-
-src/game/event/Observable.obj: src/game/event/Observable.cpp.obj
-.PHONY : src/game/event/Observable.obj
-
-# target to build an object file
-src/game/event/Observable.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj
-.PHONY : src/game/event/Observable.cpp.obj
-
-src/game/event/Observable.i: src/game/event/Observable.cpp.i
-.PHONY : src/game/event/Observable.i
-
-# target to preprocess a source file
-src/game/event/Observable.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.i
-.PHONY : src/game/event/Observable.cpp.i
-
-src/game/event/Observable.s: src/game/event/Observable.cpp.s
-.PHONY : src/game/event/Observable.s
-
-# target to generate assembly for a file
-src/game/event/Observable.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.s
-.PHONY : src/game/event/Observable.cpp.s
 
 src/game/player/ComputerPlayer.obj: src/game/player/ComputerPlayer.cpp.obj
 .PHONY : src/game/player/ComputerPlayer.obj
@@ -464,6 +464,30 @@ src/game/view/GameView.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.s
 .PHONY : src/game/view/GameView.cpp.s
 
+src/game/wrapper/RenderWrapper.obj: src/game/wrapper/RenderWrapper.cpp.obj
+.PHONY : src/game/wrapper/RenderWrapper.obj
+
+# target to build an object file
+src/game/wrapper/RenderWrapper.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/wrapper/RenderWrapper.cpp.obj
+.PHONY : src/game/wrapper/RenderWrapper.cpp.obj
+
+src/game/wrapper/RenderWrapper.i: src/game/wrapper/RenderWrapper.cpp.i
+.PHONY : src/game/wrapper/RenderWrapper.i
+
+# target to preprocess a source file
+src/game/wrapper/RenderWrapper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/wrapper/RenderWrapper.cpp.i
+.PHONY : src/game/wrapper/RenderWrapper.cpp.i
+
+src/game/wrapper/RenderWrapper.s: src/game/wrapper/RenderWrapper.cpp.s
+.PHONY : src/game/wrapper/RenderWrapper.s
+
+# target to generate assembly for a file
+src/game/wrapper/RenderWrapper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/wrapper/RenderWrapper.cpp.s
+.PHONY : src/game/wrapper/RenderWrapper.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -512,6 +536,9 @@ help:
 	@echo ... src/game/components/Column.obj
 	@echo ... src/game/components/Column.i
 	@echo ... src/game/components/Column.s
+	@echo ... src/game/components/PairSelector.obj
+	@echo ... src/game/components/PairSelector.i
+	@echo ... src/game/components/PairSelector.s
 	@echo ... src/game/controller/BoardController.obj
 	@echo ... src/game/controller/BoardController.i
 	@echo ... src/game/controller/BoardController.s
@@ -524,9 +551,6 @@ help:
 	@echo ... src/game/controller/ViewController.obj
 	@echo ... src/game/controller/ViewController.i
 	@echo ... src/game/controller/ViewController.s
-	@echo ... src/game/event/Observable.obj
-	@echo ... src/game/event/Observable.i
-	@echo ... src/game/event/Observable.s
 	@echo ... src/game/player/ComputerPlayer.obj
 	@echo ... src/game/player/ComputerPlayer.i
 	@echo ... src/game/player/ComputerPlayer.s
@@ -539,6 +563,9 @@ help:
 	@echo ... src/game/view/GameView.obj
 	@echo ... src/game/view/GameView.i
 	@echo ... src/game/view/GameView.s
+	@echo ... src/game/wrapper/RenderWrapper.obj
+	@echo ... src/game/wrapper/RenderWrapper.i
+	@echo ... src/game/wrapper/RenderWrapper.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

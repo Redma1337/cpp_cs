@@ -117,7 +117,10 @@
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/components/Component.h">
 			<Option target="sfml_test"/>
 		</Unit>
-		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/components/EBoardOperation.h">
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/components/PairSelector.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/components/PairSelector.h">
 			<Option target="sfml_test"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/controller/BoardController.cpp">
@@ -144,13 +147,7 @@
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/controller/ViewController.h">
 			<Option target="sfml_test"/>
 		</Unit>
-		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/event/IObserver.h">
-			<Option target="sfml_test"/>
-		</Unit>
-		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/event/Observable.cpp">
-			<Option target="sfml_test"/>
-		</Unit>
-		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/event/Observable.h">
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/model/EBoardOperation.h">
 			<Option target="sfml_test"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/model/Model.h">
@@ -193,6 +190,12 @@
 			<Option target="sfml_test"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/view/View.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/wrapper/RenderWrapper.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/wrapper/RenderWrapper.h">
 			<Option target="sfml_test"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/main.cpp">

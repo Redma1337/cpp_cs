@@ -24,6 +24,10 @@ Column::pack() {
 
 void
 Column::draw(sf::RenderTarget &target, sf::RenderStates states) const {
+    if (!isVisible()) {
+        return;
+    }
+
     for(Cell const &c : m_cells) {
         c.draw(target, states);
     }

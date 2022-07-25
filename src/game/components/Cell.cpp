@@ -22,15 +22,20 @@ Cell::setPieceType(PieceColor color, PieceType newType) {
     }
 }
 
-[[maybe_unused]] PieceType
+PieceType
 Cell::getPieceType(PieceColor color) {
     return m_camps[color];
 }
 
 void
 Cell::draw(sf::RenderTarget &target, sf::RenderStates states) const {
+    if (!isVisible()) {
+        return;
+    }
+
     sf::RectangleShape cellRect(m_dimension);
     cellRect.setPosition(m_position);
+    cellRect.setFillColor(sf::Color(20, 20, 20, 100));
     target.draw(cellRect);
 
     if(m_camps.size() == 1){

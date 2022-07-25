@@ -12,10 +12,11 @@
 class Button : public Component, IClickable {
     std::function<void(const sf::Vector2i)> m_callback;
     sf::Color m_color;
+    std::string m_text;
 public:
-    Button(const sf::Vector2f &dim, const sf::Vector2f &pos);
-    Button(const sf::Vector2f &dim);
-    Button();
+    Button(const std::string &text, const sf::Vector2f &dim, const sf::Vector2f &pos);
+    Button(const std::string &text, const sf::Vector2f &dim);
+    Button(const std::string &text);
 
     void addActionListener(std::function<void(const sf::Vector2i)> callback);
 
@@ -26,4 +27,5 @@ public:
     void click();
 
     void setColor(const sf::Color &color);
+    void setText(const std::string &text);
 };

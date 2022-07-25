@@ -10,10 +10,10 @@ PairSelector::PairSelector(const sf::Vector2f &dim, const sf::Vector2f &pos, flo
     :   Component(dim, pos),
         m_selectedCount{ 0 },
         m_selectorButtons {
-            Button({ bS, bS }, {m_position.x , m_position.y }),
-            Button({ bS, bS }, {m_position.x + bS + 10, m_position.y }),
-            Button({ bS, bS }, {m_position.x, m_position.y + bS + 10 }),
-            Button({ bS, bS }, {m_position.x + bS + 10, m_position.y + bS + 10 }),
+            Button("", { bS, bS }, {m_position.x , m_position.y }),
+            Button("", { bS, bS }, {m_position.x + bS + 10, m_position.y }),
+            Button("", { bS, bS }, {m_position.x, m_position.y + bS + 10 }),
+            Button("", { bS, bS }, {m_position.x + bS + 10, m_position.y + bS + 10 }),
         }
 {
     setup();
@@ -35,6 +35,10 @@ PairSelector::setup() {
 
 void
 PairSelector::draw(sf::RenderTarget &target, sf::RenderStates states) const {
+    if (!isVisible()) {
+        return;
+    }
+
     std::for_each(m_selectorButtons.begin(), m_selectorButtons.end(), [&](const Button &btn) {
         btn.draw(target, states);
     });
@@ -42,7 +46,7 @@ PairSelector::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 
 void
 PairSelector::onClick(const sf::Vector2i &cords) {
-    if (isLocked()) {
+    if (isLocked() || !isVisible()) {
         return;
     }
 
@@ -55,6 +59,11 @@ void
 PairSelector::reRoll() {
     m_selectedCount = 0;
     m_diceRoll = DiceController::rollDices();
+    for (int i = 0; i < m_selectorButtons.size(); i++) {
+        m_selectorButtons[i].setColor(sf::Color(20, 20, 20, 100));
+        m_selectorButtons[i].setLocked(false);
+        m_selectorButtons[i].setText(std::to_string(m_diceRoll[i]));
+    }
 }
 
 bool

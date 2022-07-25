@@ -8,7 +8,7 @@
 #include "Button.h"
 #include <array>
 
-class PairSelector : Component, IClickable {
+class PairSelector : public Component, IClickable {
     /*
      * Button index position
      *          0 1

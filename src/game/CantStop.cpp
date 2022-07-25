@@ -32,7 +32,7 @@ CantStop::start() {
             onEvent(event);
         }
 
-        m_window.clear(sf::Color::Black);
+        m_window.clear(sf::Color::White);
 
         m_viewController.drawView(m_window);
 

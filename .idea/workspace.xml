@@ -17,39 +17,29 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0baa877b-8070-44f2-ac6d-f81cae353eb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/game/components/Button.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/components/Button.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/view/IClickable.h" afterDir="false" />
+    <list default="true" id="0baa877b-8070-44f2-ac6d-f81cae353eb9" name="Changes" comment="fix: avoid narrowing conversion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeCXXCompiler.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeSystem.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdC/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdCXX/a.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/event/Observable.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/sfml_test.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sfml_test.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/sfml_test.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sfml_test.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/CantStop.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/CantStop.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/CantStop.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/CantStop.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Board.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Button.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Button.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Button.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Button.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Cell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Cell.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/Column.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Column.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/components/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/Component.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/controller/ViewController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/controller/ViewController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/controller/ViewController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/controller/ViewController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/PairSelector.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/PairSelector.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/components/PairSelector.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/components/PairSelector.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/view/GameView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/view/GameView.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/view/GameView.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/view/GameView.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/view/View.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/view/View.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/wrapper/RenderWrapper.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/wrapper/RenderWrapper.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/wrapper/RenderWrapper.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/wrapper/RenderWrapper.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,19 +85,24 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CPPToolchains&quot;
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CPPToolchains&quot;,
+    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\model" />
+      <recent name="C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\controller" />
+      <recent name="C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\resources\fonts" />
       <recent name="C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\view" />
       <recent name="C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="sfml_test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sfml_test" TARGET_NAME="sfml_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sfml_test" RUN_TARGET_NAME="sfml_test">
@@ -266,6 +261,10 @@
       <workItem from="1657364643500" duration="14506000" />
       <workItem from="1657913289852" duration="605000" />
       <workItem from="1657919040865" duration="2706000" />
+      <workItem from="1657998689244" duration="10957000" />
+      <workItem from="1658347401178" duration="3464000" />
+      <workItem from="1658691775547" duration="2737000" />
+      <workItem from="1658759489387" duration="3833000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1656663662329</created>
@@ -316,7 +315,28 @@
       <option name="project" value="LOCAL" />
       <updated>1657373357411</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: resources directory">
+      <created>1657999006993</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657999006993</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: dice pair selection">
+      <created>1658349470229</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1658349470229</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: Font loading &amp; string rendering">
+      <created>1658694522907</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1658694522907</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +361,10 @@
     <MESSAGE value="revert: revert previous revert" />
     <MESSAGE value="fix: made calculation for centering based on variables" />
     <MESSAGE value="fix: avoid narrowing conversion" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: avoid narrowing conversion" />
+    <MESSAGE value="feat: resources directory" />
+    <MESSAGE value="feat: dice pair selection" />
+    <MESSAGE value="feat: Font loading &amp; string rendering" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Font loading &amp; string rendering" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -363,5 +386,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="this-&gt;m_selectorButtons._M_elems[0]" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

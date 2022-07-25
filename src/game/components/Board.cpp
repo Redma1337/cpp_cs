@@ -16,6 +16,10 @@ CalculateYPos(float length, float margin, float cellHeight, float maxHeight){
 
 void
 Board::draw(sf::RenderTarget &target, sf::RenderStates states) const {
+    if (!isVisible()) {
+        return;
+    }
+
     for (auto const& pair : getData()) {
         Column col = pair.second;
         col.draw(target, states);
