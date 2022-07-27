@@ -26,6 +26,8 @@ public:
 
     void setup();
     void reRoll();
+    void reset();
+    void clickButton(int i);
 
     bool isSelectionFinished() const;
     std::array<int, 2> getDecision() const;

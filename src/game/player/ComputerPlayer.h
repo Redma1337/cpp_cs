@@ -6,10 +6,12 @@
 
 #include "EPieceColor.h"
 #include "Player.h"
+#include "../controller/EPlayerAction.h"
 
 class ComputerPlayer : public Player {
 public:
     ComputerPlayer(std::string name);
 
-    std::array<int, 2> generateTurn(PairSelector& pairSelector) override;
+    std::array<int, 2> doSelection(PairSelector& pairSelector) override;
+    std::vector<EPlayerAction> generateActions() override;
 };

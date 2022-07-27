@@ -14,7 +14,8 @@ PairSelector::PairSelector(const sf::Vector2f &dim, const sf::Vector2f &pos, flo
             Button("", { bS, bS }, {m_position.x + bS + 10, m_position.y }),
             Button("", { bS, bS }, {m_position.x, m_position.y + bS + 10 }),
             Button("", { bS, bS }, {m_position.x + bS + 10, m_position.y + bS + 10 }),
-        }
+        },
+        m_selection{ 0 }
 {
     setup();
 }
@@ -23,8 +24,7 @@ void
 PairSelector::setup() {
     for (int i = 0; i < m_selectorButtons.size(); i++) {
         m_selectorButtons[i].addActionListener([&, i](const sf::Vector2i &cords){
-            std::cout << i << std::endl;
-            int pair_index = m_selectedCount >= 2 ? 0 : 1;
+            int pair_index = m_selectedCount >= 2 ? 1 : 0;
             m_selection[pair_index] += m_diceRoll[i];
             m_selectorButtons[i].setColor(pair_index == 0 ? sf::Color::Green : sf::Color::Blue);
             m_selectorButtons[i].setLocked(true);
@@ -66,6 +66,19 @@ PairSelector::reRoll() {
     }
 }
 
+void
+PairSelector::reset() {
+    for (int i = 0; i < m_selectorButtons.size(); i++) {
+        m_selectorButtons[i].setColor(sf::Color(20, 20, 20, 100));
+        m_selectorButtons[i].setLocked(false);
+    }
+}
+
+void
+PairSelector::clickButton(int i) {
+    m_selectorButtons[i].click();
+}
+
 bool
 PairSelector::isSelectionFinished() const {
     return m_selectedCount == 4;
@@ -73,5 +86,6 @@ PairSelector::isSelectionFinished() const {
 
 std::array<int, 2>
 PairSelector::getDecision() const {
-
+    return m_selection;
 }
+

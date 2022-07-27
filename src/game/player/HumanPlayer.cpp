@@ -9,6 +9,14 @@ HumanPlayer::HumanPlayer(std::string name)
 {}
 
 std::array<int, 2>
-HumanPlayer::generateTurn(PairSelector& pairSelector) {
-    //TODO: implement move logic
+HumanPlayer::doSelection(PairSelector& pairSelector) {
+    std::cout << "Human Player turning...." << std::endl;
+    return pairSelector.getDecision();
+}
+
+std::vector<EPlayerAction>
+HumanPlayer::generateActions() {
+    std::vector<EPlayerAction> actions;
+    actions.push_back(EPlayerAction::IDLE);
+    return actions;
 }

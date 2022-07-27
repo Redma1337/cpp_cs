@@ -24,4 +24,5 @@ public:
 
     void drawView(sf::RenderTarget& target) const;
     void onClick(const sf::Vector2i &cords) const;
+    void onUpdate();
 };

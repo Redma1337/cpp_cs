@@ -22,6 +22,12 @@ ViewController::drawView(sf::RenderTarget &target) const {
 }
 
 void
+ViewController::onUpdate() {
+    std::shared_ptr<View> currentView = getCurrentView();
+    currentView->onUpdate();
+}
+
+void
 ViewController::onClick(const sf::Vector2i &cords) const {
     std::shared_ptr<View> currentView = getCurrentView();
     currentView->onClick(cords);

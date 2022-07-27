@@ -5,6 +5,7 @@
 #pragma once
 #include "EPieceColor.h"
 #include "../components/PairSelector.h"
+#include "../controller/EPlayerAction.h"
 #include <string>
 #include <array>
 #include <memory>
@@ -15,11 +16,11 @@ protected:
     const std::string m_name;
     const bool m_isHuman;
 public:
+    Player(std::string name, bool human); //pass string by value because we will std::move it
     virtual ~Player() = default;
 
-    Player(std::string name, bool human); //pass string by value because we will std::move it
-
-    virtual std::array<int, 2> generateTurn(PairSelector& pairSelector) = 0;
+    virtual std::array<int, 2> doSelection(PairSelector& pairSelector) = 0;
+    virtual std::vector<EPlayerAction> generateActions() = 0;
 
     PieceColor getColor() const;
     void setColor(PieceColor color);

@@ -7,8 +7,7 @@
 
 
 CantStop::CantStop(Player &one, Player &two)
-    :
-        m_playerController{ one, two }, m_window(sf::VideoMode(1000, 800), "Can't Stop Game", sf::Style::Default)
+    :   m_playerController{ one, two }, m_window(sf::VideoMode(1000, 800), "Can't Stop Game", sf::Style::Default)
 {
     std::shared_ptr<Board> board = std::make_shared<Board>();
     m_boardController.setBoard(board);
@@ -34,6 +33,7 @@ CantStop::start() {
 
         m_window.clear(sf::Color::White);
 
+        m_viewController.onUpdate();
         m_viewController.drawView(m_window);
 
         m_window.display();

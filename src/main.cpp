@@ -4,8 +4,8 @@
 #include "game/player/ComputerPlayer.h"
 
 int main() {
-    HumanPlayer playerOne("Player One");
-    ComputerPlayer playerTwo("Player Two");
+    HumanPlayer playerOne("Human");
+    ComputerPlayer playerTwo("Computer");
 
     CantStop cantStop(playerOne, playerTwo);
     cantStop.start();
