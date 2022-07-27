@@ -33,7 +33,7 @@ ViewController::onClick(const sf::Vector2i &cords) const {
     currentView->onClick(cords);
 }
 
-const std::shared_ptr<View>
+const std::shared_ptr<View>&
 ViewController::getCurrentView() const {
     return m_viewMap.at(m_currentView);
 }

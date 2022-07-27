@@ -18,7 +18,7 @@ public:
     ViewController();
 
     void setCurrentView(Menu m);
-    const std::shared_ptr<View> getCurrentView() const;
+    const std::shared_ptr<View>& getCurrentView() const;
 
     void addView(Menu pageIndex, std::shared_ptr<View> sharedView);
 

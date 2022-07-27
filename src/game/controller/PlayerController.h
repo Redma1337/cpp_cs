@@ -7,24 +7,29 @@
 #include "../player/Player.h"
 #include "DiceController.h"
 #include "EPlayerAction.h"
+#include "BoardController.h"
+#include "../player/HumanPlayer.h"
 #include <queue>
 #include <chrono>
 #include <thread>
 
-typedef std::pair<Player&, Player&> PlayerMatchUpModel;
-
 class PlayerController {
-    Player& m_playerOne;
-    Player& m_playerTwo;
-    Player* m_currentPlayer;
+    typedef std::shared_ptr<Player> PlayerArray[2];
+
+    PlayerArray m_players;
+    int m_currentPlayer;
+
     std::queue<EPlayerAction> m_actionQueue;
+    BoardController m_boardController;
 public:
-    PlayerController(Player& one, Player& two);
-    ~PlayerController();
+    PlayerController();
+
+    void setOpponent(const std::shared_ptr<Player>& player);
+    const std::shared_ptr<Player>& getCurrentPlayer() const;
+    void switchPlayer();
 
     void update(PairSelector& selector);
-
     void enqueueAction(EPlayerAction action);
-    void switchPlayer();
+
     bool isHumanMoving() const;
 };

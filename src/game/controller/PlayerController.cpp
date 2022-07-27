@@ -5,24 +5,16 @@
 #include "PlayerController.h"
 
 
-PlayerController::PlayerController(Player &one, Player &two)
-    :   m_playerOne{ one },
-        m_playerTwo{ two },
-        m_currentPlayer{ &one },
-        m_actionQueue{}
-{
-    one.setColor(PieceColor::COLOR_RED);
-    two.setColor(PieceColor::COLOR_GREEN);
-}
-
-PlayerController::~PlayerController() {
-    delete m_currentPlayer;
-}
+PlayerController::PlayerController()
+    :   m_currentPlayer{ 0 },
+        m_actionQueue{},
+        m_players{ std::make_shared<HumanPlayer>("Human Player") }
+{}
 
 void
 PlayerController::update(PairSelector& selector) {
     if (m_actionQueue.empty()) {
-        std::vector<EPlayerAction> newActions = m_currentPlayer->generateActions();
+        std::vector<EPlayerAction> newActions = getCurrentPlayer()->generateActions();
         std::for_each(newActions.begin(), newActions.end(), [this](EPlayerAction e) { m_actionQueue.push(e); });
         return;
     }
@@ -39,7 +31,7 @@ PlayerController::update(PairSelector& selector) {
             break;
         }
         case (EPlayerAction::MAKE_SELECTION): {
-            std::array<int, 2> turnPair = m_currentPlayer->doSelection(selector);
+            std::array<int, 2> turnPair = getCurrentPlayer()->doSelection(selector);
             break;
         }
         case (EPlayerAction::SWITCH_PLAYER): {
@@ -51,9 +43,19 @@ PlayerController::update(PairSelector& selector) {
     m_actionQueue.pop();
 }
 
+const std::shared_ptr<Player>&
+PlayerController::getCurrentPlayer() const {
+    return m_players[m_currentPlayer];
+}
+
+void
+PlayerController::setOpponent(const std::shared_ptr<Player> &player) {
+    m_players[1] = player;
+}
+
 void
 PlayerController::switchPlayer() {
-    m_currentPlayer = (m_currentPlayer == &m_playerOne) ? &m_playerTwo : &m_playerOne;
+    m_currentPlayer = (m_currentPlayer == 0 ? 1 : 0);
 }
 
 void
@@ -63,5 +65,5 @@ PlayerController::enqueueAction(EPlayerAction action) {
 
 bool
 PlayerController::isHumanMoving() const {
-    return m_currentPlayer->isHuman();
+    return getCurrentPlayer()->isHuman();
 }

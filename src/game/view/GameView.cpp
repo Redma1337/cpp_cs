@@ -3,8 +3,6 @@
 //
 
 #include "GameView.h"
-#include <chrono>
-#include <thread>
 
 GameView::GameView(std::string name, const std::shared_ptr<Board> &board, PlayerController &playerController)
     : View(name),

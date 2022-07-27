@@ -4,13 +4,17 @@
 
 #include "CantStop.h"
 #include "wrapper/RenderWrapper.h"
+#include "player/ComputerPlayer.h"
 
 
 CantStop::CantStop(Player &one, Player &two)
-    :   m_playerController{ one, two }, m_window(sf::VideoMode(1000, 800), "Can't Stop Game", sf::Style::Default)
+    :   m_window(sf::VideoMode(1000, 800), "Can't Stop Game", sf::Style::Default)
 {
     std::shared_ptr<Board> board = std::make_shared<Board>();
     m_boardController.setBoard(board);
+
+    std::shared_ptr<ComputerPlayer> opponent = std::make_shared<ComputerPlayer>("Computer Player");
+    m_playerController.setOpponent(opponent);
 
     std::shared_ptr<GameView> view = std::make_shared<GameView>("Cant Stop Game", board, m_playerController);
     m_viewController.addView(Menu::GAME_VIEW, view);
