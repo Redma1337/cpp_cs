@@ -5,9 +5,7 @@
 #include "Board.h"
 
 Board::Board()
-{
-    this->setup();
-}
+{}
 
 float
 CalculateYPos(float length, float margin, float cellHeight, float maxHeight){

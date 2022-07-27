@@ -15,16 +15,18 @@
 
 class PlayerController {
     typedef std::shared_ptr<Player> PlayerArray[2];
+    typedef std::function<void(const std::array<int, 2> &selection)> ActionCallback;
 
     PlayerArray m_players;
     int m_currentPlayer;
 
     std::queue<EPlayerAction> m_actionQueue;
-    BoardController m_boardController;
+    ActionCallback m_actionCallback;
 public:
     PlayerController();
 
     void setOpponent(const std::shared_ptr<Player>& player);
+    void setActionListener(const ActionCallback& callback);
     const std::shared_ptr<Player>& getCurrentPlayer() const;
     void switchPlayer();
 

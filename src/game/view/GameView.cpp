@@ -4,9 +4,9 @@
 
 #include "GameView.h"
 
-GameView::GameView(std::string name, const std::shared_ptr<Board> &board, PlayerController &playerController)
+GameView::GameView(std::string name, BoardController &board, PlayerController &playerController)
     : View(name),
-        m_boardComponent{ board },
+        m_boardController{ board },
         m_playerController{ playerController },
         m_switchPlayerBtn("Finish Round", {200, 50}, {700, 590}),
         m_rollDiceBtn("Roll dice", {200, 50}, {700, 650}),
@@ -59,7 +59,7 @@ GameView::draw(sf::RenderTarget& target, sf::RenderStates states) const {
     }
 
     m_pairSelector.draw(target, states);
-    m_boardComponent->draw(target, states);
+    m_boardController.drawBoard(target);
 }
 
 void

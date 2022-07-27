@@ -16,7 +16,8 @@ class BoardController {
     SharedBoard m_sharedBoard;
 public:
     void setupBoard();
+    void drawBoard(sf::RenderTarget& target) const;
     void setBoard(const std::shared_ptr<Board> &board);
-    void executeMove(int index, BoardOperation operation);
+    void onMove(const std::array<int, 2> &pair);
 };
 

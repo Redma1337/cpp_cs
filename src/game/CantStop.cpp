@@ -12,11 +12,13 @@ CantStop::CantStop(Player &one, Player &two)
 {
     std::shared_ptr<Board> board = std::make_shared<Board>();
     m_boardController.setBoard(board);
+    m_boardController.setupBoard();
 
     std::shared_ptr<ComputerPlayer> opponent = std::make_shared<ComputerPlayer>("Computer Player");
     m_playerController.setOpponent(opponent);
+    m_playerController.setActionListener([&](const std::array<int, 2> &selection){ m_boardController.onMove(selection); });
 
-    std::shared_ptr<GameView> view = std::make_shared<GameView>("Cant Stop Game", board, m_playerController);
+    std::shared_ptr<GameView> view = std::make_shared<GameView>("Cant Stop Game", m_boardController, m_playerController);
     m_viewController.addView(Menu::GAME_VIEW, view);
 
     //relative to cmake-build-debug/sfml_test.exe

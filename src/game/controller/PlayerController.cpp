@@ -32,6 +32,7 @@ PlayerController::update(PairSelector& selector) {
         }
         case (EPlayerAction::MAKE_SELECTION): {
             std::array<int, 2> turnPair = getCurrentPlayer()->doSelection(selector);
+            m_actionCallback(turnPair);
             break;
         }
         case (EPlayerAction::SWITCH_PLAYER): {
@@ -51,6 +52,10 @@ PlayerController::getCurrentPlayer() const {
 void
 PlayerController::setOpponent(const std::shared_ptr<Player> &player) {
     m_players[1] = player;
+}
+
+void PlayerController::setActionListener(const ActionCallback& callback) {
+    m_actionCallback = callback;
 }
 
 void

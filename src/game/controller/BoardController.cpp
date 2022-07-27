@@ -2,6 +2,7 @@
 // Created on 06/07/2022.
 //
 
+#include <iostream>
 #include "BoardController.h"
 
 void BoardController::setBoard(const std::shared_ptr<Board> &board) {
@@ -14,23 +15,12 @@ BoardController::setupBoard() {
 }
 
 void
-BoardController::executeMove(int index, BoardOperation operation) {
-    switch(operation) {
-        case(BoardOperation::OP_MOVE): {
-            break;
-        }
-        case(BoardOperation::OP_PLACE): {
-            break;
-        }
-        case(BoardOperation::OP_REMOVE): {
-            break;
-        }
-        case(BoardOperation::OP_REPLACE): {
-            break;
-        }
-        default:
-            //lets hope this never hits
-            break;
-    }
+BoardController::drawBoard(sf::RenderTarget &target) const {
+    m_sharedBoard->draw(target, sf::RenderStates::Default);
+}
+
+void
+BoardController::onMove(const std::array<int, 2> &pair) {
+    std::cout << "Player move received" << std::endl;
 }
 

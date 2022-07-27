@@ -10,7 +10,9 @@
 #include "../wrapper/RenderWrapper.h"
 
 class Button : public Component, IClickable {
-    std::function<void(const sf::Vector2i)> m_callback;
+    typedef std::function<void(const sf::Vector2i)> ButtonCallback;
+
+    ButtonCallback m_callback;
     sf::Color m_color;
     std::string m_text;
 public:
@@ -18,7 +20,7 @@ public:
     Button(const std::string &text, const sf::Vector2f &dim);
     Button(const std::string &text);
 
-    void addActionListener(std::function<void(const sf::Vector2i)> callback);
+    void addActionListener(ButtonCallback callback);
 
     void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
     void onClick(const sf::Vector2i &cords) override;
