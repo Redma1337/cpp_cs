@@ -20,7 +20,7 @@ Button::Button(const std::string &text)
 {}
 
 void
-Button::addActionListener(std::function<void(const sf::Vector2i)> callback) {
+Button::addActionListener(ButtonCallback callback) {
     m_callback = callback;
 }
 

@@ -4,7 +4,6 @@
 
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "model/Model.h"
 #include "view/GameView.h"
 #include "controller/PlayerController.h"
 #include "controller/BoardController.h"

@@ -4,9 +4,6 @@
 
 #include "Board.h"
 
-Board::Board()
-{}
-
 float
 CalculateYPos(float length, float margin, float cellHeight, float maxHeight){
     return ((maxHeight-(length*cellHeight+(length-1.0f)*margin))/2.0f);
@@ -18,7 +15,7 @@ Board::draw(sf::RenderTarget &target, sf::RenderStates states) const {
         return;
     }
 
-    for (auto const& pair : getData()) {
+    for (auto const &pair : m_columnContainer) {
         Column col = pair.second;
         col.draw(target, states);
     }
@@ -26,8 +23,6 @@ Board::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 
 void
 Board::setup() {
-    BoardModelType mapCopy = getData();
-
     size_t lengths[] = { 3, 5, 7, 9, 11, 13, 11, 9, 7, 5, 3 };
 
     float xOff = 0;
@@ -35,16 +30,60 @@ Board::setup() {
     float cellMargin = 10;
     sf::Vector2f cellDims = {50,50};
     float maxHeight = 13*cellDims.y + 12*cellMargin;
-    for (int i = 2; i <= 12; i++) {
-        Column col(lengths[i-2]);
-        col.setCellMargin(cellMargin);
-        col.setCellSize(cellDims);
-        col.setPos({ m_position.x + xOff, m_position.y + CalculateYPos((float)lengths[i-2], cellMargin, cellDims.y, maxHeight)});
-        col.pack();
+    for (int sum = 2; sum <= 12; sum++) {
+        const int colLength = lengths[sum-2];
+        sf::Vector2f pos = {
+                m_position.x + xOff,
+                m_position.y + CalculateYPos((float)lengths[sum-2], cellMargin, cellDims.y, maxHeight)
+        };
 
-        mapCopy.insert(BoardModelType::value_type(i, col));
+        sf::Vector2f dim = {
+                cellDims.x,
+                cellDims.y * colLength
+        };
+        Column col(dim, pos, colLength, sum);
+
+        m_columnContainer.insert({ sum, col });
         xOff += 50.0f + marginRight;
     }
-
-    setData(mapCopy);
 }
+
+std::vector<int>
+Board::getPieces(PieceColor color, PieceType type) {
+    std::vector<int> result;
+    for (auto const &pair : m_columnContainer) {
+        Column col = pair.second;
+        if (col.getPieceIndex(color, type)) {
+            result.push_back(pair.first);
+        }
+    }
+    return result;
+}
+
+void
+Board::moveRunner(PieceColor color, int colIndex) {
+    auto pairFound = m_columnContainer.find(colIndex);
+    if (pairFound != m_columnContainer.end()) {
+        Column &col = pairFound->second;
+        col.moveRunner(color);
+    }
+}
+
+void
+Board::placeRunner(PieceColor color, int colIndex) {
+    auto pairFound = m_columnContainer.find(colIndex);
+    if (pairFound != m_columnContainer.end()) {
+        Column &col = pairFound->second;
+        col.placeRunner(color);
+    }
+}
+
+void
+Board::placeCamp(PieceColor color, int colIndex) {
+    auto pairFound = m_columnContainer.find(colIndex);
+    if (pairFound != m_columnContainer.end()) {
+        Column &col = pairFound->second;
+        col.placeCamp(color);
+    }
+}
+

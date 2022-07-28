@@ -10,7 +10,7 @@
 #include "../wrapper/RenderWrapper.h"
 
 class Button : public Component, IClickable {
-    typedef std::function<void(const sf::Vector2i)> ButtonCallback;
+    typedef std::function<void(const sf::Vector2i&)> ButtonCallback;
 
     ButtonCallback m_callback;
     sf::Color m_color;

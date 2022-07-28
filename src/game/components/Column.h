@@ -8,31 +8,29 @@
 #include "Cell.h"
 #include "Component.h"
 
-class Column : public Component {
-    const size_t m_length;
-    float m_bottomMargin = 10.0F;
-    sf::Vector2f m_cellDim = { 50.0F, 50.0F };
-    std::vector<Cell> m_cells;
-    std::map<PieceColor,int> m_campPosition = {};
-    int m_runnerIndex{-1};
+typedef std::vector<Cell> CellContainer;
 
+class Column : public Component {
+    CellContainer m_cellContainer;
+    sf::Text m_headerText;
+
+    const int m_sum;
+    const int m_length;
+
+    sf::Vector2f m_cellDim = { 50.0F, 50.0F };
+    float m_bottomMargin = 10.0F;
 public:
-    explicit Column(size_t length);
+    explicit Column(const sf::Vector2f &dim, const sf::Vector2f &pos, const int length, const int sum);
 
     void pack();
 
-    void setCellMargin(float margin);
-    void setCellSize(sf::Vector2f cellDim);
-
-    void placeCamp(PieceColor color);
+    int getPieceIndex(PieceColor color, PieceType type);
     void placeRunner(PieceColor color);
-
-    void moveRunner(PieceColor);
-
-    bool isFinished() const;
+    void placeCamp(PieceColor color);
+    int removePiece(PieceColor color, PieceType type);
+    void moveRunner(PieceColor color);
 
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
-private:
-    bool inBounds(int i);
+    void reset();
 };

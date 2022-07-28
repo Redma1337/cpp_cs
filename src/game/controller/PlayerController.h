@@ -15,7 +15,7 @@
 
 class PlayerController {
     typedef std::shared_ptr<Player> PlayerArray[2];
-    typedef std::function<void(const std::array<int, 2> &selection)> ActionCallback;
+    typedef std::function<void(PieceColor color, std::array<int, 2> selection)> ActionCallback;
 
     PlayerArray m_players;
     int m_currentPlayer;

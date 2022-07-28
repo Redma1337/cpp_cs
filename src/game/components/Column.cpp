@@ -3,21 +3,32 @@
 //
 
 #include "Column.h"
+#include "../wrapper/RenderWrapper.h"
 
-Column::Column(const size_t length)
-    : m_length{ length },
-        Component({ 50, length * 50.0f })
-{}
+Column::Column(const sf::Vector2f &dim, const sf::Vector2f &pos, const int length, const int sum)
+    :   Component(dim, pos),
+        m_length{ length },
+        m_sum{ sum },
+        m_cellContainer{}
+{
+    pack();
+
+    m_headerText = RenderWrapper::createCenteredString(
+            std::to_string(sum),
+            { m_position.x + (m_cellDim.x / 2.0f), m_position.y + (m_cellDim.y / 2.0f) },
+            20,
+            sf::Color::Blue
+    );
+}
 
 void
 Column::pack() {
     float yOff = 0.0F;
 
     for (int i = 0; i < m_length; i++) {
-        Cell cell(m_cellDim);
-        cell.setPos({ m_position.x, m_position.y + yOff });
+        Cell cell(m_cellDim, { m_position.x, m_position.y + yOff });
 
-        m_cells.push_back(cell);
+        m_cellContainer.push_back(cell);
         yOff += m_cellDim.y + m_bottomMargin;
     }
 }
@@ -28,86 +39,60 @@ Column::draw(sf::RenderTarget &target, sf::RenderStates states) const {
         return;
     }
 
-    for(Cell const &c : m_cells) {
+    target.draw(m_headerText);
+    for(Cell const &c : m_cellContainer) {
         c.draw(target, states);
     }
 }
 
-void
-Column::setCellMargin(float margin) {
-    m_bottomMargin = margin;
-}
-void
-Column::setCellSize(sf::Vector2f dim) {
-    m_cellDim = dim;
-}
-
-
-void
-removeRunner(std::vector<Cell> &cells, PieceColor color, int runnerIndex){
-  cells.at(static_cast<unsigned int>(runnerIndex)).setPieceType(color,PieceType::TYPE_EMPTY);
-}
-void
-removeOldCamp(std::vector<Cell> &cells, PieceColor color, std::map<PieceColor, int> &campPosition){
-  cells.at(static_cast<unsigned int>(campPosition.at(color))).setPieceType(color, PieceType::TYPE_EMPTY);
-}
-void
-setNewCamp(std::vector<Cell> &cells, PieceColor color, std::map<PieceColor,int> &campPosition, int runnerIndex){
-  campPosition.at(color) = runnerIndex;
-  cells.at(static_cast<unsigned int>(campPosition.at(color))).setPieceType(color,PieceType::TYPE_CAMP);
-}
-void
-Column::placeCamp(PieceColor color) {
-  if(m_runnerIndex!=-1){
-    removeRunner(m_cells, color,m_runnerIndex);
-    if(m_campPosition.find(color)!=m_campPosition.end()){
-      removeOldCamp(m_cells, color, m_campPosition);
+int
+Column::getPieceIndex(PieceColor color, PieceType type) {
+    for (int i = 0; i < m_cellContainer.size(); i++) {
+        Cell &cell = m_cellContainer[i];
+        if (cell.hasPiece(color, type)) {
+            return i;
+        }
     }
-    setNewCamp(m_cells, color, m_campPosition, m_runnerIndex);
-    m_runnerIndex = -1;
-  }
+    return -1;
 }
 
-
-void
-placeRunnerOnBoard(std::vector<Cell> &cells, PieceColor color, std::map<PieceColor,int> &campPosition, int &runnerIndex){
-  cells.at(static_cast<unsigned int>(campPosition.at(color))).setPieceType(color,PieceType::TYPE_RUNNER);
-  runnerIndex = campPosition.at(color);
+int
+Column::removePiece(PieceColor color, PieceType type) {
+    for (int i = 0; i < m_cellContainer.size(); i++) {
+        Cell &cell = m_cellContainer[i];
+        if (cell.hasPiece(color, type)) {
+            cell.hasPiece(color, PieceType::TYPE_EMPTY);
+            return i;
+        }
+    }
+    return -1;
 }
+
 void
 Column::placeRunner(PieceColor color) {
-  if(m_campPosition.find(color)!=m_campPosition.end()){
-    placeRunnerOnBoard(m_cells, color, m_campPosition, m_runnerIndex);
-  }
-  else{
-    std::map<PieceColor,int> tempMap = {{color, m_length-static_cast<unsigned int>(1)}};
-    placeRunnerOnBoard(m_cells, color, tempMap, m_runnerIndex);
-  }
+    m_cellContainer.back().setRunner(true);
 }
-
 
 void
-setNewRunner(std::vector<Cell> &cells, PieceColor color, int &runnerIndex){
-  cells.at(static_cast<unsigned int>(runnerIndex+1)).setPieceType(color, PieceType::TYPE_RUNNER);
-  runnerIndex--;
+Column::placeCamp(PieceColor color) {
+    int index = removePiece(color, PieceType::TYPE_RUNNER);
+    m_cellContainer[index].addCamp(color);
 }
+
 void
 Column::moveRunner(PieceColor color) {
-  if(m_runnerIndex!=-1){
-    removeRunner(m_cells,color,m_runnerIndex);
-    setNewRunner(m_cells,color,m_runnerIndex);
-  }
+    int nextIndex = removePiece(color, PieceType::TYPE_RUNNER) - 1;
+    Cell &nextCell = m_cellContainer[nextIndex];
+    nextCell.setRunner(true);
+
+    if (nextIndex == 0) {
+        setLocked(true);
+    }
 }
 
-bool
-Column::isFinished() const {
-  if(m_runnerIndex==0){
-    return true;
-  }
-  return false;
-}
-
-bool
-Column::inBounds(int i) {
-  return false;
+void
+Column::reset() {
+    for(auto &c : m_cellContainer) {
+        c.reset();
+    }
 }

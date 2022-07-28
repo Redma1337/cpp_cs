@@ -27,11 +27,9 @@ RenderWrapper::createCenteredString(
     text.setCharacterSize(size);
     text.setStyle(sf::Text::Regular);
 
-    float offsetX = pos.x - (text.getGlobalBounds().width / 2);
-
-    //internal height calculation might be off, this should be height / 2, but it is not
-    float offsetY = pos.y - (text.getGlobalBounds().height);
-    text.setPosition({ offsetX, offsetY });
+    sf::FloatRect textRect = text.getGlobalBounds();
+    text.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
+    text.setPosition(pos);
     return text;
 }
 

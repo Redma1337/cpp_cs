@@ -3,29 +3,11 @@
 //
 
 #include "Cell.h"
+#include "../wrapper/RenderWrapper.h"
 
-Cell::Cell(const sf::Vector2f &dim)
-    : Component{ dim }
+Cell::Cell(const sf::Vector2f &dim, const sf::Vector2f &pos)
+    : Component{ dim, pos }, m_color{}, m_hasRunner{ false }
 {}
-
-void
-Cell::setPieceType(PieceColor color, PieceType newType) {
-    if(newType == PieceType::TYPE_RUNNER){
-        m_runner[color] = newType;
-    }
-    else if(newType == PieceType::TYPE_CAMP) {
-        m_camps[color] = newType;
-    }
-    else{
-        m_runner.erase(color);
-        m_camps.erase(color);
-    }
-}
-
-PieceType
-Cell::getPieceType(PieceColor color) {
-    return m_camps[color];
-}
 
 void
 Cell::draw(sf::RenderTarget &target, sf::RenderStates states) const {
@@ -63,13 +45,44 @@ Cell::draw(sf::RenderTarget &target, sf::RenderStates states) const {
         target.draw(campTwo);
     }
 
-    if(!m_runner.empty()){
-        auto it = m_runner.begin();
+    if(hasRunner()){
         sf::CircleShape runnerCircle(5,30);
         runnerCircle.setOutlineThickness(2);
         runnerCircle.setOutlineColor(sf::Color::Black);
         runnerCircle.setPosition(m_position.x + m_dimension.x/2 - runnerCircle.getRadius(), m_position.y + m_dimension.y/2 - runnerCircle.getRadius());
-        runnerCircle.setFillColor(it->first==PieceColor::COLOR_GREEN ? sf::Color::Green : sf::Color::Red );
+        runnerCircle.setFillColor(sf::Color::Green);
         target.draw(runnerCircle);
     }
+}
+
+void
+Cell::setRunner(bool state) {
+    m_hasRunner = state;
+}
+
+bool
+Cell::hasRunner() const {
+    return m_hasRunner;
+}
+
+bool
+Cell::hasCamp(PieceColor color) {
+    auto pairFound = m_camps.find(color);
+    return pairFound != m_camps.end();
+}
+
+void
+Cell::addCamp(PieceColor color) {
+    m_camps[color] = true;
+}
+
+void
+Cell::reset() {
+    m_camps = {};
+    m_hasRunner = false;
+}
+
+bool
+Cell::hasPiece(PieceColor color, PieceType type) {
+    return (type == PieceType::TYPE_RUNNER && hasRunner()) || (type == PieceType::TYPE_CAMP && hasCamp(color));
 }
