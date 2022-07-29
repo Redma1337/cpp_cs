@@ -35,10 +35,10 @@ RenderWrapper::createCenteredString(
 
 const sf::Text
 RenderWrapper::createString(
-    const std::string &msg,
-    const sf::Vector2f &pos,
-    int size,
-    const sf::Color &color)
+        const std::string &msg,
+        const sf::Vector2f &pos,
+        int size,
+        const sf::Color &color)
 {
     sf::Text text;
     text.setFont(DEFAULT_FONT);
@@ -48,4 +48,22 @@ RenderWrapper::createString(
     text.setCharacterSize(size);
     text.setStyle(sf::Text::Regular);
     return text;
+}
+
+const sf::ConvexShape
+RenderWrapper::createTriangle(
+        const sf::Vector2f &pos,
+        const sf::Vector2f &pt1,
+        const sf::Vector2f &pt2,
+        const sf::Vector2f &pt3,
+        const sf::Color &color)
+{
+    sf::ConvexShape triangle;
+    triangle.setPosition(pos);
+    triangle.setPointCount(3);
+    triangle.setPoint(0, pt1);
+    triangle.setPoint(1, pt2);
+    triangle.setPoint(2, pt3);
+    triangle.setFillColor(color);
+    return triangle;
 }

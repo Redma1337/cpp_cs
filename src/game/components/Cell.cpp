@@ -26,31 +26,22 @@ Cell::draw(sf::RenderTarget &target, sf::RenderStates states) const {
         target.draw(cellRect);
     }
     else if(m_camps.size() == 2) {
-        sf::VertexArray campOne(sf::Triangles, 4);
-        campOne[0].position = sf::Vector2f(m_position);
-        campOne[1].position = sf::Vector2f(m_position.x + m_dimension.x, m_position.y);
-        campOne[2].position = sf::Vector2f(m_position.x + m_dimension.x, m_position.y + m_dimension.y);
-        campOne[0].color = sf::Color::Red;
-        campOne[1].color = sf::Color::Red;
-        campOne[2].color = sf::Color::Red;
-        target.draw(campOne);
+        sf::ConvexShape lowerTriangle = RenderWrapper::createTriangle(m_position, { 0, 0 }, { 0, m_dimension.y }, m_dimension, sf::Color::Red);
+        target.draw(lowerTriangle);
 
-        sf::VertexArray campTwo(sf::Triangles, 3);
-        campTwo[0].position = sf::Vector2f(m_position);
-        campTwo[1].position = sf::Vector2f(m_position.x, m_position.y + m_dimension.y);
-        campTwo[2].position = sf::Vector2f(m_position.x + m_dimension.x, m_position.y + m_dimension.y);
-        campTwo[0].color = sf::Color::Green;
-        campTwo[1].color = sf::Color::Green;
-        campTwo[2].color = sf::Color::Green;
-        target.draw(campTwo);
+        sf::ConvexShape upperTriangle = RenderWrapper::createTriangle(m_position, { 0, 0 }, { 0, m_dimension.y }, m_dimension, sf::Color::Green);
+        upperTriangle.setOrigin(m_dimension);
+        upperTriangle.setRotation(180);
+        target.draw(upperTriangle);
     }
 
     if(hasRunner()){
         sf::CircleShape runnerCircle(5,30);
         runnerCircle.setOutlineThickness(2);
         runnerCircle.setOutlineColor(sf::Color::Black);
+        runnerCircle.setPointCount(50);
         runnerCircle.setPosition(m_position.x + m_dimension.x/2 - runnerCircle.getRadius(), m_position.y + m_dimension.y/2 - runnerCircle.getRadius());
-        runnerCircle.setFillColor(sf::Color::Green);
+        runnerCircle.setFillColor(sf::Color::Black);
         target.draw(runnerCircle);
     }
 }

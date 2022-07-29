@@ -14,16 +14,24 @@ public:
     static void loadFont(const std::string &str);
 
     static const sf::Text createString(
-        const std::string &msg,
-        const sf::Vector2f &pos,
-        int size,
-        const sf::Color &color
+            const std::string &msg,
+            const sf::Vector2f &pos,
+            int size,
+            const sf::Color &color
     );
 
     static const sf::Text createCenteredString(
-        const std::string &msg,
-        const sf::Vector2f &pos,
-        int size,
-        const sf::Color &color
+            const std::string &msg,
+            const sf::Vector2f &pos,
+            int size,
+            const sf::Color &color
+    );
+
+    static const sf::ConvexShape createTriangle(
+            const sf::Vector2f &pos,
+            const sf::Vector2f &pt1,
+            const sf::Vector2f &pt2,
+            const sf::Vector2f &pt3,
+            const sf::Color &color
     );
 };
