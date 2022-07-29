@@ -19,6 +19,8 @@ PlayerController::update(PairSelector& selector) {
         return;
     }
 
+    //TODO: make Actions a seperate thing, having an owner / runnable
+    bool shouldQueueWipe = false;
     EPlayerAction currentAction = m_actionQueue.front();
     switch (currentAction) {
         case (EPlayerAction::WAIT): {
@@ -31,19 +33,43 @@ PlayerController::update(PairSelector& selector) {
             break;
         }
         case (EPlayerAction::MAKE_SELECTION): {
+            //human players will just return the component, bots will imitate player use of the component
             std::array<int, 2> turnPair = getCurrentPlayer()->doSelection(selector);
-            m_actionCallback(getCurrentPlayer()->getColor(), turnPair);
+
+            //pass this data to the board controller, since its nothing that has to do with player controlling
+            bool hasBusted = m_onMoveCallback(getCurrentPlayer()->getColor(), turnPair);
+
+            if (hasBusted) {
+                m_onFinishCallback(getCurrentPlayer()->getColor(), true);
+                switchPlayer();
+                shouldQueueWipe = true;
+            }
+
             selector.setVisible(false);
+            selector.reset();
             break;
         }
         case (EPlayerAction::SWITCH_PLAYER): {
+            m_onFinishCallback(getCurrentPlayer()->getColor(), false);
+
             switchPlayer();
+            shouldQueueWipe = true;
+
             selector.setVisible(false);
             selector.reset();
             break;
         }
     }
     m_actionQueue.pop();
+
+    /**
+     *     we cant delete in the switch statement, but we need to make sure the queue is emptied if the player switches
+     *     since computers will bust although there is different behaviour queued
+     */
+
+    if (shouldQueueWipe) {
+        m_actionQueue = std::queue<EPlayerAction>();
+    }
 }
 
 const std::shared_ptr<Player>&
@@ -56,8 +82,12 @@ PlayerController::setOpponent(const std::shared_ptr<Player> &player) {
     m_players[1] = player;
 }
 
-void PlayerController::setActionListener(const ActionCallback& callback) {
-    m_actionCallback = callback;
+void PlayerController::setOnMoveListener(const OnMoveCallback& callback) {
+    m_onMoveCallback = callback;
+}
+
+void PlayerController::setOnFinishListener(const OnFinishCallback& callback) {
+    m_onFinishCallback = callback;
 }
 
 void

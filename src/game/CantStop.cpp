@@ -16,9 +16,13 @@ CantStop::CantStop(Player &one, Player &two)
 
     std::shared_ptr<ComputerPlayer> opponent = std::make_shared<ComputerPlayer>("Computer Player");
     m_playerController.setOpponent(opponent);
-    m_playerController.setActionListener(
-            [&](PieceColor color, std::array<int, 2> selection){ m_boardController.onMove(color, selection); }
-        );
+
+    m_playerController.setOnMoveListener(
+        [&](PieceColor color, std::array<int, 2> selection){ return m_boardController.onMove(color, selection); }
+    );
+    m_playerController.setOnFinishListener(
+        [&](PieceColor color, bool didBust){ return m_boardController.onFinish(color, didBust); }
+    );
 
     std::shared_ptr<GameView> view = std::make_shared<GameView>("Cant Stop Game", m_boardController, m_playerController);
     m_viewController.addView(Menu::GAME_VIEW, view);

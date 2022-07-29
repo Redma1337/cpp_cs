@@ -15,18 +15,22 @@
 
 class PlayerController {
     typedef std::shared_ptr<Player> PlayerArray[2];
-    typedef std::function<void(PieceColor color, std::array<int, 2> selection)> ActionCallback;
+    typedef std::function<bool(PieceColor color, std::array<int, 2> selection)> OnMoveCallback;
+    typedef std::function<void(PieceColor color, bool didBust)> OnFinishCallback;
 
     PlayerArray m_players;
     int m_currentPlayer;
 
     std::queue<EPlayerAction> m_actionQueue;
-    ActionCallback m_actionCallback;
+    OnMoveCallback m_onMoveCallback;
+    OnFinishCallback m_onFinishCallback;
 public:
     PlayerController();
 
+    void setOnMoveListener(const OnMoveCallback& callback);
+    void setOnFinishListener(const OnFinishCallback& callback);
+
     void setOpponent(const std::shared_ptr<Player>& player);
-    void setActionListener(const ActionCallback& callback);
     const std::shared_ptr<Player>& getCurrentPlayer() const;
     void switchPlayer();
 

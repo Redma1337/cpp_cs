@@ -16,6 +16,7 @@ public:
     void setupBoard();
     void drawBoard(sf::RenderTarget& target) const;
     void setBoard(const std::shared_ptr<Board> &board);
-    void onMove(PieceColor color, std::array<int, 2> pair);
+    bool onMove(PieceColor color, std::array<int, 2> pair);
+    bool onFinish(PieceColor color, bool didBust);
 };
 

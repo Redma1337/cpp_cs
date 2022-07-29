@@ -19,20 +19,33 @@ BoardController::drawBoard(sf::RenderTarget &target) const {
     m_sharedBoard->draw(target, sf::RenderStates::Default);
 }
 
-void
+bool
 BoardController::onMove(PieceColor color, std::array<int, 2> pair) {
-    int firstSum = pair[0], secondSum = pair[1];
-
     std::vector<int> runnerCells = m_sharedBoard->getPieces(color, PieceType::TYPE_RUNNER);
     std::vector<int> campCells = m_sharedBoard->getPieces(color, PieceType::TYPE_RUNNER);
+
+    int busts = 0;
 
     for (int sum : pair) {
         auto sumFound = std::find(runnerCells.begin(), runnerCells.end(), sum);
         if (sumFound != runnerCells.end()) {
             m_sharedBoard->moveRunner(color, sum);
         } else {
+            if (runnerCells.size() >= 3) {
+                busts++;
+                continue;
+            }
+
             m_sharedBoard->placeRunner(color, sum);
+            runnerCells.push_back(sum);
         }
     }
+
+    return busts >= 2;
+}
+
+bool
+BoardController::onFinish(PieceColor color, bool didBust) {
+    std::cout << "Player " << (didBust ? "Busted" : "Finished") << std::endl;
 }
 
