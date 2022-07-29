@@ -53,7 +53,7 @@ Board::getPieces(PieceColor color, PieceType type) {
     std::vector<int> result;
     for (auto const &pair : m_columnContainer) {
         Column col = pair.second;
-        if (col.getPieceIndex(color, type)) {
+        if (col.getPieceIndex(color, type) != -1) {
             result.push_back(pair.first);
         }
     }

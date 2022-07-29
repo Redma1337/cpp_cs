@@ -57,17 +57,17 @@ PairSelector::onClick(const sf::Vector2i &cords) {
 
 void
 PairSelector::reRoll() {
-    m_selectedCount = 0;
+    reset();
     m_diceRoll = DiceController::rollDices();
     for (int i = 0; i < m_selectorButtons.size(); i++) {
-        m_selectorButtons[i].setColor(sf::Color(20, 20, 20, 100));
-        m_selectorButtons[i].setLocked(false);
         m_selectorButtons[i].setText(std::to_string(m_diceRoll[i]));
     }
 }
 
 void
 PairSelector::reset() {
+    m_selectedCount = 0;
+    m_selection = {0, 0};
     for (int i = 0; i < m_selectorButtons.size(); i++) {
         m_selectorButtons[i].setColor(sf::Color(20, 20, 20, 100));
         m_selectorButtons[i].setLocked(false);

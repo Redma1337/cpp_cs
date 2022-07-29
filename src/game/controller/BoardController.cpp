@@ -26,18 +26,13 @@ BoardController::onMove(PieceColor color, std::array<int, 2> pair) {
     std::vector<int> runnerCells = m_sharedBoard->getPieces(color, PieceType::TYPE_RUNNER);
     std::vector<int> campCells = m_sharedBoard->getPieces(color, PieceType::TYPE_RUNNER);
 
-    auto firstSumFound = std::find(runnerCells.begin(), runnerCells.end(), firstSum);
-    if (firstSumFound != runnerCells.end()) {
-        m_sharedBoard->moveRunner(color, firstSum);
-    } else {
-        m_sharedBoard->placeRunner(color, firstSum);
-    }
-
-    auto secSumFound = std::find(runnerCells.begin(), runnerCells.end(), secondSum);
-    if (secSumFound != runnerCells.end()) {
-        m_sharedBoard->moveRunner(color, secondSum);
-    } else {
-        m_sharedBoard->placeCamp(color, secondSum);
+    for (int sum : pair) {
+        auto sumFound = std::find(runnerCells.begin(), runnerCells.end(), sum);
+        if (sumFound != runnerCells.end()) {
+            m_sharedBoard->moveRunner(color, sum);
+        } else {
+            m_sharedBoard->placeRunner(color, sum);
+        }
     }
 }
 

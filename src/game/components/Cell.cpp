@@ -72,6 +72,11 @@ Cell::hasCamp(PieceColor color) {
 }
 
 void
+Cell::removeCamp(PieceColor color) {
+    m_camps[color] = false;
+}
+
+void
 Cell::addCamp(PieceColor color) {
     m_camps[color] = true;
 }

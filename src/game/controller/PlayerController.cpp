@@ -33,11 +33,13 @@ PlayerController::update(PairSelector& selector) {
         case (EPlayerAction::MAKE_SELECTION): {
             std::array<int, 2> turnPair = getCurrentPlayer()->doSelection(selector);
             m_actionCallback(getCurrentPlayer()->getColor(), turnPair);
+            selector.setVisible(false);
             break;
         }
         case (EPlayerAction::SWITCH_PLAYER): {
             switchPlayer();
             selector.setVisible(false);
+            selector.reset();
             break;
         }
     }

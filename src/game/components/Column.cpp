@@ -13,9 +13,10 @@ Column::Column(const sf::Vector2f &dim, const sf::Vector2f &pos, const int lengt
 {
     pack();
 
+    int xAdjust = sum > 9 ? 11 : 6;
     m_headerText = RenderWrapper::createCenteredString(
             std::to_string(sum),
-            { m_position.x + (m_cellDim.x / 2.0f), m_position.y + (m_cellDim.y / 2.0f) },
+            { m_position.x + (m_cellDim.x / 2.0f) - xAdjust, m_position.y + (m_cellDim.y / 2.0f) + 7},
             20,
             sf::Color::Blue
     );
@@ -61,7 +62,7 @@ Column::removePiece(PieceColor color, PieceType type) {
     for (int i = 0; i < m_cellContainer.size(); i++) {
         Cell &cell = m_cellContainer[i];
         if (cell.hasPiece(color, type)) {
-            cell.hasPiece(color, PieceType::TYPE_EMPTY);
+            cell.setRunner(false);
             return i;
         }
     }

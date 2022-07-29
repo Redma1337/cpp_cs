@@ -22,6 +22,7 @@ public:
 
     bool hasCamp(PieceColor color);
     void addCamp(PieceColor color);
+    void removeCamp(PieceColor color);
 
     bool hasPiece(PieceColor color, PieceType type);
 
