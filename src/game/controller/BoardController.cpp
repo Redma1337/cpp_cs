@@ -22,7 +22,11 @@ BoardController::drawBoard(sf::RenderTarget &target) const {
 bool
 BoardController::onMove(PieceColor color, std::array<int, 2> pair) {
     std::vector<int> runnerCells = m_sharedBoard->getPieces(color, PieceType::TYPE_RUNNER);
+    //TODO: implement recognition of camps as checkpoints
+    //TODO: detect a win, maybe result object returned
+    //TODO: add status label
     std::vector<int> campCells = m_sharedBoard->getPieces(color, PieceType::TYPE_RUNNER);
+
 
     int busts = 0;
 
@@ -46,6 +50,13 @@ BoardController::onMove(PieceColor color, std::array<int, 2> pair) {
 
 bool
 BoardController::onFinish(PieceColor color, bool didBust) {
-    std::cout << "Player " << (didBust ? "Busted" : "Finished") << std::endl;
+    if (didBust) {
+        m_sharedBoard->removeAllRunners(color);
+    } else {
+        std::vector<int> runnerCells = m_sharedBoard->getPieces(color, PieceType::TYPE_RUNNER);
+        for (int index : runnerCells) {
+            m_sharedBoard->placeCamp(color, index);
+        }
+    }
 }
 

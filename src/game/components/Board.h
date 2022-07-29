@@ -20,4 +20,5 @@ public:
     void moveRunner(PieceColor color, int colIndex);
     void placeRunner(PieceColor color, int colIndex);
     void placeCamp(PieceColor color, int colIndex);
+    void removeAllRunners(PieceColor color);
 };

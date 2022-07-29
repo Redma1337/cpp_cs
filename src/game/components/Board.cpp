@@ -87,3 +87,11 @@ Board::placeCamp(PieceColor color, int colIndex) {
     }
 }
 
+void
+Board::removeAllRunners(PieceColor color) {
+    for (auto const &pair : m_columnContainer) {
+        Column col = pair.second;
+        col.removePiece(color, PieceType::TYPE_RUNNER);
+    }
+}
+
