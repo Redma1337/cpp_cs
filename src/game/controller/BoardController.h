@@ -8,7 +8,13 @@
 #include "../components/Column.h"
 #include "../components/Board.h"
 
+struct TurnResult {
+    bool hasBusted;
+    bool hasWon;
+};
+
 class BoardController {
+
     typedef std::shared_ptr<Board> SharedBoard;
 
     SharedBoard m_sharedBoard;
@@ -16,7 +22,7 @@ public:
     void setupBoard(sf::Vector2f pos);
     void drawBoard(sf::RenderTarget& target) const;
     void setBoard(const std::shared_ptr<Board> &board);
-    bool onMove(PieceOwner color, std::array<int, 2> pair);
+    TurnResult onMove(PieceOwner color, std::array<int, 2> pair);
     bool onFinish(PieceOwner color, bool didBust);
 };
 

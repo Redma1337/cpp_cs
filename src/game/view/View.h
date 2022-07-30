@@ -23,7 +23,7 @@ public:
     //this is not implemented -> keep it virtual
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const = 0;
     virtual void onUpdate() = 0;
-    virtual void onClick(const sf::Vector2i &cords) {};
+    virtual void onClick(const sf::Vector2i &cords) = 0;
 
     std::string getName() const{
         return m_name;

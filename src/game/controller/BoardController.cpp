@@ -20,11 +20,10 @@ BoardController::drawBoard(sf::RenderTarget &target) const {
     m_sharedBoard->draw(target, sf::RenderStates::Default);
 }
 
-bool
+TurnResult
 BoardController::onMove(PieceOwner color, std::array<int, 2> pair) {
     std::vector<int> runnerCells = m_sharedBoard->getPieces(color, PieceType::TYPE_RUNNER);
     //TODO: detect a win, maybe result object returned
-    //TODO: add status label
 
     int busts = 0;
 
@@ -43,9 +42,15 @@ BoardController::onMove(PieceOwner color, std::array<int, 2> pair) {
             m_sharedBoard->placeRunner(color, sum);
             runnerCells.push_back(sum);
         }
+
+        //check win
+        std::vector<int> wonCols = m_sharedBoard->getFinishedCols(color);
+        if (wonCols.size() >= 3) {
+            return { false, true };
+        }
     }
 
-    return busts >= 2;
+    return { busts >= 2, false };
 }
 
 bool

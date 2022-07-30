@@ -7,5 +7,4 @@
 enum class PieceType {
     TYPE_RUNNER,
     TYPE_CAMP,
-    TYPE_EMPTY
 };

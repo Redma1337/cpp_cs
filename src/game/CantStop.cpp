@@ -19,8 +19,15 @@ CantStop::CantStop(sf::ContextSettings ctxSettings)
     m_playerController.setOnMoveListener(
         [&](PieceOwner color, std::array<int, 2> selection){ return m_boardController.onMove(color, selection); }
     );
+
     m_playerController.setOnTurnFinishListener(
         [&](PieceOwner color, bool didBust){ return m_boardController.onFinish(color, didBust); }
+    );
+
+    m_playerController.setOnGameFinishCallback(
+            [&](PieceOwner color){
+
+            }
     );
 
     std::shared_ptr<GameView> view = std::make_shared<GameView>("Cant Stop Game", m_boardController, m_playerController);

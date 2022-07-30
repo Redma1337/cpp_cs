@@ -43,9 +43,14 @@ PlayerController::update(PairSelector& selector) {
             m_statusText = "Choosing " + std::to_string(turnPair[0]) + " and " + std::to_string(turnPair[1]);
 
             //pass this data to the board controller, since its nothing that has to do with player controlling
-            bool hasBusted = m_onMoveCallback(getCurrentPlayer()->getColor(), turnPair);
+            TurnResult turnResult = m_onMoveCallback(getCurrentPlayer()->getColor(), turnPair);
 
-            if (hasBusted) {
+            if (turnResult.hasWon) {
+                m_onGameFinishCallback(getCurrentPlayer()->getColor());
+                break;
+            }
+
+            if (turnResult.hasBusted) {
                 m_statusText = "Busted";
                 m_onFinishCallback(getCurrentPlayer()->getColor(), true);
                 switchPlayer();
@@ -91,6 +96,10 @@ PlayerController::setOpponent(const std::shared_ptr<Player> &player) {
 
 void PlayerController::setOnMoveListener(const OnMoveCallback& callback) {
     m_onMoveCallback = callback;
+}
+
+void PlayerController::setOnTurnFinishListener(const OnFinishCallback& callback) {
+    m_onFinishCallback = callback;
 }
 
 void PlayerController::setOnTurnFinishListener(const OnFinishCallback& callback) {

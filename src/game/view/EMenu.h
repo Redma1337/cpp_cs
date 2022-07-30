@@ -5,6 +5,9 @@
 #pragma once
 
 enum class Menu {
-    NONE = -1,
-    GAME_VIEW = 0,
+    NONE,
+    GAME_VIEW,
+    GAME_LOST,
+    GAME_WON,
+    GAME_SETTINGS,
 };
