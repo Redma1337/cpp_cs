@@ -14,13 +14,13 @@ Player::getName() const {
     return m_name;
 }
 
-PieceOwner
+sf::Color
 Player::getColor() const {
     return m_color;
 }
 
 void
-Player::setColor(PieceOwner color) {
+Player::setColor(sf::Color color) {
     m_color = color;
 }
 

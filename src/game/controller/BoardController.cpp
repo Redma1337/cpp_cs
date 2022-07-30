@@ -46,11 +46,11 @@ BoardController::onMove(PieceOwner color, std::array<int, 2> pair) {
         //check win
         std::vector<int> wonCols = m_sharedBoard->getFinishedCols(color);
         if (wonCols.size() >= 3) {
-            return { false, true };
+            return TurnResult::WON;
         }
     }
 
-    return { busts >= 2, false };
+    return busts >= 2 ? TurnResult::BUSTED : TurnResult::DEFAULT;
 }
 
 bool

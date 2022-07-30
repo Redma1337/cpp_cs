@@ -7,11 +7,7 @@
 #include <memory>
 #include "../components/Column.h"
 #include "../components/Board.h"
-
-struct TurnResult {
-    bool hasBusted;
-    bool hasWon;
-};
+#include "../player/ETurnResult.h"
 
 class BoardController {
 

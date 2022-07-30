@@ -12,7 +12,7 @@
 
 class Player {
 protected:
-    PieceOwner m_color;
+    sf::Color m_color;
     const std::string m_name;
     const bool m_isHuman;
 public:
@@ -22,8 +22,8 @@ public:
     virtual std::array<int, 2> doSelection(PairSelector& pairSelector) = 0;
     virtual std::vector<EPlayerAction> generateActions() = 0;
 
-    PieceOwner getColor() const;
-    void setColor(PieceOwner color);
+    sf::Color getColor() const;
+    void setColor(sf::Color color);
 
     std::string getName() const;
 

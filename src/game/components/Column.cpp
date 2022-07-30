@@ -26,6 +26,10 @@ Column::pack() {
     for (int i = 0; i < m_length; i++) {
         Cell cell(m_cellDim, { m_position.x, m_position.y + yOff });
 
+        if (i == 1) {
+            cell.setRunner(true);
+        }
+
         m_cellContainer.push_back(cell);
         yOff += m_cellDim.y + m_bottomMargin;
     }

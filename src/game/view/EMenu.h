@@ -7,7 +7,6 @@
 enum class Menu {
     NONE,
     GAME_VIEW,
-    GAME_LOST,
     GAME_WON,
     GAME_SETTINGS,
 };

@@ -10,12 +10,7 @@
 
 class View : sf::Drawable, IClickable {
 protected:
-    std::string m_name;
 public:
-    explicit View(std::string name, int width = 800, int height = 800)
-        : m_name{ std::move(name) }
-    {}
-
     View() = default;
 
     ~View() override = default;
@@ -24,8 +19,4 @@ public:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const = 0;
     virtual void onUpdate() = 0;
     virtual void onClick(const sf::Vector2i &cords) = 0;
-
-    std::string getName() const{
-        return m_name;
-    }
 };

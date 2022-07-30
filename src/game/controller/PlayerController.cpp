@@ -3,15 +3,15 @@
 //
 
 #include "PlayerController.h"
+#include "../Theme.h"
 
 
 PlayerController::PlayerController()
     :   m_currentPlayer{ 0 },
         m_actionQueue{},
-        m_players{ std::make_shared<HumanPlayer>("Human Player") },
+        m_players{ },
         m_statusText{ "Waiting..." }
 {
-    m_players[0]->setColor(PieceOwner::PLAYER_TWO);
 }
 
 void
@@ -43,23 +43,26 @@ PlayerController::update(PairSelector& selector) {
             m_statusText = "Choosing " + std::to_string(turnPair[0]) + " and " + std::to_string(turnPair[1]);
 
             //pass this data to the board controller, since its nothing that has to do with player controlling
-            TurnResult turnResult = m_onMoveCallback(getCurrentPlayer()->getColor(), turnPair);
+            TurnResult turnResult = m_onMoveCallback(m_currentPlayer, turnPair);
 
-            if (turnResult.hasWon) {
-                m_onGameFinishCallback(getCurrentPlayer()->getColor());
-                break;
+            switch (turnResult) {
+                case (TurnResult::WON): {
+                    m_onGameFinishCallback(m_currentPlayer);
+                    break;
+                }
+                case (TurnResult::BUSTED): {
+                    m_statusText = "Busted";
+                    m_onFinishCallback(m_currentPlayer, true);
+                    switchPlayer();
+                    shouldQueueWipe = true;
+                    break;
+                }
             }
 
-            if (turnResult.hasBusted) {
-                m_statusText = "Busted";
-                m_onFinishCallback(getCurrentPlayer()->getColor(), true);
-                switchPlayer();
-                shouldQueueWipe = true;
-            }
             break;
         }
         case (EPlayerAction::SWITCH_PLAYER): {
-            m_onFinishCallback(getCurrentPlayer()->getColor(), false);
+            m_onFinishCallback(m_currentPlayer, false);
 
             switchPlayer();
             shouldQueueWipe = true;
@@ -85,30 +88,30 @@ PlayerController::update(PairSelector& selector) {
 
 const std::shared_ptr<Player>&
 PlayerController::getCurrentPlayer() const {
-    return m_players[m_currentPlayer];
+    return m_players[(int) m_currentPlayer];
 }
 
 void
-PlayerController::setOpponent(const std::shared_ptr<Player> &player) {
-    m_players[1] = player;
-    m_players[1]->setColor(PieceOwner::PLAYER_ONE);
+PlayerController::setPlayer(PieceOwner playerPos, const std::shared_ptr<Player> &player) {
+    m_players[(int) playerPos] = player;
+    m_players[(int) playerPos]->setColor(playerPos == PieceOwner::PLAYER_ONE ? Theme::PLAYER_ONE_COLOR : Theme::PLAYER_TWO_COLOR);
 }
 
 void PlayerController::setOnMoveListener(const OnMoveCallback& callback) {
     m_onMoveCallback = callback;
 }
 
-void PlayerController::setOnTurnFinishListener(const OnFinishCallback& callback) {
+void PlayerController::setOnTurnFinishListener(const OnTurnFinishCallback& callback) {
     m_onFinishCallback = callback;
 }
 
-void PlayerController::setOnTurnFinishListener(const OnFinishCallback& callback) {
-    m_onFinishCallback = callback;
+void PlayerController::setOnGameFinishCallback(const OnGameFinishCallback& callback) {
+    m_onGameFinishCallback = callback;
 }
 
 void
 PlayerController::switchPlayer() {
-    m_currentPlayer = (m_currentPlayer == 0 ? 1 : 0);
+    m_currentPlayer = (m_currentPlayer == PieceOwner::PLAYER_ONE ? PieceOwner::PLAYER_TWO : PieceOwner::PLAYER_ONE);
 }
 
 void
@@ -125,3 +128,5 @@ std::string
 PlayerController::getCurrentStatus() {
     return m_statusText;
 }
+
+

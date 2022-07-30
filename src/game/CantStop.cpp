@@ -5,16 +5,20 @@
 #include "CantStop.h"
 #include "wrapper/RenderWrapper.h"
 #include "player/ComputerPlayer.h"
+#include "view/GameResultView.h"
+#include "view/GameSettingsView.h"
 
 
 CantStop::CantStop(sf::ContextSettings ctxSettings)
-    :   m_window(sf::VideoMode(1000, 800), "Can't Stop Game", sf::Style::Default, ctxSettings)
+    :   m_window(sf::VideoMode(1000, 850), "Can't Stop Game", sf::Style::Default, ctxSettings)
 {
     std::shared_ptr<Board> board = std::make_shared<Board>();
     m_boardController.setBoard(board);
 
-    std::shared_ptr<ComputerPlayer> opponent = std::make_shared<ComputerPlayer>("Computer Player");
-    m_playerController.setOpponent(opponent);
+    std::shared_ptr<HumanPlayer> playerOne = std::make_shared<HumanPlayer>("Human Player");
+    std::shared_ptr<ComputerPlayer> playerTwo = std::make_shared<ComputerPlayer>("Computer Player");
+    m_playerController.setPlayer(PieceOwner::PLAYER_ONE, playerOne);
+    m_playerController.setPlayer(PieceOwner::PLAYER_TWO, playerTwo);
 
     m_playerController.setOnMoveListener(
         [&](PieceOwner color, std::array<int, 2> selection){ return m_boardController.onMove(color, selection); }
@@ -25,13 +29,17 @@ CantStop::CantStop(sf::ContextSettings ctxSettings)
     );
 
     m_playerController.setOnGameFinishCallback(
-            [&](PieceOwner color){
-
+            [&](PieceOwner owner){
+                m_viewController.setCurrentView(Menu::GAME_WON);
             }
     );
 
-    std::shared_ptr<GameView> view = std::make_shared<GameView>("Cant Stop Game", m_boardController, m_playerController);
-    m_viewController.addView(Menu::GAME_VIEW, view);
+    std::shared_ptr<GameView> mainView = std::make_shared<GameView>(m_boardController, m_playerController);
+    std::shared_ptr<GameResultView> resultView = std::make_shared<GameResultView>();
+    std::shared_ptr<GameSettingsView> settingsView = std::make_shared<GameSettingsView>();
+    m_viewController.addView(Menu::GAME_VIEW, mainView);
+    m_viewController.addView(Menu::GAME_WON, resultView);
+    m_viewController.addView(Menu::GAME_SETTINGS, settingsView);
 
     //relative to cmake-build-debug/sfml_test.exe
     RenderWrapper::loadFont("../resources/fonts/Roboto-Medium.ttf");

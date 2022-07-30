@@ -18,10 +18,10 @@ class PlayerController {
 
     typedef std::function<TurnResult(PieceOwner color, std::array<int, 2> selection)> OnMoveCallback;
     typedef std::function<void(PieceOwner color, bool didBust)> OnTurnFinishCallback;
-    typedef std::function<void(PieceOwner color)> OnGameFinishCallback;
+    typedef std::function<void(PieceOwner player)> OnGameFinishCallback;
 
     PlayerArray m_players;
-    int m_currentPlayer;
+    PieceOwner m_currentPlayer;
 
     std::queue<EPlayerAction> m_actionQueue;
 
@@ -38,7 +38,7 @@ public:
     void setOnGameFinishCallback(const OnGameFinishCallback& callback);
 
 
-    void setOpponent(const std::shared_ptr<Player>& player);
+    void setPlayer(PieceOwner playerPos, const std::shared_ptr<Player>& player);
     const std::shared_ptr<Player>& getCurrentPlayer() const;
     void switchPlayer();
 

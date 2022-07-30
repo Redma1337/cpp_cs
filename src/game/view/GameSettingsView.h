@@ -8,8 +8,6 @@
 
 class GameSettingsView : public View {
 public:
-    GameSettingsView(std::string name);
-
     void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
     void onUpdate() override;
     void onClick(const sf::Vector2i &cords) override;

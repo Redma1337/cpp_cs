@@ -22,7 +22,7 @@ class GameView : public View {
 
     PairSelector m_pairSelector;
 public:
-    explicit GameView(std::string name, BoardController &board, PlayerController &playerController);
+    explicit GameView(BoardController &board, PlayerController &playerController);
 
     void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
     void onUpdate() override;

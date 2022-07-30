@@ -5,6 +5,6 @@
 #pragma once
 
 enum class PieceOwner {
-    PLAYER_ONE,
-    PLAYER_TWO
+    PLAYER_ONE = 0,
+    PLAYER_TWO = 1
 };
