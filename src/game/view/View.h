@@ -19,4 +19,5 @@ public:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const = 0;
     virtual void onUpdate() = 0;
     virtual void onClick(const sf::Vector2i &cords) = 0;
+    virtual void reload() = 0;
 };

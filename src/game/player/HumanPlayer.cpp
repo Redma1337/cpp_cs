@@ -4,8 +4,8 @@
 
 #include "HumanPlayer.h"
 
-HumanPlayer::HumanPlayer(std::string name)
-    : Player(std::move(name), true)
+HumanPlayer::HumanPlayer()
+    : Player("You", true)
 {}
 
 std::array<int, 2>

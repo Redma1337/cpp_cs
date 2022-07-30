@@ -24,7 +24,7 @@ Column::pack() {
     float yOff = 0.0F;
 
     for (int i = 0; i < m_length; i++) {
-        Cell cell(m_cellDim, { m_position.x, m_position.y + yOff });
+        Cell cell(m_cellDim, { m_position.x, m_position.y + yOff }, i == 0);
 
         if (i == 1) {
             cell.setRunner(true);

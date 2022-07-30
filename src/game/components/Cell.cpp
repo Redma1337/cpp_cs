@@ -5,9 +5,10 @@
 #include "Cell.h"
 #include "../wrapper/RenderWrapper.h"
 
-Cell::Cell(const sf::Vector2f &dim, const sf::Vector2f &pos)
+Cell::Cell(const sf::Vector2f &dim, const sf::Vector2f &pos, bool isEndCell)
     : Component{ dim, pos },
         m_color{},
+        m_isEndCell{ isEndCell },
         m_hasRunner{ false },
         m_camps{
             {PieceOwner::PLAYER_TWO, false },
@@ -41,10 +42,10 @@ Cell::draw(sf::RenderTarget &target, sf::RenderStates states) const {
         target.draw(camp);
     }
 
-    if(hasRunner()){
+    if(hasRunner() && !m_isEndCell){
         sf::CircleShape runnerCircle(5,30);
         runnerCircle.setPointCount(50);
-        runnerCircle.setPosition(m_position.x + m_dimension.x/2 - runnerCircle.getRadius(), m_position.y + m_dimension.y/2 - runnerCircle.getRadius());
+        runnerCircle.setPosition(m_position.x + m_dimension.x / 2 - runnerCircle.getRadius(), m_position.y + m_dimension.y / 2 - runnerCircle.getRadius());
         runnerCircle.setFillColor(sf::Color::White);
         target.draw(runnerCircle);
     }

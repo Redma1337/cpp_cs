@@ -3,14 +3,12 @@
 //
 
 #pragma once
-#include <map>
-#include <memory>
 #include "../components/Column.h"
 #include "../components/Board.h"
 #include "../player/ETurnResult.h"
+#include <memory>
 
 class BoardController {
-
     typedef std::shared_ptr<Board> SharedBoard;
 
     SharedBoard m_sharedBoard;

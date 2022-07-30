@@ -5,14 +5,12 @@
 #include "PlayerController.h"
 #include "../Theme.h"
 
-
 PlayerController::PlayerController()
     :   m_currentPlayer{ 0 },
         m_actionQueue{},
         m_players{ },
         m_statusText{ "Waiting..." }
-{
-}
+{}
 
 void
 PlayerController::update(PairSelector& selector) {
@@ -47,7 +45,7 @@ PlayerController::update(PairSelector& selector) {
 
             switch (turnResult) {
                 case (TurnResult::WON): {
-                    m_onGameFinishCallback(m_currentPlayer);
+                    m_onGameFinishCallback(getCurrentPlayer()->getName());
                     break;
                 }
                 case (TurnResult::BUSTED): {
@@ -76,15 +74,22 @@ PlayerController::update(PairSelector& selector) {
     }
     m_actionQueue.pop();
 
-    /**
-     *     we cant delete in the switch statement, but we need to make sure the queue is emptied if the player switches
-     *     since computers will bust although there is different behaviour queued
-     */
-
     if (shouldQueueWipe) {
-        m_actionQueue = std::queue<EPlayerAction>();
+        clearActions();
     }
 }
+
+void PlayerController::reset() {
+    m_players[0] = nullptr;
+    m_players[1] = nullptr;
+}
+
+void
+PlayerController::switchPlayer() {
+    m_currentPlayer = (m_currentPlayer == PieceOwner::PLAYER_ONE ? PieceOwner::PLAYER_TWO : PieceOwner::PLAYER_ONE);
+}
+
+
 
 const std::shared_ptr<Player>&
 PlayerController::getCurrentPlayer() const {
@@ -95,23 +100,6 @@ void
 PlayerController::setPlayer(PieceOwner playerPos, const std::shared_ptr<Player> &player) {
     m_players[(int) playerPos] = player;
     m_players[(int) playerPos]->setColor(playerPos == PieceOwner::PLAYER_ONE ? Theme::PLAYER_ONE_COLOR : Theme::PLAYER_TWO_COLOR);
-}
-
-void PlayerController::setOnMoveListener(const OnMoveCallback& callback) {
-    m_onMoveCallback = callback;
-}
-
-void PlayerController::setOnTurnFinishListener(const OnTurnFinishCallback& callback) {
-    m_onFinishCallback = callback;
-}
-
-void PlayerController::setOnGameFinishCallback(const OnGameFinishCallback& callback) {
-    m_onGameFinishCallback = callback;
-}
-
-void
-PlayerController::switchPlayer() {
-    m_currentPlayer = (m_currentPlayer == PieceOwner::PLAYER_ONE ? PieceOwner::PLAYER_TWO : PieceOwner::PLAYER_ONE);
 }
 
 void
@@ -128,5 +116,11 @@ std::string
 PlayerController::getCurrentStatus() {
     return m_statusText;
 }
+
+void PlayerController::clearActions() {
+    m_actionQueue = std::queue<EPlayerAction>();
+}
+
+
 
 

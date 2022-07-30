@@ -8,7 +8,7 @@
 
 class HumanPlayer : public Player {
 public:
-    HumanPlayer(std::string name);
+    HumanPlayer();
 
     std::array<int, 2> doSelection(PairSelector& pairSelector) override;
     std::vector<EPlayerAction> generateActions() override;

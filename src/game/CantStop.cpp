@@ -3,46 +3,64 @@
 //
 
 #include "CantStop.h"
-#include "wrapper/RenderWrapper.h"
-#include "player/ComputerPlayer.h"
-#include "view/GameResultView.h"
-#include "view/GameSettingsView.h"
-
 
 CantStop::CantStop(sf::ContextSettings ctxSettings)
     :   m_window(sf::VideoMode(1000, 850), "Can't Stop Game", sf::Style::Default, ctxSettings)
 {
-    std::shared_ptr<Board> board = std::make_shared<Board>();
-    m_boardController.setBoard(board);
-
-    std::shared_ptr<HumanPlayer> playerOne = std::make_shared<HumanPlayer>("Human Player");
-    std::shared_ptr<ComputerPlayer> playerTwo = std::make_shared<ComputerPlayer>("Computer Player");
-    m_playerController.setPlayer(PieceOwner::PLAYER_ONE, playerOne);
-    m_playerController.setPlayer(PieceOwner::PLAYER_TWO, playerTwo);
-
-    m_playerController.setOnMoveListener(
-        [&](PieceOwner color, std::array<int, 2> selection){ return m_boardController.onMove(color, selection); }
-    );
-
-    m_playerController.setOnTurnFinishListener(
-        [&](PieceOwner color, bool didBust){ return m_boardController.onFinish(color, didBust); }
-    );
-
-    m_playerController.setOnGameFinishCallback(
-            [&](PieceOwner owner){
-                m_viewController.setCurrentView(Menu::GAME_WON);
-            }
-    );
-
-    std::shared_ptr<GameView> mainView = std::make_shared<GameView>(m_boardController, m_playerController);
-    std::shared_ptr<GameResultView> resultView = std::make_shared<GameResultView>();
-    std::shared_ptr<GameSettingsView> settingsView = std::make_shared<GameSettingsView>();
-    m_viewController.addView(Menu::GAME_VIEW, mainView);
-    m_viewController.addView(Menu::GAME_WON, resultView);
-    m_viewController.addView(Menu::GAME_SETTINGS, settingsView);
+    setupBoardController();
+    setupGameControlls();
+    setupRoutes();
 
     //relative to cmake-build-debug/sfml_test.exe
     RenderWrapper::loadFont("../resources/fonts/Roboto-Medium.ttf");
+}
+
+void
+CantStop::setupBoardController() {
+    std::shared_ptr<Board> board = std::make_shared<Board>();
+    m_boardController.setBoard(board);
+
+    m_playerController.setOnMoveListener(
+            [&](PieceOwner color, std::array<int, 2> selection){ return m_boardController.onMove(color, selection); }
+    );
+
+    m_playerController.setOnTurnFinishListener(
+            [&](PieceOwner color, bool didBust){ return m_boardController.onFinish(color, didBust); }
+    );
+
+    m_playerController.setOnGameFinishListener(
+            [&](std::string name){
+                m_resultView->setWinner(name);
+                m_viewController.setCurrentView(Menu::GAME_WON);
+            }
+    );
+}
+
+void
+CantStop::setupGameControlls() {
+    auto restartFunc = [&] {
+        m_playerController.reset();
+        m_viewController.setCurrentView(Menu::GAME_SETTINGS);
+    };
+    m_resultView = std::make_shared<GameResultView>(restartFunc);
+
+    auto initFunc = [&](auto one, auto two) {
+        m_playerController.setPlayer(PieceOwner::PLAYER_ONE, one);
+        m_playerController.setPlayer(PieceOwner::PLAYER_TWO, two);
+        m_viewController.setCurrentView(Menu::GAME_VIEW);
+    };
+    m_settingsView = std::make_shared<GameSettingsView>(initFunc);
+}
+
+void
+CantStop::setupRoutes() {
+    m_gameView = std::make_shared<GameView>(m_boardController, m_playerController);
+
+    m_viewController.addView(Menu::GAME_VIEW, m_gameView);
+    m_viewController.addView(Menu::GAME_WON, m_resultView);
+    m_viewController.addView(Menu::GAME_SETTINGS, m_settingsView);
+
+    m_viewController.setCurrentView(Menu::GAME_SETTINGS);
 }
 
 void
@@ -75,3 +93,5 @@ CantStop::onEvent(sf::Event emitter) {
         }
     }
 }
+
+

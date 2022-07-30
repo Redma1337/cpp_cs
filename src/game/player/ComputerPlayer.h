@@ -10,7 +10,7 @@
 
 class ComputerPlayer : public Player {
 public:
-    ComputerPlayer(std::string name);
+    ComputerPlayer();
 
     std::array<int, 2> doSelection(PairSelector& pairSelector) override;
     std::vector<EPlayerAction> generateActions() override;

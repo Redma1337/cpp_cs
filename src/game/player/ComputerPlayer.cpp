@@ -4,8 +4,8 @@
 
 #include "ComputerPlayer.h"
 
-ComputerPlayer::ComputerPlayer(std::string name)
-        : Player(std::move(name), false)
+ComputerPlayer::ComputerPlayer()
+        : Player("Computer Player", false)
 {}
 
 std::array<int, 2>

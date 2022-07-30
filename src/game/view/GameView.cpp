@@ -7,20 +7,19 @@
 GameView::GameView(BoardController &board, PlayerController &playerController)
     :   m_boardController{ board },
         m_playerController{ playerController },
-        m_switchPlayerBtn("Finish Round", {200, 50}, {700, 590}, true),
-        m_rollDiceBtn("Roll dice", {200, 50}, {700, 650}, true),
-        m_commitSelectionBtn("Commit", {200, 50}, {700, 700}, true), //just place the second button bellow, so we dont have problems with click events stacking
+        m_switchPlayerBtn("Finish Round", {200, 50}, {750, 590}, true),
+        m_rollDiceBtn("Roll dice", {200, 50}, {750, 650}, true),
+        m_commitSelectionBtn("Commit", {200, 50}, {750, 700}, true), //just place the second button bellow, so we dont have problems with click events stacking
         m_pairSelector{ { 110, 110 }, {740, 300}, 50 },
         m_statusText{ RenderWrapper::createString("Status: " + playerController.getCurrentStatus(), {600, 50}, 20, sf::Color::White) }
-{
-    m_boardController.setupBoard({50, 50});
-    m_commitSelectionBtn.setVisible(false);
-    m_pairSelector.setVisible(false);
-    setup();
-}
+{}
 
 void
 GameView::setup() {
+    m_boardController.setupBoard({50, 50});
+    m_commitSelectionBtn.setVisible(false);
+    m_pairSelector.setVisible(false);
+
     m_rollDiceBtn.addActionListener([this](const sf::Vector2i &cord) {
         m_rollDiceBtn.setVisible(false);
         m_switchPlayerBtn.setVisible(false);
@@ -77,4 +76,8 @@ GameView::onClick(const sf::Vector2i &cords) {
         m_pairSelector.onClick(cords);
     }
     m_switchPlayerBtn.onClick(cords);
+}
+
+void GameView::reload() {
+    setup();
 }

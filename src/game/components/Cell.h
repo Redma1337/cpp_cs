@@ -11,9 +11,10 @@
 class Cell : public Component {
     std::map<PieceOwner, bool> m_camps;
     bool m_hasRunner; //we will at most have 1 runner of the current player
+    bool m_isEndCell; //we will at most have 1 runner of the current player
     sf::Color m_color;
 public:
-    explicit Cell(const sf::Vector2f &dim, const sf::Vector2f &pos);
+    explicit Cell(const sf::Vector2f &dim, const sf::Vector2f &pos, bool isEndCell);
 
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 

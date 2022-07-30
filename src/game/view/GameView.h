@@ -22,12 +22,12 @@ class GameView : public View {
 
     PairSelector m_pairSelector;
 public:
-    explicit GameView(BoardController &board, PlayerController &playerController);
+    GameView(BoardController &board, PlayerController &playerController);
 
     void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
-    void onUpdate() override;
-
     void onClick(const sf::Vector2i &cords) override;
+    void onUpdate() override;
+    void reload() override;
 
     void setup();
 };

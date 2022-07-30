@@ -12,7 +12,9 @@ ViewController::ViewController()
 void
 ViewController::setCurrentView(Menu m) {
     m_currentView = m;
-    //todo make sure name is valid
+
+    std::shared_ptr<View> currentView = getCurrentView();
+    currentView->reload();
 }
 
 void
@@ -40,9 +42,7 @@ ViewController::getCurrentView() const {
 
 void
 ViewController::addView(Menu pageIndex, std::shared_ptr<View> sharedView) {
-    if (m_currentView == Menu::NONE) {
-        m_currentView = pageIndex;
-    }
-
-    m_viewMap.insert(SharedViewMap::value_type(pageIndex, sharedView));
+    m_viewMap.insert(
+            SharedViewMap::value_type(pageIndex, sharedView)
+    );
 }

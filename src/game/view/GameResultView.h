@@ -5,10 +5,24 @@
 #pragma once
 
 #include "View.h"
+#include "../player/EPieceOwner.h"
+#include "../components/Button.h"
+#include "../controller/PlayerController.h"
 
 class GameResultView : public View {
+    typedef std::function<void()> OnGameRestartCallback;
+    OnGameRestartCallback m_restartGameCallback;
+
+    std::string m_winner;
+    Button m_quit;
+    Button m_playAigan;
 public:
+    GameResultView(const OnGameRestartCallback &callback);
+
     void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
     void onUpdate() override;
     void onClick(const sf::Vector2i &cords) override;
+    void reload() override;
+
+    void setWinner(const std::string &name);
 };
