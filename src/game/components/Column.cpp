@@ -79,7 +79,7 @@ Column::placeRunner(PieceColor color) {
     if (campIndex == -1) {
         m_cellContainer.back().setRunner(true);
     } else {
-        Cell &campCell = m_cellContainer[campIndex];
+        Cell &campCell = m_cellContainer[campIndex - 1];
         campCell.setRunner(true);
         campCell.removeCamp(color);
     }

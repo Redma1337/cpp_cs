@@ -26,6 +26,7 @@ ComputerPlayer::generateActions() {
     actions.push_back(EPlayerAction::WAIT);
     actions.push_back(EPlayerAction::MAKE_SELECTION);
     actions.push_back(EPlayerAction::WAIT);
+    actions.push_back(EPlayerAction::WAIT);
     actions.push_back(EPlayerAction::SWITCH_PLAYER);
     return actions;
 }

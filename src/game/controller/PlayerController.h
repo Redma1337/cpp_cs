@@ -24,6 +24,8 @@ class PlayerController {
     std::queue<EPlayerAction> m_actionQueue;
     OnMoveCallback m_onMoveCallback;
     OnFinishCallback m_onFinishCallback;
+
+    std::string m_statusText;
 public:
     PlayerController();
 

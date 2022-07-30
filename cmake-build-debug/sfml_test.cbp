@@ -135,6 +135,9 @@
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/controller/DiceController.h">
 			<Option target="sfml_test"/>
 		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/controller/EPlayerAction.h">
+			<Option target="sfml_test"/>
+		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/controller/PlayerController.cpp">
 			<Option target="sfml_test"/>
 		</Unit>
@@ -145,12 +148,6 @@
 			<Option target="sfml_test"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/controller/ViewController.h">
-			<Option target="sfml_test"/>
-		</Unit>
-		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/model/EBoardOperation.h">
-			<Option target="sfml_test"/>
-		</Unit>
-		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/model/Model.h">
 			<Option target="sfml_test"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/player/ComputerPlayer.cpp">
@@ -196,6 +193,12 @@
 			<Option target="sfml_test"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/wrapper/RenderWrapper.h">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/wrapper/RoundedRectangleShape.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/game/wrapper/RoundedRectangleShape.h">
 			<Option target="sfml_test"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/src/main.cpp">

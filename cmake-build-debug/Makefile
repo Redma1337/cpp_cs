@@ -488,6 +488,30 @@ src/game/wrapper/RenderWrapper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/wrapper/RenderWrapper.cpp.s
 .PHONY : src/game/wrapper/RenderWrapper.cpp.s
 
+src/game/wrapper/RoundedRectangleShape.obj: src/game/wrapper/RoundedRectangleShape.cpp.obj
+.PHONY : src/game/wrapper/RoundedRectangleShape.obj
+
+# target to build an object file
+src/game/wrapper/RoundedRectangleShape.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/wrapper/RoundedRectangleShape.cpp.obj
+.PHONY : src/game/wrapper/RoundedRectangleShape.cpp.obj
+
+src/game/wrapper/RoundedRectangleShape.i: src/game/wrapper/RoundedRectangleShape.cpp.i
+.PHONY : src/game/wrapper/RoundedRectangleShape.i
+
+# target to preprocess a source file
+src/game/wrapper/RoundedRectangleShape.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/wrapper/RoundedRectangleShape.cpp.i
+.PHONY : src/game/wrapper/RoundedRectangleShape.cpp.i
+
+src/game/wrapper/RoundedRectangleShape.s: src/game/wrapper/RoundedRectangleShape.cpp.s
+.PHONY : src/game/wrapper/RoundedRectangleShape.s
+
+# target to generate assembly for a file
+src/game/wrapper/RoundedRectangleShape.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/wrapper/RoundedRectangleShape.cpp.s
+.PHONY : src/game/wrapper/RoundedRectangleShape.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -566,6 +590,9 @@ help:
 	@echo ... src/game/wrapper/RenderWrapper.obj
 	@echo ... src/game/wrapper/RenderWrapper.i
 	@echo ... src/game/wrapper/RenderWrapper.s
+	@echo ... src/game/wrapper/RoundedRectangleShape.obj
+	@echo ... src/game/wrapper/RoundedRectangleShape.i
+	@echo ... src/game/wrapper/RoundedRectangleShape.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

@@ -22,7 +22,6 @@ BoardController::drawBoard(sf::RenderTarget &target) const {
 bool
 BoardController::onMove(PieceColor color, std::array<int, 2> pair) {
     std::vector<int> runnerCells = m_sharedBoard->getPieces(color, PieceType::TYPE_RUNNER);
-    //TODO: implement recognition of camps as checkpoints
     //TODO: detect a win, maybe result object returned
     //TODO: add status label
 

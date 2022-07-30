@@ -26,10 +26,12 @@ PlayerController::update(PairSelector& selector) {
     EPlayerAction currentAction = m_actionQueue.front();
     switch (currentAction) {
         case (EPlayerAction::WAIT): {
+            m_statusText = "Thinking...";
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
             break;
         }
         case (EPlayerAction::ROLL_DICE): {
+            m_statusText = "Rolling dice";
             selector.reRoll();
             selector.setVisible(true);
             break;
@@ -37,21 +39,21 @@ PlayerController::update(PairSelector& selector) {
         case (EPlayerAction::MAKE_SELECTION): {
             //human players will just return the component, bots will imitate player use of the component
             std::array<int, 2> turnPair = getCurrentPlayer()->doSelection(selector);
+            m_statusText = "Choosing " + std::to_string(turnPair[0]) + " and " + std::to_string(turnPair[1]);
 
             //pass this data to the board controller, since its nothing that has to do with player controlling
             bool hasBusted = m_onMoveCallback(getCurrentPlayer()->getColor(), turnPair);
 
             if (hasBusted) {
+                m_statusText = "Busted";
                 m_onFinishCallback(getCurrentPlayer()->getColor(), true);
                 switchPlayer();
                 shouldQueueWipe = true;
             }
-
-            selector.setVisible(false);
-            selector.reset();
             break;
         }
         case (EPlayerAction::SWITCH_PLAYER): {
+            m_statusText = "Scoring";
             m_onFinishCallback(getCurrentPlayer()->getColor(), false);
 
             switchPlayer();
@@ -61,6 +63,8 @@ PlayerController::update(PairSelector& selector) {
             selector.reset();
             break;
         }
+        default:
+            m_statusText = "Thinking...";
     }
     m_actionQueue.pop();
 
