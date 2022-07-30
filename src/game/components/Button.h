@@ -15,8 +15,9 @@ class Button : public Component, IClickable {
     ButtonCallback m_callback;
     sf::Color m_color;
     std::string m_text;
+    bool m_isRounded;
 public:
-    Button(const std::string &text, const sf::Vector2f &dim, const sf::Vector2f &pos);
+    Button(const std::string &text, const sf::Vector2f &dim, const sf::Vector2f &pos, bool isRounded);
     Button(const std::string &text, const sf::Vector2f &dim);
     Button(const std::string &text);
 

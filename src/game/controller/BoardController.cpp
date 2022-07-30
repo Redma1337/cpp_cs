@@ -25,16 +25,16 @@ BoardController::onMove(PieceColor color, std::array<int, 2> pair) {
     //TODO: implement recognition of camps as checkpoints
     //TODO: detect a win, maybe result object returned
     //TODO: add status label
-    std::vector<int> campCells = m_sharedBoard->getPieces(color, PieceType::TYPE_RUNNER);
-
 
     int busts = 0;
 
     for (int sum : pair) {
         auto sumFound = std::find(runnerCells.begin(), runnerCells.end(), sum);
+        //the sum was found in existing runners
         if (sumFound != runnerCells.end()) {
             m_sharedBoard->moveRunner(color, sum);
         } else {
+            //sum was none of the 3 runners
             if (runnerCells.size() >= 3) {
                 busts++;
                 continue;

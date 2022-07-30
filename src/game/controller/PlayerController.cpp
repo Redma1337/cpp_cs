@@ -9,7 +9,9 @@ PlayerController::PlayerController()
     :   m_currentPlayer{ 0 },
         m_actionQueue{},
         m_players{ std::make_shared<HumanPlayer>("Human Player") }
-{}
+{
+    m_players[0]->setColor(PieceColor::COLOR_GREEN);
+}
 
 void
 PlayerController::update(PairSelector& selector) {
@@ -80,6 +82,7 @@ PlayerController::getCurrentPlayer() const {
 void
 PlayerController::setOpponent(const std::shared_ptr<Player> &player) {
     m_players[1] = player;
+    m_players[1]->setColor(PieceColor::COLOR_RED);
 }
 
 void PlayerController::setOnMoveListener(const OnMoveCallback& callback) {

@@ -7,5 +7,4 @@
 enum class PieceColor {
     COLOR_RED,
     COLOR_GREEN,
-    COLOR_WHITE
 };

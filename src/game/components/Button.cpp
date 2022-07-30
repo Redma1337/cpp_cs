@@ -3,20 +3,22 @@
 //
 
 #include "Button.h"
+#include "../wrapper/RoundedRectangleShape.h"
 
-Button::Button(const std::string &text, const sf::Vector2f &dim, const sf::Vector2f &pos)
+Button::Button(const std::string &text, const sf::Vector2f &dim, const sf::Vector2f &pos, bool isRounded)
     : Component(dim, pos),
-        m_color{ sf::Color::Red },
+        m_color{ sf::Color(0x6366f1ff) },
         m_text{ text },
-        m_callback()
+        m_callback(),
+        m_isRounded{ isRounded }
 {}
 
 Button::Button(const std::string &text, const sf::Vector2f &dim)
-        : Button(text, dim, {0, 0})
+        : Button(text, dim, {0, 0}, false)
 {}
 
 Button::Button(const std::string &text)
-        : Button(text, {0, 0}, {0, 0})
+        : Button(text, {0, 0}, {0, 0}, false)
 {}
 
 void
@@ -30,7 +32,11 @@ Button::draw(sf::RenderTarget &target, sf::RenderStates states) const {
         return;
     }
 
-    sf::RectangleShape cellRect(m_dimension);
+    sf::RoundedRectangleShape cellRect(m_dimension);
+    cellRect.setCornerPointCount(4);
+    if (m_isRounded) {
+        cellRect.setCornersRadius(5);
+    }
     cellRect.setPosition(m_position);
     cellRect.setFillColor(m_color);
     target.draw(cellRect);

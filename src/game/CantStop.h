@@ -17,6 +17,6 @@ class CantStop {
 
     void onEvent(sf::Event emitter);
 public:
-    CantStop(Player& one, Player& two);
+    CantStop(sf::ContextSettings ctxSettings);
     void start();
 };

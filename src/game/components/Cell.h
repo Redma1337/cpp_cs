@@ -20,11 +20,9 @@ public:
     void setRunner(bool state);
     bool hasRunner() const;
 
-    bool hasCamp(PieceColor color);
+    bool hasCamp(PieceColor color) const;
     void addCamp(PieceColor color);
     void removeCamp(PieceColor color);
 
     bool hasPiece(PieceColor color, PieceType type);
-
-    void reset();
 };

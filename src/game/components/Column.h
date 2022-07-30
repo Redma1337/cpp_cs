@@ -31,6 +31,4 @@ public:
     void moveRunner(PieceColor color);
 
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
-
-    void reset();
 };

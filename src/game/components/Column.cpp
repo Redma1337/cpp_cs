@@ -18,7 +18,7 @@ Column::Column(const sf::Vector2f &dim, const sf::Vector2f &pos, const int lengt
             std::to_string(sum),
             { m_position.x + (m_cellDim.x / 2.0f) - xAdjust, m_position.y + (m_cellDim.y / 2.0f) + 7},
             20,
-            sf::Color::Blue
+            sf::Color::White
     );
 }
 
@@ -40,10 +40,10 @@ Column::draw(sf::RenderTarget &target, sf::RenderStates states) const {
         return;
     }
 
-    target.draw(m_headerText);
     for(Cell const &c : m_cellContainer) {
         c.draw(target, states);
     }
+    target.draw(m_headerText);
 }
 
 int
@@ -62,7 +62,11 @@ Column::removePiece(PieceColor color, PieceType type) {
     for (int i = 0; i < m_cellContainer.size(); i++) {
         Cell &cell = m_cellContainer[i];
         if (cell.hasPiece(color, type)) {
-            cell.setRunner(false);
+            if (type == PieceType::TYPE_RUNNER) {
+                cell.setRunner(false);
+            } else {
+                cell.removeCamp(color);
+            }
             return i;
         }
     }
@@ -71,13 +75,22 @@ Column::removePiece(PieceColor color, PieceType type) {
 
 void
 Column::placeRunner(PieceColor color) {
-    m_cellContainer.back().setRunner(true);
+    int campIndex = removePiece(color, PieceType::TYPE_CAMP);
+    if (campIndex == -1) {
+        m_cellContainer.back().setRunner(true);
+    } else {
+        Cell &campCell = m_cellContainer[campIndex];
+        campCell.setRunner(true);
+        campCell.removeCamp(color);
+    }
 }
 
 void
 Column::placeCamp(PieceColor color) {
     int index = removePiece(color, PieceType::TYPE_RUNNER);
-    m_cellContainer[index].addCamp(color);
+    if (index != -1) {
+        m_cellContainer[index].addCamp(color);
+    }
 }
 
 void
@@ -88,12 +101,5 @@ Column::moveRunner(PieceColor color) {
 
     if (nextIndex == 0) {
         setLocked(true);
-    }
-}
-
-void
-Column::reset() {
-    for(auto &c : m_cellContainer) {
-        c.reset();
     }
 }

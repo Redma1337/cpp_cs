@@ -8,9 +8,9 @@ GameView::GameView(std::string name, BoardController &board, PlayerController &p
     : View(name),
         m_boardController{ board },
         m_playerController{ playerController },
-        m_switchPlayerBtn("Finish Round", {200, 50}, {700, 590}),
-        m_rollDiceBtn("Roll dice", {200, 50}, {700, 650}),
-        m_commitSelectionBtn("Commit", {200, 50}, {700, 700}), //just place the second button bellow, so we dont have problems with click events stacking
+        m_switchPlayerBtn("Finish Round", {200, 50}, {700, 590}, true),
+        m_rollDiceBtn("Roll dice", {200, 50}, {700, 650}, true),
+        m_commitSelectionBtn("Commit", {200, 50}, {700, 700}, true), //just place the second button bellow, so we dont have problems with click events stacking
         m_pairSelector{ { 110, 110 }, {740, 300}, 50 }
 {
     m_commitSelectionBtn.setVisible(false);

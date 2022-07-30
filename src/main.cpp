@@ -4,10 +4,10 @@
 #include "game/player/ComputerPlayer.h"
 
 int main() {
-    HumanPlayer playerOne("Human");
-    ComputerPlayer playerTwo("Computer");
+    sf::ContextSettings settings;
+    settings.antialiasingLevel = 8;
 
-    CantStop cantStop(playerOne, playerTwo);
+    CantStop cantStop(settings);
     cantStop.start();
     return 0;
 }

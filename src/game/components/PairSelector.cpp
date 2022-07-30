@@ -10,10 +10,10 @@ PairSelector::PairSelector(const sf::Vector2f &dim, const sf::Vector2f &pos, flo
     :   Component(dim, pos),
         m_selectedCount{ 0 },
         m_selectorButtons {
-            Button("", { bS, bS }, {m_position.x , m_position.y }),
-            Button("", { bS, bS }, {m_position.x + bS + 10, m_position.y }),
-            Button("", { bS, bS }, {m_position.x, m_position.y + bS + 10 }),
-            Button("", { bS, bS }, {m_position.x + bS + 10, m_position.y + bS + 10 }),
+            Button("", { bS, bS }, {m_position.x , m_position.y }, true),
+            Button("", { bS, bS }, {m_position.x + bS + 10, m_position.y }, true),
+            Button("", { bS, bS }, {m_position.x, m_position.y + bS + 10 }, true),
+            Button("", { bS, bS }, {m_position.x + bS + 10, m_position.y + bS + 10 }, true),
         },
         m_selection{ 0 }
 {
@@ -26,7 +26,7 @@ PairSelector::setup() {
         m_selectorButtons[i].addActionListener([&, i](const sf::Vector2i &cords){
             int pair_index = m_selectedCount >= 2 ? 1 : 0;
             m_selection[pair_index] += m_diceRoll[i];
-            m_selectorButtons[i].setColor(pair_index == 0 ? sf::Color::Green : sf::Color::Blue);
+            m_selectorButtons[i].setColor(pair_index == 0 ? sf::Color(0x6366f1ff) : sf::Color(0x0ea5e9ff));
             m_selectorButtons[i].setLocked(true);
             m_selectedCount++;
         });
@@ -69,7 +69,7 @@ PairSelector::reset() {
     m_selectedCount = 0;
     m_selection = {0, 0};
     for (int i = 0; i < m_selectorButtons.size(); i++) {
-        m_selectorButtons[i].setColor(sf::Color(20, 20, 20, 100));
+        m_selectorButtons[i].setColor(sf::Color(0x182134ff));
         m_selectorButtons[i].setLocked(false);
     }
 }
