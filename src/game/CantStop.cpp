@@ -12,16 +12,15 @@ CantStop::CantStop(sf::ContextSettings ctxSettings)
 {
     std::shared_ptr<Board> board = std::make_shared<Board>();
     m_boardController.setBoard(board);
-    m_boardController.setupBoard();
 
     std::shared_ptr<ComputerPlayer> opponent = std::make_shared<ComputerPlayer>("Computer Player");
     m_playerController.setOpponent(opponent);
 
     m_playerController.setOnMoveListener(
-        [&](PieceColor color, std::array<int, 2> selection){ return m_boardController.onMove(color, selection); }
+        [&](PieceOwner color, std::array<int, 2> selection){ return m_boardController.onMove(color, selection); }
     );
-    m_playerController.setOnFinishListener(
-        [&](PieceColor color, bool didBust){ return m_boardController.onFinish(color, didBust); }
+    m_playerController.setOnTurnFinishListener(
+        [&](PieceOwner color, bool didBust){ return m_boardController.onFinish(color, didBust); }
     );
 
     std::shared_ptr<GameView> view = std::make_shared<GameView>("Cant Stop Game", m_boardController, m_playerController);

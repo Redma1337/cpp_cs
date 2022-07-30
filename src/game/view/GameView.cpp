@@ -11,8 +11,10 @@ GameView::GameView(std::string name, BoardController &board, PlayerController &p
         m_switchPlayerBtn("Finish Round", {200, 50}, {700, 590}, true),
         m_rollDiceBtn("Roll dice", {200, 50}, {700, 650}, true),
         m_commitSelectionBtn("Commit", {200, 50}, {700, 700}, true), //just place the second button bellow, so we dont have problems with click events stacking
-        m_pairSelector{ { 110, 110 }, {740, 300}, 50 }
+        m_pairSelector{ { 110, 110 }, {740, 300}, 50 },
+        m_statusText{ RenderWrapper::createString("Status: " + playerController.getCurrentStatus(), {600, 50}, 20, sf::Color::White) }
 {
+    m_boardController.setupBoard({50, 50});
     m_commitSelectionBtn.setVisible(false);
     m_pairSelector.setVisible(false);
     setup();
@@ -44,6 +46,7 @@ GameView::setup() {
 
 void
 GameView::onUpdate() {
+    m_statusText.setString(m_playerController.getCurrentStatus());
     m_playerController.update(m_pairSelector);
 }
 
@@ -56,6 +59,8 @@ GameView::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 
         m_rollDiceBtn.draw(target, states);
         m_switchPlayerBtn.draw(target, states);
+    } else {
+        target.draw(m_statusText);
     }
 
     m_pairSelector.draw(target, states);

@@ -11,7 +11,11 @@ Button::Button(const std::string &text, const sf::Vector2f &dim, const sf::Vecto
         m_text{ text },
         m_callback(),
         m_isRounded{ isRounded }
-{}
+{
+    m_backgroundRect = RenderWrapper::createRoundedRect(m_position, m_dimension, m_color, isRounded ? 5 : 0);
+    //sf::Vector2f centerPos = { m_position.x + m_dimension.x / 2.f, m_position.y + m_dimension.y / 2.f };
+    //m_buttonText = RenderWrapper::createCenteredString(m_text, centerPos, 20, sf::Color::White);
+}
 
 Button::Button(const std::string &text, const sf::Vector2f &dim)
         : Button(text, dim, {0, 0}, false)
@@ -32,18 +36,10 @@ Button::draw(sf::RenderTarget &target, sf::RenderStates states) const {
         return;
     }
 
-    sf::RoundedRectangleShape cellRect(m_dimension);
-    cellRect.setCornerPointCount(4);
-    if (m_isRounded) {
-        cellRect.setCornersRadius(5);
-    }
-    cellRect.setPosition(m_position);
-    cellRect.setFillColor(m_color);
-    target.draw(cellRect);
-
-    sf::Vector2f centerPos = { m_position.x + m_dimension.x / 2, m_position.y + m_dimension.y / 2 };
-    sf::Text text = RenderWrapper::createCenteredString(m_text, centerPos, 20, sf::Color::White);
-    target.draw(text);
+    sf::Vector2f centerPos = { m_position.x + m_dimension.x / 2.f, m_position.y + m_dimension.y / 2.f };
+    sf::Text btnText = RenderWrapper::createCenteredString(m_text, centerPos, 20, sf::Color::White);
+    target.draw(m_backgroundRect);
+    target.draw(btnText);
 }
 
 void
@@ -66,6 +62,7 @@ Button::onClick(const sf::Vector2i &cords) {
 void
 Button::setColor(const sf::Color &color) {
     m_color = color;
+    m_backgroundRect.setFillColor(color);
 }
 
 void

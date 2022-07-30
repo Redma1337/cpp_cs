@@ -39,7 +39,7 @@ Board::setup() {
 
         sf::Vector2f dim = {
                 cellDims.x,
-                cellDims.y * colLength
+                cellDims.y * colLength + cellMargin * colLength - cellMargin
         };
         Column col(dim, pos, colLength, sum);
 
@@ -49,7 +49,7 @@ Board::setup() {
 }
 
 std::vector<int>
-Board::getPieces(PieceColor color, PieceType type) {
+Board::getPieces(PieceOwner color, PieceType type) {
     std::vector<int> result;
     for (auto const &pair : m_columnContainer) {
         Column col = pair.second;
@@ -60,8 +60,20 @@ Board::getPieces(PieceColor color, PieceType type) {
     return result;
 }
 
+std::vector<int>
+Board::getFinishedCols(PieceOwner color) {
+    std::vector<int> result;
+    for (auto const &pair : m_columnContainer) {
+        Column col = pair.second;
+        if (col.isLocked()) {
+            result.push_back(pair.first);
+        }
+    }
+    return result;
+}
+
 void
-Board::moveRunner(PieceColor color, int colIndex) {
+Board::moveRunner(PieceOwner color, int colIndex) {
     auto pairFound = m_columnContainer.find(colIndex);
     if (pairFound != m_columnContainer.end()) {
         Column &col = pairFound->second;
@@ -70,7 +82,7 @@ Board::moveRunner(PieceColor color, int colIndex) {
 }
 
 void
-Board::placeRunner(PieceColor color, int colIndex) {
+Board::placeRunner(PieceOwner color, int colIndex) {
     auto pairFound = m_columnContainer.find(colIndex);
     if (pairFound != m_columnContainer.end()) {
         Column &col = pairFound->second;
@@ -79,7 +91,7 @@ Board::placeRunner(PieceColor color, int colIndex) {
 }
 
 void
-Board::placeCamp(PieceColor color, int colIndex) {
+Board::placeCamp(PieceOwner color, int colIndex) {
     auto pairFound = m_columnContainer.find(colIndex);
     if (pairFound != m_columnContainer.end()) {
         Column &col = pairFound->second;
@@ -88,7 +100,7 @@ Board::placeCamp(PieceColor color, int colIndex) {
 }
 
 void
-Board::removeAllRunners(PieceColor color) {
+Board::removeAllRunners(PieceOwner color) {
     for (auto &pair : m_columnContainer) {
         Column &col = pair.second;
         col.removePiece(color, PieceType::TYPE_RUNNER);

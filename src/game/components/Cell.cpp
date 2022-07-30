@@ -10,8 +10,8 @@ Cell::Cell(const sf::Vector2f &dim, const sf::Vector2f &pos)
         m_color{},
         m_hasRunner{ false },
         m_camps{
-            { PieceColor::COLOR_GREEN, false },
-            { PieceColor::COLOR_RED, false }
+            {PieceOwner::PLAYER_TWO, false },
+            {PieceOwner::PLAYER_ONE, false }
         }
 {}
 
@@ -26,7 +26,7 @@ Cell::draw(sf::RenderTarget &target, sf::RenderStates states) const {
     cellRect.setFillColor(sf::Color(0x182134ff));
     target.draw(cellRect);
 
-    if (hasCamp(PieceColor::COLOR_GREEN) && hasCamp(PieceColor::COLOR_RED)) {
+    if (hasCamp(PieceOwner::PLAYER_TWO) && hasCamp(PieceOwner::PLAYER_ONE)) {
         sf::ConvexShape lowerTriangle = RenderWrapper::createTriangle(m_position, { 0, 0 }, { 0, m_dimension.y }, m_dimension, sf::Color(0x6366f1ff));
         target.draw(lowerTriangle);
 
@@ -34,10 +34,10 @@ Cell::draw(sf::RenderTarget &target, sf::RenderStates states) const {
         upperTriangle.setOrigin(m_dimension);
         upperTriangle.setRotation(180);
         target.draw(upperTriangle);
-    } else if (hasCamp(PieceColor::COLOR_GREEN) || hasCamp(PieceColor::COLOR_RED)) {
+    } else if (hasCamp(PieceOwner::PLAYER_TWO) || hasCamp(PieceOwner::PLAYER_ONE)) {
         sf::RectangleShape camp(m_dimension);
         camp.setPosition(m_position);
-        camp.setFillColor(hasCamp(PieceColor::COLOR_GREEN) ? sf::Color(0x6366f1ff) : sf::Color(0x0ea5e9ff));
+        camp.setFillColor(hasCamp(PieceOwner::PLAYER_TWO) ? sf::Color(0x6366f1ff) : sf::Color(0x0ea5e9ff));
         target.draw(camp);
     }
 
@@ -61,22 +61,22 @@ Cell::hasRunner() const {
 }
 
 bool
-Cell::hasCamp(PieceColor color) const {
+Cell::hasCamp(PieceOwner color) const {
     auto pairFound = m_camps.find(color);
     return pairFound->second;
 }
 
 void
-Cell::removeCamp(PieceColor color) {
+Cell::removeCamp(PieceOwner color) {
     m_camps[color] = false;
 }
 
 void
-Cell::addCamp(PieceColor color) {
+Cell::addCamp(PieceOwner color) {
     m_camps[color] = true;
 }
 
 bool
-Cell::hasPiece(PieceColor color, PieceType type) {
+Cell::hasPiece(PieceOwner color, PieceType type) {
     return (type == PieceType::TYPE_RUNNER && hasRunner()) || (type == PieceType::TYPE_CAMP && hasCamp(color));
 }

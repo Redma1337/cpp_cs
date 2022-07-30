@@ -44,7 +44,5 @@ ViewController::addView(Menu pageIndex, std::shared_ptr<View> sharedView) {
         m_currentView = pageIndex;
     }
 
-    m_viewMap.insert(
-            SharedViewMap::value_type(pageIndex, sharedView)
-        );
+    m_viewMap.insert(SharedViewMap::value_type(pageIndex, sharedView));
 }

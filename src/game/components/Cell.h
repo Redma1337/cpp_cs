@@ -4,12 +4,12 @@
 
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "../player/EPieceColor.h"
+#include "../player/EPieceOwner.h"
 #include "../player/EPieceType.h"
 #include "Component.h"
 
 class Cell : public Component {
-    std::map<PieceColor, bool> m_camps;
+    std::map<PieceOwner, bool> m_camps;
     bool m_hasRunner; //we will at most have 1 runner of the current player
     sf::Color m_color;
 public:
@@ -20,9 +20,9 @@ public:
     void setRunner(bool state);
     bool hasRunner() const;
 
-    bool hasCamp(PieceColor color) const;
-    void addCamp(PieceColor color);
-    void removeCamp(PieceColor color);
+    bool hasCamp(PieceOwner color) const;
+    void addCamp(PieceOwner color);
+    void removeCamp(PieceOwner color);
 
-    bool hasPiece(PieceColor color, PieceType type);
+    bool hasPiece(PieceOwner color, PieceType type);
 };

@@ -12,7 +12,11 @@
 class Button : public Component, IClickable {
     typedef std::function<void(const sf::Vector2i&)> ButtonCallback;
 
+    sf::RoundedRectangleShape m_backgroundRect;
+    sf::Text m_buttonText;
+
     ButtonCallback m_callback;
+
     sf::Color m_color;
     std::string m_text;
     bool m_isRounded;

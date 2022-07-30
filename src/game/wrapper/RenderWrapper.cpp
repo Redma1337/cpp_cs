@@ -22,12 +22,12 @@ RenderWrapper::createCenteredString(
 {
     sf::Text text;
     text.setFont(DEFAULT_FONT);
-    text.setString(msg);
+    text.setString(msg); // 800 675
     text.setFillColor(color);
     text.setCharacterSize(size);
     text.setStyle(sf::Text::Regular);
 
-    sf::FloatRect textRect = text.getGlobalBounds();
+    sf::FloatRect textRect = text.getLocalBounds();
     text.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
     text.setPosition(pos);
     return text;
@@ -67,3 +67,19 @@ RenderWrapper::createTriangle(
     triangle.setFillColor(color);
     return triangle;
 }
+
+const sf::RoundedRectangleShape
+RenderWrapper::createRoundedRect(
+        const sf::Vector2f &pos,
+        const sf::Vector2f &dim,
+        const sf::Color &fillColor,
+        float cornerRadius)
+{
+    sf::RoundedRectangleShape rect(dim);
+    rect.setCornerPointCount(4);
+    rect.setCornersRadius(cornerRadius);
+    rect.setPosition(pos);
+    rect.setFillColor(fillColor);
+    return rect;
+}
+

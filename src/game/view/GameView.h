@@ -18,6 +18,8 @@ class GameView : public View {
     Button m_commitSelectionBtn;
     Button m_switchPlayerBtn;
 
+    sf::Text m_statusText;
+
     PairSelector m_pairSelector;
 public:
     explicit GameView(std::string name, BoardController &board, PlayerController &playerController);

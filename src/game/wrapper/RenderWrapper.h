@@ -7,6 +7,7 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "RoundedRectangleShape.h"
 
 class RenderWrapper {
     static sf::Font DEFAULT_FONT;
@@ -33,5 +34,12 @@ public:
             const sf::Vector2f &pt2,
             const sf::Vector2f &pt3,
             const sf::Color &color
+    );
+
+    static const sf::RoundedRectangleShape createRoundedRect(
+            const sf::Vector2f &pos,
+            const sf::Vector2f &dim,
+            const sf::Color &fillColor,
+            float cornerRadius
     );
 };

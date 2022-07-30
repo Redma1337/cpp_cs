@@ -7,12 +7,16 @@
 #include <SFML/Graphics.hpp>
 #include "Cell.h"
 #include "Component.h"
+#include "../wrapper/RoundedRectangleShape.h"
+#include "../wrapper/RenderWrapper.h"
 
 typedef std::vector<Cell> CellContainer;
 
 class Column : public Component {
     CellContainer m_cellContainer;
+
     sf::Text m_headerText;
+    sf::RoundedRectangleShape m_lockedBorder;
 
     const int m_sum;
     const int m_length;
@@ -24,11 +28,11 @@ public:
 
     void pack();
 
-    int getPieceIndex(PieceColor color, PieceType type);
-    void placeRunner(PieceColor color);
-    void placeCamp(PieceColor color);
-    int removePiece(PieceColor color, PieceType type);
-    void moveRunner(PieceColor color);
+    int getPieceIndex(PieceOwner color, PieceType type);
+    void placeRunner(PieceOwner color);
+    void placeCamp(PieceOwner color);
+    int removePiece(PieceOwner color, PieceType type);
+    void moveRunner(PieceOwner color);
 
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 };

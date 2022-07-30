@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "EPieceColor.h"
+#include "EPieceOwner.h"
 #include "Player.h"
 #include "../controller/EPlayerAction.h"
 

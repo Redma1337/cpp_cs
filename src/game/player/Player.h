@@ -3,7 +3,7 @@
 //
 
 #pragma once
-#include "EPieceColor.h"
+#include "EPieceOwner.h"
 #include "../components/PairSelector.h"
 #include "../controller/EPlayerAction.h"
 #include <string>
@@ -12,7 +12,7 @@
 
 class Player {
 protected:
-    PieceColor m_color;
+    PieceOwner m_color;
     const std::string m_name;
     const bool m_isHuman;
 public:
@@ -22,8 +22,8 @@ public:
     virtual std::array<int, 2> doSelection(PairSelector& pairSelector) = 0;
     virtual std::vector<EPlayerAction> generateActions() = 0;
 
-    PieceColor getColor() const;
-    void setColor(PieceColor color);
+    PieceOwner getColor() const;
+    void setColor(PieceOwner color);
 
     std::string getName() const;
 

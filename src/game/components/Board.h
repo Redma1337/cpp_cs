@@ -16,9 +16,10 @@ public:
 
     void setup();
 
-    std::vector<int> getPieces(PieceColor color, PieceType type);
-    void moveRunner(PieceColor color, int colIndex);
-    void placeRunner(PieceColor color, int colIndex);
-    void placeCamp(PieceColor color, int colIndex);
-    void removeAllRunners(PieceColor color);
+    std::vector<int> getPieces(PieceOwner color, PieceType type);
+    std::vector<int> getFinishedCols(PieceOwner color);
+    void moveRunner(PieceOwner color, int colIndex);
+    void placeRunner(PieceOwner color, int colIndex);
+    void placeCamp(PieceOwner color, int colIndex);
+    void removeAllRunners(PieceOwner color);
 };

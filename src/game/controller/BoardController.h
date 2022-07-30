@@ -13,10 +13,10 @@ class BoardController {
 
     SharedBoard m_sharedBoard;
 public:
-    void setupBoard();
+    void setupBoard(sf::Vector2f pos);
     void drawBoard(sf::RenderTarget& target) const;
     void setBoard(const std::shared_ptr<Board> &board);
-    bool onMove(PieceColor color, std::array<int, 2> pair);
-    bool onFinish(PieceColor color, bool didBust);
+    bool onMove(PieceOwner color, std::array<int, 2> pair);
+    bool onFinish(PieceOwner color, bool didBust);
 };
 

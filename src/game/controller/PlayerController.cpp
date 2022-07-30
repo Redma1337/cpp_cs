@@ -8,9 +8,10 @@
 PlayerController::PlayerController()
     :   m_currentPlayer{ 0 },
         m_actionQueue{},
-        m_players{ std::make_shared<HumanPlayer>("Human Player") }
+        m_players{ std::make_shared<HumanPlayer>("Human Player") },
+        m_statusText{ "Waiting..." }
 {
-    m_players[0]->setColor(PieceColor::COLOR_GREEN);
+    m_players[0]->setColor(PieceOwner::PLAYER_TWO);
 }
 
 void
@@ -53,7 +54,6 @@ PlayerController::update(PairSelector& selector) {
             break;
         }
         case (EPlayerAction::SWITCH_PLAYER): {
-            m_statusText = "Scoring";
             m_onFinishCallback(getCurrentPlayer()->getColor(), false);
 
             switchPlayer();
@@ -86,14 +86,14 @@ PlayerController::getCurrentPlayer() const {
 void
 PlayerController::setOpponent(const std::shared_ptr<Player> &player) {
     m_players[1] = player;
-    m_players[1]->setColor(PieceColor::COLOR_RED);
+    m_players[1]->setColor(PieceOwner::PLAYER_ONE);
 }
 
 void PlayerController::setOnMoveListener(const OnMoveCallback& callback) {
     m_onMoveCallback = callback;
 }
 
-void PlayerController::setOnFinishListener(const OnFinishCallback& callback) {
+void PlayerController::setOnTurnFinishListener(const OnFinishCallback& callback) {
     m_onFinishCallback = callback;
 }
 
@@ -110,4 +110,9 @@ PlayerController::enqueueAction(EPlayerAction action) {
 bool
 PlayerController::isHumanMoving() const {
     return getCurrentPlayer()->isHuman();
+}
+
+std::string
+PlayerController::getCurrentStatus() {
+    return m_statusText;
 }

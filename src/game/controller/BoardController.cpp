@@ -10,7 +10,8 @@ void BoardController::setBoard(const std::shared_ptr<Board> &board) {
 }
 
 void
-BoardController::setupBoard() {
+BoardController::setupBoard(sf::Vector2f pos) {
+    m_sharedBoard->setPos(pos);
     m_sharedBoard->setup();
 }
 
@@ -20,7 +21,7 @@ BoardController::drawBoard(sf::RenderTarget &target) const {
 }
 
 bool
-BoardController::onMove(PieceColor color, std::array<int, 2> pair) {
+BoardController::onMove(PieceOwner color, std::array<int, 2> pair) {
     std::vector<int> runnerCells = m_sharedBoard->getPieces(color, PieceType::TYPE_RUNNER);
     //TODO: detect a win, maybe result object returned
     //TODO: add status label
@@ -48,7 +49,7 @@ BoardController::onMove(PieceColor color, std::array<int, 2> pair) {
 }
 
 bool
-BoardController::onFinish(PieceColor color, bool didBust) {
+BoardController::onFinish(PieceOwner color, bool didBust) {
     if (didBust) {
         m_sharedBoard->removeAllRunners(color);
     } else {
