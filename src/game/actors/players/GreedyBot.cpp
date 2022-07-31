@@ -5,19 +5,26 @@
 #include "GreedyBot.h"
 
 GreedyBot::GreedyBot()
-        : Player("Greedy Bot", false)
+        : Player("Greedy Bot", false), m_runnerMap{  }
 {}
 
 std::array<int, 2>
 GreedyBot::doSelection(PairSelector& pairSelector) {
     Selection roll = pairSelector.getRoll();
     Selection selection = {};
-    if (m_runner.empty()) {
+    if (m_runnerMap.size() < 3) {
         selection = getRandomSelection();
-        m_runner[0] = selection[0] + selection[1];
-        m_runner[1] = selection[1] + selection[2];
+        addRunner(selection[0] + selection[1]);
+        addRunner(selection[1] + selection[2]);
     } else {
-        selection = findMatchingSelection(pairSelector.getRoll());
+        for (auto &pair : m_runnerMap) {
+            selection = findMatchingSelection(pairSelector.getRoll(), pair.first);
+            if (selection[0] == 0 && selection[1] == 0) {
+                selection = getRandomSelection();
+            } else {
+                pair.second += 1;
+            }
+        }
     }
 
     for (int i : selection) {
@@ -29,7 +36,7 @@ GreedyBot::doSelection(PairSelector& pairSelector) {
 std::vector<PlayerAction>
 GreedyBot::generateActions() {
     std::vector<PlayerAction> actions;
-    size_t lengths[] = { 3, 5, 7, 9, 11, 13, 11, 9, 7, 5, 3 };
+    doRoll(actions);
     return actions;
 }
 
@@ -37,13 +44,26 @@ std::array<int, 4>
 GreedyBot::getRandomSelection() const {
     Selection arr { 0, 1, 2, 3 };
     std::random_shuffle(arr.begin(), arr.end());
-
     return arr;
 }
 
 std::array<int, 4>
-GreedyBot::findMatchingSelection(Selection roll) const {
-    for (int runnerSum : m_runner) {
-
+GreedyBot::findMatchingSelection(Selection roll, int sum) const {
+    for (int i = 0; i < roll.size(); i++) {
+        for (int j = 0; j < roll.size(); j++) {
+            if (i == j) continue;
+            int total = roll[i] + roll[j];
+            if (total == sum) {
+                return { i, j, 3 - i, 3 - j};
+            }
+        }
     }
+    return {};
+}
+
+void GreedyBot::addRunner(int sum) {
+    if (m_runnerMap.size() >= 3) {
+        return;
+    }
+    m_runnerMap.insert({ sum, 0 });
 }

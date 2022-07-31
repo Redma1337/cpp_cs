@@ -8,12 +8,13 @@
 #include "../Player.h"
 
 class GreedyBot : public Player  {
-    std::array<int, 3> m_runner;
+    std::map<int, int> m_runnerMap;
 public:
     GreedyBot();
     std::array<int, 2> doSelection(PairSelector& pairSelector) override;
     std::vector<PlayerAction> generateActions() override;
 
     Selection getRandomSelection() const;
-    Selection findMatchingSelection(Selection roll) const;
+    Selection findMatchingSelection(Selection roll, int sum) const;
+    void addRunner(int sum);
 };

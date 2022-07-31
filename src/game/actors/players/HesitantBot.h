@@ -9,8 +9,10 @@
 #include "../Player.h"
 
 class HesitantBot : public Player {
+    std::vector<int> m_runnerVec;
 public:
     HesitantBot();
     std::array<int, 2> doSelection(PairSelector& pairSelector) override;
     std::vector<PlayerAction> generateActions() override;
+    Selection getRandomSelection() const;
 };
