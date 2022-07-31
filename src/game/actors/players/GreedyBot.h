@@ -6,15 +6,14 @@
 
 #include "../../../graphics/components/misc/pairing/PairSelector.h"
 #include "../Player.h"
+#include "Bot.h"
 
-class GreedyBot : public Player  {
+class GreedyBot : public Player, Bot  {
     std::map<int, int> m_runnerMap;
 public:
     GreedyBot();
     std::array<int, 2> doSelection(PairSelector& pairSelector) override;
     std::vector<PlayerAction> generateActions() override;
 
-    Selection getRandomSelection() const;
-    Selection findMatchingSelection(Selection roll, int sum) const;
     void addRunner(int first, int second, Selection roll);
 };

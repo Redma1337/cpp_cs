@@ -8,7 +8,7 @@
 #include <array>
 
 RandomBot::RandomBot()
-        : Player("Random Bot", false)
+        : Player("Random Bot", false), Bot()
 {}
 
 std::array<int, 2>
@@ -31,13 +31,5 @@ RandomBot::generateActions() {
         switchPlayer(actions);
     }
     return actions;
-}
-
-std::array<int, 4>
-RandomBot::getRandomSelection() const {
-    Selection arr { 0, 1, 2, 3 };
-    std::random_shuffle(arr.begin(), arr.end());
-
-    return arr;
 }
 

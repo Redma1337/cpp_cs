@@ -24,7 +24,7 @@ PlayerController::update(PairSelector& selector) {
     PlayerAction currentAction = m_actionQueue.front();
     switch (currentAction) {
         case (PlayerAction::WAIT): {
-            std::this_thread::sleep_for(std::chrono::milliseconds(0));
+            std::this_thread::sleep_for(std::chrono::milliseconds(500));
             m_statusText = "Thinking...";
             break;
         }

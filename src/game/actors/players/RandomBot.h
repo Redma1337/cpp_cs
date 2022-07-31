@@ -7,12 +7,11 @@
 #include "../../../graphics/components/misc/pairing/PairSelector.h"
 #include "../PlayerEnums.h"
 #include "../Player.h"
+#include "Bot.h"
 
-class RandomBot : public Player {
+class RandomBot : public Player, Bot {
 public:
     RandomBot();
     std::array<int, 2> doSelection(PairSelector& pairSelector) override;
     ActionVec generateActions() override;
-
-    Selection getRandomSelection() const;
 };

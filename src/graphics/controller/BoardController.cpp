@@ -54,10 +54,6 @@ BoardController::onMove(PieceOwner color, std::array<int, 2> pair) {
         }
     }
 
-    if (busts >= 2) {
-        int x = 10;
-    }
-
     return busts >= 2 ? TurnResult::BUSTED : TurnResult::DEFAULT;
 }
 

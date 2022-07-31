@@ -5,7 +5,7 @@
 #include "HesitantBot.h"
 
 HesitantBot::HesitantBot()
-        : Player("Hesitant Bot", false)
+        : Player("Hesitant Bot", false), Bot()
 {}
 
 std::array<int, 2>
@@ -40,12 +40,4 @@ HesitantBot::generateActions() {
         m_runnerVec.clear();
     }
     return actions;
-}
-
-std::array<int, 4>
-HesitantBot::getRandomSelection() const {
-    Selection arr { 0, 1, 2, 3 };
-    std::random_shuffle(arr.begin(), arr.end());
-
-    return arr;
 }

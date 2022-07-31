@@ -12,7 +12,6 @@
 class Player {
 protected:
     typedef std::vector<PlayerAction> ActionVec;
-    typedef std::array<int, 4> Selection;
 
     sf::Color m_color;
     const std::string m_name;
