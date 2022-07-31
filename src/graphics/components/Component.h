@@ -40,7 +40,7 @@ public:
         );
     }
 
-    void setLocked(bool state) {
+    virtual void setLocked(bool state) {
         m_locked = state;
     }
 

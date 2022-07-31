@@ -16,7 +16,11 @@ HesitantBot::doSelection(PairSelector& pairSelector) {
     }
 
     for (int i = 0; i < rngSelection.size(); i+= 2) {
-        int sum = rngSelection[i] + rngSelection[i+1];
+        int firstRngIndex = rngSelection[i];
+        int secondRngIndex = rngSelection[i+1];
+
+        Selection roll = pairSelector.getRoll();
+        int sum = roll[firstRngIndex] + roll[secondRngIndex];
         auto sumFound = std::find(m_runnerVec.begin(), m_runnerVec.end(), sum);
         if (sumFound == m_runnerVec.end()) {
             m_runnerVec.push_back(sum);

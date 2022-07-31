@@ -22,16 +22,21 @@ BoardController::drawBoard(sf::RenderTarget &target) const {
 TurnResult
 BoardController::onMove(PieceOwner color, std::array<int, 2> pair) {
     std::vector<int> runnerCells = m_sharedBoard->getPieces(color, PieceType::TYPE_RUNNER);
+    std::vector<int> lockedCols = m_sharedBoard->getFinishedCols(color);
     //TODO: detect a win, maybe result object returned
 
     int busts = 0;
-
     for (int sum : pair) {
         auto sumFound = std::find(runnerCells.begin(), runnerCells.end(), sum);
         //the sum was found in existing runners
         if (sumFound != runnerCells.end()) {
             m_sharedBoard->moveRunner(color, sum);
         } else {
+            auto isLockedCol = std::find(lockedCols.begin(), lockedCols.end(), sum);
+            if (isLockedCol != lockedCols.end()) {
+                continue;
+            }
+
             //sum was none of the 3 runners
             if (runnerCells.size() >= 3) {
                 busts++;
@@ -47,6 +52,10 @@ BoardController::onMove(PieceOwner color, std::array<int, 2> pair) {
         if (wonCols.size() >= 3) {
             return TurnResult::WON;
         }
+    }
+
+    if (busts >= 2) {
+        int x = 10;
     }
 
     return busts >= 2 ? TurnResult::BUSTED : TurnResult::DEFAULT;

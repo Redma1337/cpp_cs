@@ -16,5 +16,5 @@ public:
 
     Selection getRandomSelection() const;
     Selection findMatchingSelection(Selection roll, int sum) const;
-    void addRunner(int sum);
+    void addRunner(int first, int second, Selection roll);
 };

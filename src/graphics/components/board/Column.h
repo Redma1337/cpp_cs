@@ -9,9 +9,9 @@
 #include "../Component.h"
 #include "../../utils/RoundedRectangleShape.h"
 
-typedef std::vector<Cell> CellContainer;
 
 class Column : public Component {
+    typedef std::vector<Cell> CellContainer;
     CellContainer m_cellContainer;
 
     sf::Text m_headerText;
@@ -32,6 +32,8 @@ public:
     void placeCamp(PieceOwner color);
     int removePiece(PieceOwner color, PieceType type);
     void moveRunner(PieceOwner color);
+
+    void setLocked(bool state) override;
 
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 };

@@ -14,8 +14,8 @@ GreedyBot::doSelection(PairSelector& pairSelector) {
     Selection selection = {};
     if (m_runnerMap.size() < 3) {
         selection = getRandomSelection();
-        addRunner(selection[0] + selection[1]);
-        addRunner(selection[1] + selection[2]);
+        addRunner(selection[0], selection[1], roll);
+        addRunner(selection[1], selection[2], roll);
     } else {
         for (auto &pair : m_runnerMap) {
             selection = findMatchingSelection(pairSelector.getRoll(), pair.first);
@@ -61,9 +61,10 @@ GreedyBot::findMatchingSelection(Selection roll, int sum) const {
     return {};
 }
 
-void GreedyBot::addRunner(int sum) {
+void GreedyBot::addRunner(int first, int second, Selection roll) {
     if (m_runnerMap.size() >= 3) {
         return;
     }
-    m_runnerMap.insert({ sum, 0 });
+    m_runnerMap.insert({ roll[first] + roll[second], 0 });
 }
+

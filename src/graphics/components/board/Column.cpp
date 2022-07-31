@@ -52,7 +52,7 @@ int
 Column::getPieceIndex(PieceOwner color, PieceType type) {
     for (int i = 0; i < m_cellContainer.size(); i++) {
         Cell &cell = m_cellContainer[i];
-        if (cell.hasPiece(color, type)) {
+        if (cell.hasPiece(color, type) && !isLocked()) {
             return i;
         }
     }
@@ -85,14 +85,13 @@ Column::placeRunner(PieceOwner color) {
         return;
     }
 
-    int campIndex = removePiece(color, PieceType::TYPE_CAMP);
+    int campIndex = getPieceIndex(color, PieceType::TYPE_CAMP);
     if (campIndex == -1) {
         m_cellContainer.back().setRunner(true);
     } else {
         int nextIndex = campIndex - 1;
         Cell &campCell = m_cellContainer[nextIndex];
         campCell.setRunner(true);
-        campCell.removeCamp(color);
 
         if (nextIndex == 0) {
             setLocked(true);
@@ -106,6 +105,7 @@ Column::placeCamp(PieceOwner color) {
         return;
     }
 
+    removePiece(color, PieceType::TYPE_CAMP);
     int index = removePiece(color, PieceType::TYPE_RUNNER);
     if (index != -1) {
         m_cellContainer[index].addCamp(color);
@@ -125,4 +125,10 @@ Column::moveRunner(PieceOwner color) {
     if (nextIndex == 0) {
         setLocked(true);
     }
+}
+
+void Column::setLocked(bool state) {
+    removePiece(PieceOwner::PLAYER_ONE, PieceType::TYPE_CAMP);
+    removePiece(PieceOwner::PLAYER_TWO, PieceType::TYPE_CAMP);
+    Component::setLocked(state);
 }
