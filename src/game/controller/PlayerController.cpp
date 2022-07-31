@@ -3,7 +3,7 @@
 //
 
 #include "PlayerController.h"
-#include "../Theme.h"
+#include "../../graphics/ColorTheme.h"
 
 PlayerController::PlayerController()
     :   m_currentPlayer{ 0 },
@@ -15,37 +15,37 @@ PlayerController::PlayerController()
 void
 PlayerController::update(PairSelector& selector) {
     if (m_actionQueue.empty()) {
-        std::vector<EPlayerAction> newActions = getCurrentPlayer()->generateActions();
-        std::for_each(newActions.begin(), newActions.end(), [this](EPlayerAction e) { m_actionQueue.push(e); });
+        std::vector<PlayerAction> newActions = getCurrentPlayer()->generateActions();
+        std::for_each(newActions.begin(), newActions.end(), [this](PlayerAction e) { m_actionQueue.push(e); });
         return;
     }
 
-    //TODO: make Actions a seperate thing, having an owner / runnable
     bool shouldQueueWipe = false;
-    EPlayerAction currentAction = m_actionQueue.front();
+    PlayerAction currentAction = m_actionQueue.front();
     switch (currentAction) {
-        case (EPlayerAction::WAIT): {
+        case (PlayerAction::WAIT): {
+            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
             m_statusText = "Thinking...";
-            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
             break;
         }
-        case (EPlayerAction::ROLL_DICE): {
+        case (PlayerAction::ROLL_DICE): {
             m_statusText = "Rolling dice";
             selector.reRoll();
             selector.setVisible(true);
             break;
         }
-        case (EPlayerAction::MAKE_SELECTION): {
-            //human players will just return the component, bots will imitate player use of the component
+        case (PlayerAction::MAKE_SELECTION): {
+            //human players will just return the component, bots will imitate actors use of the component
             std::array<int, 2> turnPair = getCurrentPlayer()->doSelection(selector);
             m_statusText = "Choosing " + std::to_string(turnPair[0]) + " and " + std::to_string(turnPair[1]);
 
-            //pass this data to the board controller, since its nothing that has to do with player controlling
+            //pass this data to the board controller, since its nothing that has to do with actors controlling
             TurnResult turnResult = m_onMoveCallback(m_currentPlayer, turnPair);
 
             switch (turnResult) {
                 case (TurnResult::WON): {
                     m_onGameFinishCallback(getCurrentPlayer()->getName());
+                    selector.setVisible(false);
                     break;
                 }
                 case (TurnResult::BUSTED): {
@@ -53,13 +53,15 @@ PlayerController::update(PairSelector& selector) {
                     m_onFinishCallback(m_currentPlayer, true);
                     switchPlayer();
                     shouldQueueWipe = true;
+                    selector.setVisible(false);
                     break;
                 }
             }
 
             break;
         }
-        case (EPlayerAction::SWITCH_PLAYER): {
+        case (PlayerAction::SWITCH_PLAYER): {
+            m_statusText = "Scoring";
             m_onFinishCallback(m_currentPlayer, false);
 
             switchPlayer();
@@ -91,19 +93,19 @@ PlayerController::switchPlayer() {
 
 
 
-const std::shared_ptr<Player>&
+const std::shared_ptr<Player>
 PlayerController::getCurrentPlayer() const {
     return m_players[(int) m_currentPlayer];
 }
 
 void
-PlayerController::setPlayer(PieceOwner playerPos, const std::shared_ptr<Player> &player) {
+PlayerController::setPlayer(PieceOwner playerPos, const SharedPlayer &player) {
     m_players[(int) playerPos] = player;
-    m_players[(int) playerPos]->setColor(playerPos == PieceOwner::PLAYER_ONE ? Theme::PLAYER_ONE_COLOR : Theme::PLAYER_TWO_COLOR);
+    m_players[(int) playerPos]->setColor(playerPos == PieceOwner::PLAYER_ONE ? ColorTheme::PLAYER_ONE_COLOR : ColorTheme::PLAYER_TWO_COLOR);
 }
 
 void
-PlayerController::enqueueAction(EPlayerAction action) {
+PlayerController::enqueueAction(PlayerAction action) {
     m_actionQueue.push(action);
 }
 
@@ -113,12 +115,12 @@ PlayerController::isHumanMoving() const {
 }
 
 std::string
-PlayerController::getCurrentStatus() {
-    return m_statusText;
+PlayerController::getCurrentStatus() const {
+    return getCurrentPlayer()->getName() + ": " + m_statusText;
 }
 
 void PlayerController::clearActions() {
-    m_actionQueue = std::queue<EPlayerAction>();
+    m_actionQueue = ActionQueue();
 }
 
 

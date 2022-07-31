@@ -4,12 +4,12 @@
 
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "view/GameView.h"
 #include "controller/PlayerController.h"
-#include "controller/BoardController.h"
-#include "controller/ViewController.h"
-#include "view/GameResultView.h"
-#include "view/GameSettingsView.h"
+#include "../graphics/controller/BoardController.h"
+#include "../graphics/controller/ViewController.h"
+#include "../graphics/display/views/GameView.h"
+#include "../graphics/display/views/GameResultView.h"
+#include "../graphics/display/views/GameSettingsView.h"
 
 class CantStop {
     BoardController m_boardController;
@@ -24,10 +24,7 @@ class CantStop {
     void onEvent(sf::Event emitter);
 public:
     CantStop(sf::ContextSettings ctxSettings);
-    void restart();
-
     void start();
     void setupBoardController();
-    void setupGameControlls();
     void setupRoutes();
 };

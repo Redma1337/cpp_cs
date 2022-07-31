@@ -4,23 +4,23 @@
 
 #pragma once
 
-#include "../player/Player.h"
-#include "../player/HumanPlayer.h"
 #include "DiceController.h"
-#include "EPlayerAction.h"
-#include "BoardController.h"
+#include "../../graphics/controller/BoardController.h"
 #include "CallbackAdapter.h"
+#include "../actors/Player.h"
 #include <queue>
 #include <chrono>
 #include <thread>
+#include <iostream>
 
 class PlayerController : public CallbackAdapter {
-    typedef std::shared_ptr<Player> PlayerArray[2];
+    typedef std::shared_ptr<Player> SharedPlayer;
+    typedef std::queue<PlayerAction> ActionQueue;
 
-    PlayerArray m_players;
+    SharedPlayer m_players[2];
     PieceOwner m_currentPlayer;
 
-    std::queue<EPlayerAction> m_actionQueue;
+    ActionQueue m_actionQueue;
 
     std::string m_statusText;
 public:
@@ -30,12 +30,12 @@ public:
     void switchPlayer();
     void reset();
 
-    void enqueueAction(EPlayerAction action);
+    void enqueueAction(PlayerAction action);
     void clearActions();
 
-    void setPlayer(PieceOwner playerPos, const std::shared_ptr<Player>& player);
-    const std::shared_ptr<Player>& getCurrentPlayer() const;
+    void setPlayer(PieceOwner playerPos, const SharedPlayer& player);
+    const SharedPlayer getCurrentPlayer() const;
 
     bool isHumanMoving() const;
-    std::string getCurrentStatus();
+    std::string getCurrentStatus() const;
 };

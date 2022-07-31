@@ -3,9 +3,7 @@
 //
 
 #pragma once
-
-#include "../player/EPieceOwner.h"
-#include "BoardController.h"
+#include "../actors/PlayerEnums.h"
 #include <functional>
 
 class CallbackAdapter {

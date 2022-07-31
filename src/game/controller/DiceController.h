@@ -14,4 +14,6 @@ class DiceController {
     static int rollSingleDice();
 public:
     static std::array<int, 4> rollDices();
+
+    static int getRandomInt(int lowerBound, int upperBound);
 };

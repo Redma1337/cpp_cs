@@ -1,7 +1,5 @@
 
 #include "game/CantStop.h"
-#include "game/player/HumanPlayer.h"
-#include "game/player/ComputerPlayer.h"
 
 int main() {
     sf::ContextSettings settings;
