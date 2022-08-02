@@ -24,7 +24,7 @@ PlayerController::update(PairSelector& selector) {
     PlayerAction currentAction = m_actionQueue.front();
     switch (currentAction) {
         case (PlayerAction::WAIT): {
-            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+            std::this_thread::sleep_for(std::chrono::milliseconds(1));
             m_statusText = "Thinking...";
             break;
         }
@@ -44,12 +44,13 @@ PlayerController::update(PairSelector& selector) {
 
             switch (turnResult) {
                 case (TurnResult::WON): {
-                    m_onGameFinishCallback(getCurrentPlayer()->getName());
+                    m_onGameFinishCallback(m_currentPlayer, getCurrentPlayer()->getName());
                     selector.setVisible(false);
                     break;
                 }
                 case (TurnResult::BUSTED): {
                     m_statusText = "Busted";
+                    getCurrentPlayer()->onBust();
                     m_onFinishCallback(m_currentPlayer, true);
                     switchPlayer();
                     shouldQueueWipe = true;
@@ -63,7 +64,6 @@ PlayerController::update(PairSelector& selector) {
         case (PlayerAction::SWITCH_PLAYER): {
             m_statusText = "Scoring";
             m_onFinishCallback(m_currentPlayer, false);
-
             switchPlayer();
             shouldQueueWipe = true;
 

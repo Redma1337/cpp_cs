@@ -41,3 +41,7 @@ HesitantBot::generateActions() {
     }
     return actions;
 }
+
+void HesitantBot::onBust() {
+    m_runnerVec.clear();
+}

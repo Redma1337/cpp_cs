@@ -7,9 +7,9 @@
 #include "../Component.h"
 #include "Column.h"
 
-typedef std::map<int, Column> ColumnContainer;
 
 class Board : public Component {
+    typedef std::map<int, Column> ColumnContainer;
     ColumnContainer m_columnContainer;
 public:
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
@@ -22,5 +22,4 @@ public:
     void placeRunner(PieceOwner color, int colIndex);
     void placeCamp(PieceOwner color, int colIndex);
     void removeAllRunners(PieceOwner color);
-    std::map<int, Column> getColumnContainer();
 };

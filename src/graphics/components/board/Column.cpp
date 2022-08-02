@@ -94,7 +94,7 @@ Column::placeRunner(PieceOwner color) {
         campCell.setRunner(true);
 
         if (nextIndex == 0) {
-            setLocked(true);
+            setLocked(color, true);
         }
     }
 }
@@ -123,13 +123,14 @@ Column::moveRunner(PieceOwner color) {
     nextCell.setRunner(true);
 
     if (nextIndex == 0) {
-        setLocked(true);
+        setLocked(color, true);
     }
 }
 
-void Column::setLocked(bool state) {
+void Column::setLocked(PieceOwner winner, bool state) {
     removePiece(PieceOwner::PLAYER_ONE, PieceType::TYPE_CAMP);
     removePiece(PieceOwner::PLAYER_TWO, PieceType::TYPE_CAMP);
+    m_cellContainer[0].addCamp(winner);
     Component::setLocked(state);
 }
 
@@ -137,3 +138,8 @@ std::vector<Cell>
 Column::getCellContainer(){
   return m_cellContainer;
 }
+
+bool Column::isWon(PieceOwner color) {
+    return isLocked() && m_cellContainer[0].hasCamp(color);
+}
+

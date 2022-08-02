@@ -19,3 +19,5 @@ HumanPlayer::generateActions() {
     actions.push_back(PlayerAction::IDLE);
     return actions;
 }
+
+void HumanPlayer::onBust() {}

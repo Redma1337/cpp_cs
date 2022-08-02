@@ -12,4 +12,5 @@ public:
 
     std::array<int, 2> doSelection(PairSelector& pairSelector) override;
     std::vector<PlayerAction> generateActions() override;
+    void onBust() override;
 };

@@ -23,7 +23,7 @@ GreedyBot::doSelection(PairSelector& pairSelector) {
         for (auto &pair : m_runnerMap) {
             if (i >= 2) continue;
             selection = findMatchingSelection(pairSelector.getRoll(), pair.first);
-            if (selection[0] == 0 && selection[1] == 0) {
+            if (selection[0] == -1) {
                 selection = getRandomSelection();
             } else {
                 pair.second += 1;
@@ -52,3 +52,6 @@ void GreedyBot::addRunner(int first, int second, Selection roll) {
     m_runnerMap.insert({ roll[first] + roll[second], 0 });
 }
 
+void GreedyBot::onBust() {
+    m_runnerMap.clear();
+}

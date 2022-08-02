@@ -33,7 +33,8 @@ public:
     int removePiece(PieceOwner color, PieceType type);
     void moveRunner(PieceOwner color);
 
-    void setLocked(bool state) override;
+    void setLocked(PieceOwner winner, bool state);
+    bool isWon(PieceOwner winner);
 
     std::vector<Cell> getCellContainer();
 

@@ -22,6 +22,7 @@ public:
 
     virtual std::array<int, 2> doSelection(PairSelector& pairSelector) = 0;
     virtual std::vector<PlayerAction> generateActions() = 0;
+    virtual void onBust() = 0;
 
     void doRoll(ActionVec& actions);
     void switchPlayer(ActionVec& actions);

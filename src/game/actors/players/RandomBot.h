@@ -14,4 +14,5 @@ public:
     RandomBot();
     std::array<int, 2> doSelection(PairSelector& pairSelector) override;
     ActionVec generateActions() override;
+    void onBust() override;
 };

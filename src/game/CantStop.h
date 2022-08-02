@@ -10,11 +10,15 @@
 #include "../graphics/display/views/GameView.h"
 #include "../graphics/display/views/GameResultView.h"
 #include "../graphics/display/views/GameSettingsView.h"
+#include "benchmarking/Benchmark.h"
 
 class CantStop {
     BoardController m_boardController;
     PlayerController m_playerController;
     ViewController m_viewController;
+
+    Benchmark<PieceOwner> m_benchmark;
+
     sf::RenderWindow m_window;
 
     std::shared_ptr<GameView> m_gameView;

@@ -23,7 +23,7 @@ Board::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 
 void
 Board::setup() {
-    m_columnContainer = {};
+    m_columnContainer.clear();
     size_t lengths[] = { 3, 5, 7, 9, 11, 13, 11, 9, 7, 5, 3 };
 
     float xOff = 0;
@@ -66,7 +66,7 @@ Board::getFinishedCols(PieceOwner color) {
     std::vector<int> result;
     for (auto const &pair : m_columnContainer) {
         Column col = pair.second;
-        if (col.isLocked()) {
+        if (col.isWon(color)) {
             result.push_back(pair.first);
         }
     }
@@ -108,7 +108,3 @@ Board::removeAllRunners(PieceOwner color) {
     }
 }
 
-std::map<int, Column>
-Board::getColumnContainer() {
-  return m_columnContainer;
-}

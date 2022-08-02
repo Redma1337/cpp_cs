@@ -14,6 +14,7 @@ public:
     GreedyBot();
     std::array<int, 2> doSelection(PairSelector& pairSelector) override;
     std::vector<PlayerAction> generateActions() override;
+    void onBust() override;
 
     void addRunner(int first, int second, Selection roll);
 };

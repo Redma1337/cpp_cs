@@ -1,5 +1,4 @@
 C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/CMakeFiles/sfml_test.dir
-C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/CMakeFiles/CellTest.dir
 C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/CMakeFiles/list_install_components.dir

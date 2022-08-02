@@ -67,56 +67,6 @@
 					<DistClean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="CellTest">
-				<Option output="C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/CellTest.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DSFML_STATIC"/>
-					<Add directory="C:/Users/weser/CLionProjects/cpp_cs/cmake-modules/SFML/include"/>
-					<Add directory="C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/_deps/googletest-src/googletest/include"/>
-					<Add directory="C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/_deps/googletest-src/googletest"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/Makefile&quot;  VERBOSE=1 CellTest"/>
-					<CompileFile command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="CellTest/fast">
-				<Option output="C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/CellTest.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DSFML_STATIC"/>
-					<Add directory="C:/Users/weser/CLionProjects/cpp_cs/cmake-modules/SFML/include"/>
-					<Add directory="C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/_deps/googletest-src/googletest/include"/>
-					<Add directory="C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/_deps/googletest-src/googletest"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"/>
-					<Add directory="C:/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/Makefile&quot;  VERBOSE=1 CellTest/fast"/>
-					<CompileFile command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug"/>
 				<Option type="4"/>
@@ -392,229 +342,177 @@
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/CantStop.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/CantStop.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/Player.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/Player.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/PlayerEnums.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/players/Bot.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/players/Bot.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/players/GreedyBot.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/players/GreedyBot.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/players/HesitantBot.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/players/HesitantBot.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/players/HumanPlayer.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/players/HumanPlayer.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/players/IntelligentBot.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/players/IntelligentBot.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/players/RandomBot.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/actors/players/RandomBot.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/controller/CallbackAdapter.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/controller/CallbackAdapter.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/controller/DiceController.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/controller/DiceController.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/controller/PlayerController.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/game/controller/PlayerController.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/ColorTheme.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/components/Component.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/components/IClickable.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/components/board/Board.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/components/board/Board.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/components/board/Cell.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/components/board/Cell.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/components/board/Column.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/components/board/Column.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/components/misc/Button.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/components/misc/Button.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/components/misc/pairing/PairSelector.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/components/misc/pairing/PairSelector.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/components/misc/pairing/Selector.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/controller/BoardController.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/controller/BoardController.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/controller/EPieceType.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/controller/ViewController.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/controller/ViewController.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/display/MenuEnum.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/display/View.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/display/views/BenchmarkResultView.cpp">
+			<Option target="sfml_test"/>
+		</Unit>
+		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/display/views/BenchmarkResultView.h">
+			<Option target="sfml_test"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/display/views/GameResultView.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/display/views/GameResultView.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/display/views/GameSettingsView.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/display/views/GameSettingsView.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/display/views/GameView.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/display/views/GameView.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/utils/RenderWrapper.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/utils/RenderWrapper.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/utils/RoundedRectangleShape.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/graphics/utils/RoundedRectangleShape.h">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/main.cpp">
 			<Option target="sfml_test"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/tests/bot_test.cpp">
 			<Option target="sfml_test"/>
-			<Option target="CellTest"/>
-		</Unit>
-		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/src/tests/components_test.cpp">
-			<Option target="CellTest"/>
 		</Unit>
 		<Unit filename="C:/Users/weser/CLionProjects/cpp_cs/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

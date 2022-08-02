@@ -13,6 +13,7 @@
 GameSettingsView::GameSettingsView(const OnGameStartCallback &callback)
     :   m_startGameCallback{ callback },
         m_startGameBtn("Play", {200, 50}, {400, 700}, true),
+        m_startBenchmarkBtn("Benchmark", {200, 50}, {400, 760}, true),
         m_selectorOne{ {200, 200}, {200, 350}, 1 },
         m_selectorTwo{ {200, 200}, {600, 350}, 1 }
 {
@@ -32,6 +33,12 @@ GameSettingsView::GameSettingsView(const OnGameStartCallback &callback)
         auto playerTwo = m_selectorTwo.getSelection()[0];
         m_startGameCallback(playerOne, playerTwo);
     });
+
+    m_startBenchmarkBtn.addActionListener([this](const sf::Vector2i &cord) {
+        auto playerOne = m_selectorOne.getSelection()[0];
+        auto playerTwo = m_selectorTwo.getSelection()[0];
+        m_startBenchmarkCallback(playerOne, playerTwo);
+    });
 }
 
 void GameSettingsView::draw(sf::RenderTarget &target, sf::RenderStates states) const {
@@ -45,6 +52,7 @@ void GameSettingsView::draw(sf::RenderTarget &target, sf::RenderStates states) c
 
     if (m_selectorOne.isSelectionFinished() && m_selectorTwo.isSelectionFinished()) {
         m_startGameBtn.draw(target, states);
+        m_startBenchmarkBtn.draw(target, states);
     }
 }
 
@@ -54,6 +62,7 @@ void GameSettingsView::onClick(const sf::Vector2i &cords) {
     m_selectorOne.onClick(cords);
     m_selectorTwo.onClick(cords);
     m_startGameBtn.onClick(cords);
+    m_startBenchmarkBtn.onClick(cords);
 }
 
 void GameSettingsView::reload() {
@@ -61,4 +70,7 @@ void GameSettingsView::reload() {
     m_selectorOne.reset();
 }
 
-
+void
+GameSettingsView::addBenchmarkStartedListener(const OnGameBenchmarkCallback &callback) {
+    m_startBenchmarkCallback = callback;
+}

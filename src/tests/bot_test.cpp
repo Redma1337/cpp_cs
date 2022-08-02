@@ -22,18 +22,15 @@ TEST_F(BotTest, BestSumOfRollTest) {
 TEST_F(BotTest, AdvanceScoreTest) {
     ibot_.addRunner(0, 1, { 2, 3, 1, 4});
     ibot_.advance(5);
-
-    for (const auto &pair : ibot_.getRunnerMap()) {
-        std::cout << pair.first << " " << pair.second << std::endl;
-    }
-
-    ASSERT_EQ(ibot_.getCurrentScore(), 3);
+    ASSERT_EQ(ibot_.getCurrentScore(), 9);
+    ibot_.resetScore();
     ibot_.addRunner(0, 1, { 5, 5, 1, 4});
     ibot_.advance(10);
-    ASSERT_EQ(ibot_.getCurrentScore(), 7);
+    ASSERT_EQ(ibot_.getCurrentScore(), 12);
+    ibot_.resetScore();
     ibot_.addRunner(0, 1, { 1, 1, 1, 4});
-    ibot_.mark(2);
-    ASSERT_EQ(ibot_.getCurrentScore(), 19);
+    ibot_.advance(2);
+    ASSERT_EQ(ibot_.getCurrentScore(), 18);
 }
 
 TEST_F(BotTest, getRandomSelection) {

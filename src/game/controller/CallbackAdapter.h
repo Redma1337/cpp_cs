@@ -9,7 +9,7 @@
 class CallbackAdapter {
     typedef std::function<TurnResult(PieceOwner color, std::array<int, 2> selection)> OnMoveCallback;
     typedef std::function<void(PieceOwner color, bool didBust)> OnTurnFinishCallback;
-    typedef std::function<void(std::string player)> OnGameFinishCallback;
+    typedef std::function<void(PieceOwner winner, std::string player)> OnGameFinishCallback;
 protected:
     OnMoveCallback m_onMoveCallback;
     OnTurnFinishCallback m_onFinishCallback;

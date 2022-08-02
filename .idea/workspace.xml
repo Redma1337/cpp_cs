@@ -13,7 +13,6 @@
       <config projectName="sfml_test" targetName="gmock_main" />
       <config projectName="sfml_test" targetName="gtest" />
       <config projectName="sfml_test" targetName="sfml_test" />
-      <config projectName="sfml_test" targetName="CellTest" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -22,27 +21,43 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0baa877b-8070-44f2-ac6d-f81cae353eb9" name="Changes" comment="fix: avoid narrowing conversion">
+    <list default="true" id="0baa877b-8070-44f2-ac6d-f81cae353eb9" name="Changes" comment="feat: better bot logic">
+      <change afterPath="$PROJECT_DIR$/src/game/benchmarking/Benchmark.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdC/a.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.22.3/CompilerIdCXX/a.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/sfml_test.dir/src/main.cpp.obj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/sfml_test.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sfml_test.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/actors/players/Bot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/actors/players/Bot.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/actors/players/Bot.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/actors/players/Bot.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/sfml_test.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sfml_test.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/CantStop.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/CantStop.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/CantStop.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/CantStop.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/actors/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/actors/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/actors/players/GreedyBot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/actors/players/GreedyBot.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/actors/players/GreedyBot.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/actors/players/GreedyBot.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/actors/players/HesitantBot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/actors/players/HesitantBot.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/actors/players/HesitantBot.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/actors/players/HesitantBot.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/actors/players/HumanPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/actors/players/HumanPlayer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/actors/players/HumanPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/actors/players/HumanPlayer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/actors/players/IntelligentBot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/actors/players/IntelligentBot.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/actors/players/IntelligentBot.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/actors/players/IntelligentBot.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/actors/players/RandomBot.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/actors/players/RandomBot.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/actors/players/RandomBot.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/actors/players/RandomBot.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/controller/CallbackAdapter.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/controller/CallbackAdapter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/controller/PlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/controller/PlayerController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphics/components/board/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/components/board/Board.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphics/components/board/Board.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/components/board/Board.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphics/components/board/Column.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/components/board/Column.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphics/components/board/Column.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/components/board/Column.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphics/display/views/GameSettingsView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/display/views/GameSettingsView.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphics/display/views/GameSettingsView.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/display/views/GameSettingsView.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/bot_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/bot_test.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/components_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/components_test.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +99,7 @@
     "cidr.known.project.marker": "true",
     "cmake.loaded.for.project": "true",
     "ctest.advertisement.all.test.configuration.is.created": "true",
-    "last_opened_file_path": "C:/Users/weser/CLionProjects/cpp/cpp_sfml_test",
+    "last_opened_file_path": "C:/Users/weser/CLionProjects/cpp_cs/src/game/benchmarking",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -95,6 +110,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\weser\CLionProjects\cpp_cs\src\game\benchmarking" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\model" />
       <recent name="C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src\game\controller" />
@@ -104,15 +122,9 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.sfml_test">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CellTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sfml_test" TARGET_NAME="CellTest" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sfml_test" RUN_TARGET_NAME="CellTest" TEST_MODE="SUITE_TEST">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sfml_test" TARGET_NAME="gmock" CONFIG_NAME="Debug">
@@ -140,7 +152,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All CTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_MODE="SUITE_TEST">
+    <configuration name="All CTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -276,7 +288,6 @@
       <item itemvalue="CMake Application.gtest" />
       <item itemvalue="CMake Application.gtest_main" />
       <item itemvalue="CTest Application.All CTest" />
-      <item itemvalue="Google Test.CellTest" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -310,6 +321,7 @@
       <workItem from="1658347401178" duration="3464000" />
       <workItem from="1658691775547" duration="2737000" />
       <workItem from="1658759489387" duration="3833000" />
+      <workItem from="1659474515667" duration="2145000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1656663662329</created>
@@ -381,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658694522907</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: better bot logic">
+      <created>1659466425455</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1659466425455</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,27 +428,35 @@
     <MESSAGE value="feat: resources directory" />
     <MESSAGE value="feat: dice pair selection" />
     <MESSAGE value="feat: Font loading &amp; string rendering" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Font loading &amp; string rendering" />
+    <MESSAGE value="feat: better bot logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: better bot logic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+        <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/game/event/Observable.cpp</url>
           <line>10</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+        <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/game/event/Observable.cpp</url>
           <line>17</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+        <line-breakpoint type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/game/event/Observable.cpp</url>
           <line>13</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">

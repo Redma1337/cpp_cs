@@ -6,7 +6,8 @@
 #include "../graphics/utils/RenderWrapper.h"
 
 CantStop::CantStop(sf::ContextSettings ctxSettings)
-    :   m_window(sf::VideoMode(1000, 850), "Can't Stop Game", sf::Style::Default, ctxSettings)
+    :   m_window(sf::VideoMode(1000, 850), "Can't Stop Game", sf::Style::Default, ctxSettings),
+        m_benchmark{}
 {
     //relative to cmake-build-debug/sfml_test.exe
     RenderWrapper::loadFont("../resources/fonts/Roboto-Medium.ttf");
@@ -28,9 +29,17 @@ CantStop::setupBoardController() {
         return m_boardController.onFinish(color, didBust);
     });
 
-    m_playerController.setOnGameFinishListener([&](std::string name){
+    m_playerController.setOnGameFinishListener([&](PieceOwner winner, std::string name){
         m_resultView->setWinner(name);
-        m_viewController.setCurrentView(Menu::GAME_WON);
+        if (m_benchmark.isRunning()) {
+            m_benchmark.commitRun(winner);
+        }
+
+        if (m_benchmark.isRunning()) {
+            m_viewController.setCurrentView(Menu::GAME_VIEW);
+        } else {
+            m_viewController.setCurrentView(Menu::GAME_WON);
+        }
     });
 }
 
@@ -44,6 +53,14 @@ CantStop::setupRoutes() {
 
     m_settingsView = std::make_shared<GameSettingsView>([&](auto one, auto two) {
         //handle the game start
+        m_playerController.setPlayer(PieceOwner::PLAYER_ONE, one);
+        m_playerController.setPlayer(PieceOwner::PLAYER_TWO, two);
+        m_viewController.setCurrentView(Menu::GAME_VIEW);
+    });
+
+    m_settingsView->addBenchmarkStartedListener([&](auto one, auto two) {
+        m_benchmark.setRunCount(5);
+        m_benchmark.setRunning(true);
         m_playerController.setPlayer(PieceOwner::PLAYER_ONE, one);
         m_playerController.setPlayer(PieceOwner::PLAYER_TWO, two);
         m_viewController.setCurrentView(Menu::GAME_VIEW);

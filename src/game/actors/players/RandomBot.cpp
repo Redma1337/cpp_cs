@@ -33,3 +33,5 @@ RandomBot::generateActions() {
     return actions;
 }
 
+void RandomBot::onBust() {}
+

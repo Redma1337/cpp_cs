@@ -8,8 +8,11 @@
 IntelligentBot::IntelligentBot()
         : Player("Intelligent Bot", false), Bot(),
             m_currentScore{ 0 },
-            m_markedVals{ 12, 10, 6, 6, 4, 2, 4, 6, 8, 10, 12 },
-            m_advancingVals{ 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6 }
+            m_runnerMap{ },
+            m_campMap{ },
+            m_markedVals{ 12, 10, 8, 6, 4, 2, 4, 6, 8, 10, 12 },
+            m_advancingVals{ 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6 },
+            m_colLengths{ 3, 5, 7, 9, 11, 13, 11, 9, 7, 5, 3 }
 {}
 
 std::array<int, 2>
@@ -20,7 +23,7 @@ IntelligentBot::doSelection(PairSelector& pairSelector) {
     if (m_runnerMap.size() < 3) {
         best = getBestSelection(roll, m_colValues);
 
-        std::cout << "Playing runner... | Roll was: ";
+        std::cout << "Adding runner... | Roll was: ";
         for (int i : roll) {
             std::cout << std::to_string(i);
         }
@@ -30,6 +33,8 @@ IntelligentBot::doSelection(PairSelector& pairSelector) {
         }
         std::cout << std::endl;
 
+        moveRunner(best[0], best[1], roll);
+        moveRunner(best[2], best[3], roll);
         addRunner(best[0], best[1], roll);
         addRunner(best[2], best[3], roll);
     } else {
@@ -46,7 +51,7 @@ IntelligentBot::doSelection(PairSelector& pairSelector) {
         }
         std::cout << std::endl << "Runner pool is: ";
         for (int i : runnerPool) {
-            std::cout << std::to_string(i);
+            std::cout << std::to_string(i) << " ";
         }
         std::cout << std::endl << "Choosing...: ";
         for (int i : best) {
@@ -74,10 +79,18 @@ IntelligentBot::generateActions() {
         doRoll(actions);
     } else {
         m_currentScore = 0;
-        m_runnerMap = {};
+        placeCamps();
+        m_runnerMap.clear();
         switchPlayer(actions);
     }
     return actions;
+}
+
+void
+IntelligentBot::placeCamps() {
+    for (const auto &pair : m_runnerMap) {
+        m_campMap[pair.first] = pair.second;
+    }
 }
 
 void
@@ -86,15 +99,22 @@ IntelligentBot::addRunner(int first, int second, Selection roll) {
         return;
     }
     int runnerSum = roll[first] + roll[second];
-    m_runnerMap.insert({ runnerSum, 0 });
+    m_runnerMap.insert({ runnerSum, m_campMap[runnerSum] });
     mark(runnerSum);
 }
 
 void
 IntelligentBot::moveRunner(int first, int second, Selection roll) {
     int runnerSum = roll[first] + roll[second];
-    m_runnerMap[runnerSum] += 1;
-    advance(runnerSum);
+    auto runnerFound = m_runnerMap.find(runnerSum);
+    if (runnerFound != m_runnerMap.end()) {
+        m_runnerMap[runnerSum] += 1;
+        if (m_runnerMap[runnerSum] >= m_colLengths[runnerSum-2]) {
+            m_wonCols.push_back(runnerSum);
+            m_runnerMap.erase(runnerSum);
+        }
+        advance(runnerSum);
+    }
 }
 
 void
@@ -111,8 +131,16 @@ IntelligentBot::getCurrentScore() const {
     return m_currentScore;
 }
 
+void
+IntelligentBot::resetScore() {
+    m_currentScore = 0;
+}
+
 std::vector<int>
 IntelligentBot::getBestSelection(std::array<int, 4> roll, std::vector<int> sumPool) {
+    for (int i : m_wonCols) {
+        std::remove(sumPool.begin(), sumPool.end(), i);
+    }
     int bestSum = 0;
     std::vector<int> result = { -1, -1 };
     for (int sum : sumPool) {
@@ -143,4 +171,9 @@ IntelligentBot::getBestSelection(std::array<int, 4> roll, std::vector<int> sumPo
 std::map<int, int>
 IntelligentBot::getRunnerMap() const {
     return m_runnerMap;
+}
+
+void IntelligentBot::onBust() {
+    m_runnerMap.clear();
+    m_currentScore = 0;
 }
