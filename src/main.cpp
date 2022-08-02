@@ -1,5 +1,6 @@
 
 #include "game/CantStop.h"
+#include <unordered_set>
 
 int main() {
     sf::ContextSettings settings;
@@ -9,3 +10,5 @@ int main() {
     cantStop.start();
     return 0;
 }
+
+

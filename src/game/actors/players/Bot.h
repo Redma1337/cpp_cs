@@ -6,6 +6,7 @@
 #include <array>
 #include <vector>
 #include <algorithm>
+#include <unordered_set>
 
 class Bot {
 protected:
@@ -17,4 +18,7 @@ public:
     Selection findMatchingSelection(Selection roll, int sum) const;
     Selection getBestSumOfRoll(Selection roll) const;
     Selection getRandomSelection() const;
+
+    std::vector<int> getBestSelection(std::vector<int> roll);
+    std::vector<int> getFirstPair(std::vector<int> roll, int sum);
 };

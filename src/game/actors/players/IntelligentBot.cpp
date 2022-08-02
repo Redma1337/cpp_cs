@@ -16,7 +16,6 @@ IntelligentBot::doSelection(PairSelector& pairSelector) {
     Selection roll = pairSelector.getRoll();
     Selection selection = {};
 
-
     if (m_runnerMap.size() < 3) {
         selection = getBestSumOfRoll(roll);
         if (selection[0] == -1) {
