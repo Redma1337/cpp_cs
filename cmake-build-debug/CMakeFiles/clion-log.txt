@@ -1,5 +1,5 @@
-"C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/mingw32/bin/mingw32-make.exe -DCMAKE_C_COMPILER=C:/mingw32/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/mingw32/bin/g++.exe -G "CodeBlocks - MinGW Makefiles" -S C:\Users\weser\CLionProjects\cpp\cpp_sfml_test -B C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\cmake-build-debug
--- Found SFML 2.5.1 in C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/cmake-modules/SFML/lib/cmake/SFML
+"C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/mingw32/bin/mingw32-make.exe -DCMAKE_C_COMPILER=C:/mingw32/bin/gcc.exe -DCMAKE_CXX_COMPILER=C:/mingw32/bin/g++.exe -G "CodeBlocks - MinGW Makefiles" -S C:\Users\weser\CLionProjects\cpp_cs -B C:\Users\weser\CLionProjects\cpp_cs\cmake-build-debug
+-- Found SFML 2.5.1 in C:/Users/weser/CLionProjects/cpp_cs/cmake-modules/SFML/lib/cmake/SFML
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/weser/CLionProjects/cpp/cpp_sfml_test/cmake-build-debug
+-- Build files have been written to: C:/Users/weser/CLionProjects/cpp_cs/cmake-build-debug

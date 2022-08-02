@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -E rm
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\weser\CLionProjects\cpp\cpp_sfml_test
+CMAKE_SOURCE_DIR = C:\Users\weser\CLionProjects\cpp_cs
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\weser\CLionProjects\cpp_cs\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -84,11 +84,56 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	"C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	"C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	"C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\cmake-build-debug\CMakeFiles C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\weser\CLionProjects\cpp_cs\cmake-build-debug\CMakeFiles C:\Users\weser\CLionProjects\cpp_cs\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\weser\CLionProjects\cpp_cs\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,12 +173,78 @@ sfml_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/build
 .PHONY : sfml_test/fast
 
+#=============================================================================
+# Target rules for targets named CellTest
+
+# Build rule for target.
+CellTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CellTest
+.PHONY : CellTest
+
+# fast build rule for target.
+CellTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/build
+.PHONY : CellTest/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
 src/game/CantStop.obj: src/game/CantStop.cpp.obj
 .PHONY : src/game/CantStop.obj
 
 # target to build an object file
 src/game/CantStop.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/CantStop.cpp.obj
 .PHONY : src/game/CantStop.cpp.obj
 
 src/game/CantStop.i: src/game/CantStop.cpp.i
@@ -142,6 +253,7 @@ src/game/CantStop.i: src/game/CantStop.cpp.i
 # target to preprocess a source file
 src/game/CantStop.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/CantStop.cpp.i
 .PHONY : src/game/CantStop.cpp.i
 
 src/game/CantStop.s: src/game/CantStop.cpp.s
@@ -150,151 +262,224 @@ src/game/CantStop.s: src/game/CantStop.cpp.s
 # target to generate assembly for a file
 src/game/CantStop.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/CantStop.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/CantStop.cpp.s
 .PHONY : src/game/CantStop.cpp.s
 
-src/game/components/Board.obj: src/game/components/Board.cpp.obj
-.PHONY : src/game/components/Board.obj
+src/game/actors/Player.obj: src/game/actors/Player.cpp.obj
+.PHONY : src/game/actors/Player.obj
 
 # target to build an object file
-src/game/components/Board.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Board.cpp.obj
-.PHONY : src/game/components/Board.cpp.obj
+src/game/actors/Player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/Player.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/Player.cpp.obj
+.PHONY : src/game/actors/Player.cpp.obj
 
-src/game/components/Board.i: src/game/components/Board.cpp.i
-.PHONY : src/game/components/Board.i
+src/game/actors/Player.i: src/game/actors/Player.cpp.i
+.PHONY : src/game/actors/Player.i
 
 # target to preprocess a source file
-src/game/components/Board.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Board.cpp.i
-.PHONY : src/game/components/Board.cpp.i
+src/game/actors/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/Player.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/Player.cpp.i
+.PHONY : src/game/actors/Player.cpp.i
 
-src/game/components/Board.s: src/game/components/Board.cpp.s
-.PHONY : src/game/components/Board.s
+src/game/actors/Player.s: src/game/actors/Player.cpp.s
+.PHONY : src/game/actors/Player.s
 
 # target to generate assembly for a file
-src/game/components/Board.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Board.cpp.s
-.PHONY : src/game/components/Board.cpp.s
+src/game/actors/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/Player.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/Player.cpp.s
+.PHONY : src/game/actors/Player.cpp.s
 
-src/game/components/Button.obj: src/game/components/Button.cpp.obj
-.PHONY : src/game/components/Button.obj
+src/game/actors/players/Bot.obj: src/game/actors/players/Bot.cpp.obj
+.PHONY : src/game/actors/players/Bot.obj
 
 # target to build an object file
-src/game/components/Button.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Button.cpp.obj
-.PHONY : src/game/components/Button.cpp.obj
+src/game/actors/players/Bot.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/Bot.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/Bot.cpp.obj
+.PHONY : src/game/actors/players/Bot.cpp.obj
 
-src/game/components/Button.i: src/game/components/Button.cpp.i
-.PHONY : src/game/components/Button.i
+src/game/actors/players/Bot.i: src/game/actors/players/Bot.cpp.i
+.PHONY : src/game/actors/players/Bot.i
 
 # target to preprocess a source file
-src/game/components/Button.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Button.cpp.i
-.PHONY : src/game/components/Button.cpp.i
+src/game/actors/players/Bot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/Bot.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/Bot.cpp.i
+.PHONY : src/game/actors/players/Bot.cpp.i
 
-src/game/components/Button.s: src/game/components/Button.cpp.s
-.PHONY : src/game/components/Button.s
+src/game/actors/players/Bot.s: src/game/actors/players/Bot.cpp.s
+.PHONY : src/game/actors/players/Bot.s
 
 # target to generate assembly for a file
-src/game/components/Button.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Button.cpp.s
-.PHONY : src/game/components/Button.cpp.s
+src/game/actors/players/Bot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/Bot.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/Bot.cpp.s
+.PHONY : src/game/actors/players/Bot.cpp.s
 
-src/game/components/Cell.obj: src/game/components/Cell.cpp.obj
-.PHONY : src/game/components/Cell.obj
+src/game/actors/players/GreedyBot.obj: src/game/actors/players/GreedyBot.cpp.obj
+.PHONY : src/game/actors/players/GreedyBot.obj
 
 # target to build an object file
-src/game/components/Cell.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Cell.cpp.obj
-.PHONY : src/game/components/Cell.cpp.obj
+src/game/actors/players/GreedyBot.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/GreedyBot.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/GreedyBot.cpp.obj
+.PHONY : src/game/actors/players/GreedyBot.cpp.obj
 
-src/game/components/Cell.i: src/game/components/Cell.cpp.i
-.PHONY : src/game/components/Cell.i
+src/game/actors/players/GreedyBot.i: src/game/actors/players/GreedyBot.cpp.i
+.PHONY : src/game/actors/players/GreedyBot.i
 
 # target to preprocess a source file
-src/game/components/Cell.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Cell.cpp.i
-.PHONY : src/game/components/Cell.cpp.i
+src/game/actors/players/GreedyBot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/GreedyBot.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/GreedyBot.cpp.i
+.PHONY : src/game/actors/players/GreedyBot.cpp.i
 
-src/game/components/Cell.s: src/game/components/Cell.cpp.s
-.PHONY : src/game/components/Cell.s
+src/game/actors/players/GreedyBot.s: src/game/actors/players/GreedyBot.cpp.s
+.PHONY : src/game/actors/players/GreedyBot.s
 
 # target to generate assembly for a file
-src/game/components/Cell.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Cell.cpp.s
-.PHONY : src/game/components/Cell.cpp.s
+src/game/actors/players/GreedyBot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/GreedyBot.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/GreedyBot.cpp.s
+.PHONY : src/game/actors/players/GreedyBot.cpp.s
 
-src/game/components/Column.obj: src/game/components/Column.cpp.obj
-.PHONY : src/game/components/Column.obj
+src/game/actors/players/HesitantBot.obj: src/game/actors/players/HesitantBot.cpp.obj
+.PHONY : src/game/actors/players/HesitantBot.obj
 
 # target to build an object file
-src/game/components/Column.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Column.cpp.obj
-.PHONY : src/game/components/Column.cpp.obj
+src/game/actors/players/HesitantBot.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/HesitantBot.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/HesitantBot.cpp.obj
+.PHONY : src/game/actors/players/HesitantBot.cpp.obj
 
-src/game/components/Column.i: src/game/components/Column.cpp.i
-.PHONY : src/game/components/Column.i
+src/game/actors/players/HesitantBot.i: src/game/actors/players/HesitantBot.cpp.i
+.PHONY : src/game/actors/players/HesitantBot.i
 
 # target to preprocess a source file
-src/game/components/Column.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Column.cpp.i
-.PHONY : src/game/components/Column.cpp.i
+src/game/actors/players/HesitantBot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/HesitantBot.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/HesitantBot.cpp.i
+.PHONY : src/game/actors/players/HesitantBot.cpp.i
 
-src/game/components/Column.s: src/game/components/Column.cpp.s
-.PHONY : src/game/components/Column.s
+src/game/actors/players/HesitantBot.s: src/game/actors/players/HesitantBot.cpp.s
+.PHONY : src/game/actors/players/HesitantBot.s
 
 # target to generate assembly for a file
-src/game/components/Column.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/Column.cpp.s
-.PHONY : src/game/components/Column.cpp.s
+src/game/actors/players/HesitantBot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/HesitantBot.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/HesitantBot.cpp.s
+.PHONY : src/game/actors/players/HesitantBot.cpp.s
 
-src/game/components/PairSelector.obj: src/game/components/PairSelector.cpp.obj
-.PHONY : src/game/components/PairSelector.obj
+src/game/actors/players/HumanPlayer.obj: src/game/actors/players/HumanPlayer.cpp.obj
+.PHONY : src/game/actors/players/HumanPlayer.obj
 
 # target to build an object file
-src/game/components/PairSelector.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/PairSelector.cpp.obj
-.PHONY : src/game/components/PairSelector.cpp.obj
+src/game/actors/players/HumanPlayer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/HumanPlayer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/HumanPlayer.cpp.obj
+.PHONY : src/game/actors/players/HumanPlayer.cpp.obj
 
-src/game/components/PairSelector.i: src/game/components/PairSelector.cpp.i
-.PHONY : src/game/components/PairSelector.i
+src/game/actors/players/HumanPlayer.i: src/game/actors/players/HumanPlayer.cpp.i
+.PHONY : src/game/actors/players/HumanPlayer.i
 
 # target to preprocess a source file
-src/game/components/PairSelector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/PairSelector.cpp.i
-.PHONY : src/game/components/PairSelector.cpp.i
+src/game/actors/players/HumanPlayer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/HumanPlayer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/HumanPlayer.cpp.i
+.PHONY : src/game/actors/players/HumanPlayer.cpp.i
 
-src/game/components/PairSelector.s: src/game/components/PairSelector.cpp.s
-.PHONY : src/game/components/PairSelector.s
+src/game/actors/players/HumanPlayer.s: src/game/actors/players/HumanPlayer.cpp.s
+.PHONY : src/game/actors/players/HumanPlayer.s
 
 # target to generate assembly for a file
-src/game/components/PairSelector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/components/PairSelector.cpp.s
-.PHONY : src/game/components/PairSelector.cpp.s
+src/game/actors/players/HumanPlayer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/HumanPlayer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/HumanPlayer.cpp.s
+.PHONY : src/game/actors/players/HumanPlayer.cpp.s
 
-src/game/controller/BoardController.obj: src/game/controller/BoardController.cpp.obj
-.PHONY : src/game/controller/BoardController.obj
+src/game/actors/players/IntelligentBot.obj: src/game/actors/players/IntelligentBot.cpp.obj
+.PHONY : src/game/actors/players/IntelligentBot.obj
 
 # target to build an object file
-src/game/controller/BoardController.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/BoardController.cpp.obj
-.PHONY : src/game/controller/BoardController.cpp.obj
+src/game/actors/players/IntelligentBot.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/IntelligentBot.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/IntelligentBot.cpp.obj
+.PHONY : src/game/actors/players/IntelligentBot.cpp.obj
 
-src/game/controller/BoardController.i: src/game/controller/BoardController.cpp.i
-.PHONY : src/game/controller/BoardController.i
+src/game/actors/players/IntelligentBot.i: src/game/actors/players/IntelligentBot.cpp.i
+.PHONY : src/game/actors/players/IntelligentBot.i
 
 # target to preprocess a source file
-src/game/controller/BoardController.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/BoardController.cpp.i
-.PHONY : src/game/controller/BoardController.cpp.i
+src/game/actors/players/IntelligentBot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/IntelligentBot.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/IntelligentBot.cpp.i
+.PHONY : src/game/actors/players/IntelligentBot.cpp.i
 
-src/game/controller/BoardController.s: src/game/controller/BoardController.cpp.s
-.PHONY : src/game/controller/BoardController.s
+src/game/actors/players/IntelligentBot.s: src/game/actors/players/IntelligentBot.cpp.s
+.PHONY : src/game/actors/players/IntelligentBot.s
 
 # target to generate assembly for a file
-src/game/controller/BoardController.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/BoardController.cpp.s
-.PHONY : src/game/controller/BoardController.cpp.s
+src/game/actors/players/IntelligentBot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/IntelligentBot.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/IntelligentBot.cpp.s
+.PHONY : src/game/actors/players/IntelligentBot.cpp.s
+
+src/game/actors/players/RandomBot.obj: src/game/actors/players/RandomBot.cpp.obj
+.PHONY : src/game/actors/players/RandomBot.obj
+
+# target to build an object file
+src/game/actors/players/RandomBot.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/RandomBot.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/RandomBot.cpp.obj
+.PHONY : src/game/actors/players/RandomBot.cpp.obj
+
+src/game/actors/players/RandomBot.i: src/game/actors/players/RandomBot.cpp.i
+.PHONY : src/game/actors/players/RandomBot.i
+
+# target to preprocess a source file
+src/game/actors/players/RandomBot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/RandomBot.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/RandomBot.cpp.i
+.PHONY : src/game/actors/players/RandomBot.cpp.i
+
+src/game/actors/players/RandomBot.s: src/game/actors/players/RandomBot.cpp.s
+.PHONY : src/game/actors/players/RandomBot.s
+
+# target to generate assembly for a file
+src/game/actors/players/RandomBot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/actors/players/RandomBot.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/actors/players/RandomBot.cpp.s
+.PHONY : src/game/actors/players/RandomBot.cpp.s
+
+src/game/controller/CallbackAdapter.obj: src/game/controller/CallbackAdapter.cpp.obj
+.PHONY : src/game/controller/CallbackAdapter.obj
+
+# target to build an object file
+src/game/controller/CallbackAdapter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/CallbackAdapter.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/controller/CallbackAdapter.cpp.obj
+.PHONY : src/game/controller/CallbackAdapter.cpp.obj
+
+src/game/controller/CallbackAdapter.i: src/game/controller/CallbackAdapter.cpp.i
+.PHONY : src/game/controller/CallbackAdapter.i
+
+# target to preprocess a source file
+src/game/controller/CallbackAdapter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/CallbackAdapter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/controller/CallbackAdapter.cpp.i
+.PHONY : src/game/controller/CallbackAdapter.cpp.i
+
+src/game/controller/CallbackAdapter.s: src/game/controller/CallbackAdapter.cpp.s
+.PHONY : src/game/controller/CallbackAdapter.s
+
+# target to generate assembly for a file
+src/game/controller/CallbackAdapter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/CallbackAdapter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/controller/CallbackAdapter.cpp.s
+.PHONY : src/game/controller/CallbackAdapter.cpp.s
 
 src/game/controller/DiceController.obj: src/game/controller/DiceController.cpp.obj
 .PHONY : src/game/controller/DiceController.obj
@@ -302,6 +487,7 @@ src/game/controller/DiceController.obj: src/game/controller/DiceController.cpp.o
 # target to build an object file
 src/game/controller/DiceController.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/DiceController.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/controller/DiceController.cpp.obj
 .PHONY : src/game/controller/DiceController.cpp.obj
 
 src/game/controller/DiceController.i: src/game/controller/DiceController.cpp.i
@@ -310,6 +496,7 @@ src/game/controller/DiceController.i: src/game/controller/DiceController.cpp.i
 # target to preprocess a source file
 src/game/controller/DiceController.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/DiceController.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/controller/DiceController.cpp.i
 .PHONY : src/game/controller/DiceController.cpp.i
 
 src/game/controller/DiceController.s: src/game/controller/DiceController.cpp.s
@@ -318,6 +505,7 @@ src/game/controller/DiceController.s: src/game/controller/DiceController.cpp.s
 # target to generate assembly for a file
 src/game/controller/DiceController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/DiceController.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/controller/DiceController.cpp.s
 .PHONY : src/game/controller/DiceController.cpp.s
 
 src/game/controller/PlayerController.obj: src/game/controller/PlayerController.cpp.obj
@@ -326,6 +514,7 @@ src/game/controller/PlayerController.obj: src/game/controller/PlayerController.c
 # target to build an object file
 src/game/controller/PlayerController.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/PlayerController.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/controller/PlayerController.cpp.obj
 .PHONY : src/game/controller/PlayerController.cpp.obj
 
 src/game/controller/PlayerController.i: src/game/controller/PlayerController.cpp.i
@@ -334,6 +523,7 @@ src/game/controller/PlayerController.i: src/game/controller/PlayerController.cpp
 # target to preprocess a source file
 src/game/controller/PlayerController.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/PlayerController.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/controller/PlayerController.cpp.i
 .PHONY : src/game/controller/PlayerController.cpp.i
 
 src/game/controller/PlayerController.s: src/game/controller/PlayerController.cpp.s
@@ -342,175 +532,332 @@ src/game/controller/PlayerController.s: src/game/controller/PlayerController.cpp
 # target to generate assembly for a file
 src/game/controller/PlayerController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/PlayerController.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/game/controller/PlayerController.cpp.s
 .PHONY : src/game/controller/PlayerController.cpp.s
 
-src/game/controller/ViewController.obj: src/game/controller/ViewController.cpp.obj
-.PHONY : src/game/controller/ViewController.obj
+src/graphics/components/board/Board.obj: src/graphics/components/board/Board.cpp.obj
+.PHONY : src/graphics/components/board/Board.obj
 
 # target to build an object file
-src/game/controller/ViewController.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/ViewController.cpp.obj
-.PHONY : src/game/controller/ViewController.cpp.obj
+src/graphics/components/board/Board.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/board/Board.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/board/Board.cpp.obj
+.PHONY : src/graphics/components/board/Board.cpp.obj
 
-src/game/controller/ViewController.i: src/game/controller/ViewController.cpp.i
-.PHONY : src/game/controller/ViewController.i
+src/graphics/components/board/Board.i: src/graphics/components/board/Board.cpp.i
+.PHONY : src/graphics/components/board/Board.i
 
 # target to preprocess a source file
-src/game/controller/ViewController.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/ViewController.cpp.i
-.PHONY : src/game/controller/ViewController.cpp.i
+src/graphics/components/board/Board.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/board/Board.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/board/Board.cpp.i
+.PHONY : src/graphics/components/board/Board.cpp.i
 
-src/game/controller/ViewController.s: src/game/controller/ViewController.cpp.s
-.PHONY : src/game/controller/ViewController.s
+src/graphics/components/board/Board.s: src/graphics/components/board/Board.cpp.s
+.PHONY : src/graphics/components/board/Board.s
 
 # target to generate assembly for a file
-src/game/controller/ViewController.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/controller/ViewController.cpp.s
-.PHONY : src/game/controller/ViewController.cpp.s
+src/graphics/components/board/Board.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/board/Board.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/board/Board.cpp.s
+.PHONY : src/graphics/components/board/Board.cpp.s
 
-src/game/player/ComputerPlayer.obj: src/game/player/ComputerPlayer.cpp.obj
-.PHONY : src/game/player/ComputerPlayer.obj
+src/graphics/components/board/Cell.obj: src/graphics/components/board/Cell.cpp.obj
+.PHONY : src/graphics/components/board/Cell.obj
 
 # target to build an object file
-src/game/player/ComputerPlayer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/ComputerPlayer.cpp.obj
-.PHONY : src/game/player/ComputerPlayer.cpp.obj
+src/graphics/components/board/Cell.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/board/Cell.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/board/Cell.cpp.obj
+.PHONY : src/graphics/components/board/Cell.cpp.obj
 
-src/game/player/ComputerPlayer.i: src/game/player/ComputerPlayer.cpp.i
-.PHONY : src/game/player/ComputerPlayer.i
+src/graphics/components/board/Cell.i: src/graphics/components/board/Cell.cpp.i
+.PHONY : src/graphics/components/board/Cell.i
 
 # target to preprocess a source file
-src/game/player/ComputerPlayer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/ComputerPlayer.cpp.i
-.PHONY : src/game/player/ComputerPlayer.cpp.i
+src/graphics/components/board/Cell.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/board/Cell.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/board/Cell.cpp.i
+.PHONY : src/graphics/components/board/Cell.cpp.i
 
-src/game/player/ComputerPlayer.s: src/game/player/ComputerPlayer.cpp.s
-.PHONY : src/game/player/ComputerPlayer.s
+src/graphics/components/board/Cell.s: src/graphics/components/board/Cell.cpp.s
+.PHONY : src/graphics/components/board/Cell.s
 
 # target to generate assembly for a file
-src/game/player/ComputerPlayer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/ComputerPlayer.cpp.s
-.PHONY : src/game/player/ComputerPlayer.cpp.s
+src/graphics/components/board/Cell.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/board/Cell.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/board/Cell.cpp.s
+.PHONY : src/graphics/components/board/Cell.cpp.s
 
-src/game/player/HumanPlayer.obj: src/game/player/HumanPlayer.cpp.obj
-.PHONY : src/game/player/HumanPlayer.obj
+src/graphics/components/board/Column.obj: src/graphics/components/board/Column.cpp.obj
+.PHONY : src/graphics/components/board/Column.obj
 
 # target to build an object file
-src/game/player/HumanPlayer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/HumanPlayer.cpp.obj
-.PHONY : src/game/player/HumanPlayer.cpp.obj
+src/graphics/components/board/Column.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/board/Column.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/board/Column.cpp.obj
+.PHONY : src/graphics/components/board/Column.cpp.obj
 
-src/game/player/HumanPlayer.i: src/game/player/HumanPlayer.cpp.i
-.PHONY : src/game/player/HumanPlayer.i
+src/graphics/components/board/Column.i: src/graphics/components/board/Column.cpp.i
+.PHONY : src/graphics/components/board/Column.i
 
 # target to preprocess a source file
-src/game/player/HumanPlayer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/HumanPlayer.cpp.i
-.PHONY : src/game/player/HumanPlayer.cpp.i
+src/graphics/components/board/Column.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/board/Column.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/board/Column.cpp.i
+.PHONY : src/graphics/components/board/Column.cpp.i
 
-src/game/player/HumanPlayer.s: src/game/player/HumanPlayer.cpp.s
-.PHONY : src/game/player/HumanPlayer.s
+src/graphics/components/board/Column.s: src/graphics/components/board/Column.cpp.s
+.PHONY : src/graphics/components/board/Column.s
 
 # target to generate assembly for a file
-src/game/player/HumanPlayer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/HumanPlayer.cpp.s
-.PHONY : src/game/player/HumanPlayer.cpp.s
+src/graphics/components/board/Column.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/board/Column.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/board/Column.cpp.s
+.PHONY : src/graphics/components/board/Column.cpp.s
 
-src/game/player/Player.obj: src/game/player/Player.cpp.obj
-.PHONY : src/game/player/Player.obj
+src/graphics/components/misc/Button.obj: src/graphics/components/misc/Button.cpp.obj
+.PHONY : src/graphics/components/misc/Button.obj
 
 # target to build an object file
-src/game/player/Player.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/Player.cpp.obj
-.PHONY : src/game/player/Player.cpp.obj
+src/graphics/components/misc/Button.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/misc/Button.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/misc/Button.cpp.obj
+.PHONY : src/graphics/components/misc/Button.cpp.obj
 
-src/game/player/Player.i: src/game/player/Player.cpp.i
-.PHONY : src/game/player/Player.i
+src/graphics/components/misc/Button.i: src/graphics/components/misc/Button.cpp.i
+.PHONY : src/graphics/components/misc/Button.i
 
 # target to preprocess a source file
-src/game/player/Player.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/Player.cpp.i
-.PHONY : src/game/player/Player.cpp.i
+src/graphics/components/misc/Button.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/misc/Button.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/misc/Button.cpp.i
+.PHONY : src/graphics/components/misc/Button.cpp.i
 
-src/game/player/Player.s: src/game/player/Player.cpp.s
-.PHONY : src/game/player/Player.s
+src/graphics/components/misc/Button.s: src/graphics/components/misc/Button.cpp.s
+.PHONY : src/graphics/components/misc/Button.s
 
 # target to generate assembly for a file
-src/game/player/Player.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/player/Player.cpp.s
-.PHONY : src/game/player/Player.cpp.s
+src/graphics/components/misc/Button.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/misc/Button.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/misc/Button.cpp.s
+.PHONY : src/graphics/components/misc/Button.cpp.s
 
-src/game/view/GameView.obj: src/game/view/GameView.cpp.obj
-.PHONY : src/game/view/GameView.obj
+src/graphics/components/misc/pairing/PairSelector.obj: src/graphics/components/misc/pairing/PairSelector.cpp.obj
+.PHONY : src/graphics/components/misc/pairing/PairSelector.obj
 
 # target to build an object file
-src/game/view/GameView.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.obj
-.PHONY : src/game/view/GameView.cpp.obj
+src/graphics/components/misc/pairing/PairSelector.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/misc/pairing/PairSelector.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/misc/pairing/PairSelector.cpp.obj
+.PHONY : src/graphics/components/misc/pairing/PairSelector.cpp.obj
 
-src/game/view/GameView.i: src/game/view/GameView.cpp.i
-.PHONY : src/game/view/GameView.i
+src/graphics/components/misc/pairing/PairSelector.i: src/graphics/components/misc/pairing/PairSelector.cpp.i
+.PHONY : src/graphics/components/misc/pairing/PairSelector.i
 
 # target to preprocess a source file
-src/game/view/GameView.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.i
-.PHONY : src/game/view/GameView.cpp.i
+src/graphics/components/misc/pairing/PairSelector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/misc/pairing/PairSelector.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/misc/pairing/PairSelector.cpp.i
+.PHONY : src/graphics/components/misc/pairing/PairSelector.cpp.i
 
-src/game/view/GameView.s: src/game/view/GameView.cpp.s
-.PHONY : src/game/view/GameView.s
+src/graphics/components/misc/pairing/PairSelector.s: src/graphics/components/misc/pairing/PairSelector.cpp.s
+.PHONY : src/graphics/components/misc/pairing/PairSelector.s
 
 # target to generate assembly for a file
-src/game/view/GameView.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/view/GameView.cpp.s
-.PHONY : src/game/view/GameView.cpp.s
+src/graphics/components/misc/pairing/PairSelector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/components/misc/pairing/PairSelector.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/components/misc/pairing/PairSelector.cpp.s
+.PHONY : src/graphics/components/misc/pairing/PairSelector.cpp.s
 
-src/game/wrapper/RenderWrapper.obj: src/game/wrapper/RenderWrapper.cpp.obj
-.PHONY : src/game/wrapper/RenderWrapper.obj
+src/graphics/controller/BoardController.obj: src/graphics/controller/BoardController.cpp.obj
+.PHONY : src/graphics/controller/BoardController.obj
 
 # target to build an object file
-src/game/wrapper/RenderWrapper.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/wrapper/RenderWrapper.cpp.obj
-.PHONY : src/game/wrapper/RenderWrapper.cpp.obj
+src/graphics/controller/BoardController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/controller/BoardController.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/controller/BoardController.cpp.obj
+.PHONY : src/graphics/controller/BoardController.cpp.obj
 
-src/game/wrapper/RenderWrapper.i: src/game/wrapper/RenderWrapper.cpp.i
-.PHONY : src/game/wrapper/RenderWrapper.i
+src/graphics/controller/BoardController.i: src/graphics/controller/BoardController.cpp.i
+.PHONY : src/graphics/controller/BoardController.i
 
 # target to preprocess a source file
-src/game/wrapper/RenderWrapper.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/wrapper/RenderWrapper.cpp.i
-.PHONY : src/game/wrapper/RenderWrapper.cpp.i
+src/graphics/controller/BoardController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/controller/BoardController.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/controller/BoardController.cpp.i
+.PHONY : src/graphics/controller/BoardController.cpp.i
 
-src/game/wrapper/RenderWrapper.s: src/game/wrapper/RenderWrapper.cpp.s
-.PHONY : src/game/wrapper/RenderWrapper.s
+src/graphics/controller/BoardController.s: src/graphics/controller/BoardController.cpp.s
+.PHONY : src/graphics/controller/BoardController.s
 
 # target to generate assembly for a file
-src/game/wrapper/RenderWrapper.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/wrapper/RenderWrapper.cpp.s
-.PHONY : src/game/wrapper/RenderWrapper.cpp.s
+src/graphics/controller/BoardController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/controller/BoardController.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/controller/BoardController.cpp.s
+.PHONY : src/graphics/controller/BoardController.cpp.s
 
-src/game/wrapper/RoundedRectangleShape.obj: src/game/wrapper/RoundedRectangleShape.cpp.obj
-.PHONY : src/game/wrapper/RoundedRectangleShape.obj
+src/graphics/controller/ViewController.obj: src/graphics/controller/ViewController.cpp.obj
+.PHONY : src/graphics/controller/ViewController.obj
 
 # target to build an object file
-src/game/wrapper/RoundedRectangleShape.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/wrapper/RoundedRectangleShape.cpp.obj
-.PHONY : src/game/wrapper/RoundedRectangleShape.cpp.obj
+src/graphics/controller/ViewController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/controller/ViewController.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/controller/ViewController.cpp.obj
+.PHONY : src/graphics/controller/ViewController.cpp.obj
 
-src/game/wrapper/RoundedRectangleShape.i: src/game/wrapper/RoundedRectangleShape.cpp.i
-.PHONY : src/game/wrapper/RoundedRectangleShape.i
+src/graphics/controller/ViewController.i: src/graphics/controller/ViewController.cpp.i
+.PHONY : src/graphics/controller/ViewController.i
 
 # target to preprocess a source file
-src/game/wrapper/RoundedRectangleShape.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/wrapper/RoundedRectangleShape.cpp.i
-.PHONY : src/game/wrapper/RoundedRectangleShape.cpp.i
+src/graphics/controller/ViewController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/controller/ViewController.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/controller/ViewController.cpp.i
+.PHONY : src/graphics/controller/ViewController.cpp.i
 
-src/game/wrapper/RoundedRectangleShape.s: src/game/wrapper/RoundedRectangleShape.cpp.s
-.PHONY : src/game/wrapper/RoundedRectangleShape.s
+src/graphics/controller/ViewController.s: src/graphics/controller/ViewController.cpp.s
+.PHONY : src/graphics/controller/ViewController.s
 
 # target to generate assembly for a file
-src/game/wrapper/RoundedRectangleShape.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/game/wrapper/RoundedRectangleShape.cpp.s
-.PHONY : src/game/wrapper/RoundedRectangleShape.cpp.s
+src/graphics/controller/ViewController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/controller/ViewController.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/controller/ViewController.cpp.s
+.PHONY : src/graphics/controller/ViewController.cpp.s
+
+src/graphics/display/views/GameResultView.obj: src/graphics/display/views/GameResultView.cpp.obj
+.PHONY : src/graphics/display/views/GameResultView.obj
+
+# target to build an object file
+src/graphics/display/views/GameResultView.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/display/views/GameResultView.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/display/views/GameResultView.cpp.obj
+.PHONY : src/graphics/display/views/GameResultView.cpp.obj
+
+src/graphics/display/views/GameResultView.i: src/graphics/display/views/GameResultView.cpp.i
+.PHONY : src/graphics/display/views/GameResultView.i
+
+# target to preprocess a source file
+src/graphics/display/views/GameResultView.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/display/views/GameResultView.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/display/views/GameResultView.cpp.i
+.PHONY : src/graphics/display/views/GameResultView.cpp.i
+
+src/graphics/display/views/GameResultView.s: src/graphics/display/views/GameResultView.cpp.s
+.PHONY : src/graphics/display/views/GameResultView.s
+
+# target to generate assembly for a file
+src/graphics/display/views/GameResultView.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/display/views/GameResultView.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/display/views/GameResultView.cpp.s
+.PHONY : src/graphics/display/views/GameResultView.cpp.s
+
+src/graphics/display/views/GameSettingsView.obj: src/graphics/display/views/GameSettingsView.cpp.obj
+.PHONY : src/graphics/display/views/GameSettingsView.obj
+
+# target to build an object file
+src/graphics/display/views/GameSettingsView.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/display/views/GameSettingsView.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/display/views/GameSettingsView.cpp.obj
+.PHONY : src/graphics/display/views/GameSettingsView.cpp.obj
+
+src/graphics/display/views/GameSettingsView.i: src/graphics/display/views/GameSettingsView.cpp.i
+.PHONY : src/graphics/display/views/GameSettingsView.i
+
+# target to preprocess a source file
+src/graphics/display/views/GameSettingsView.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/display/views/GameSettingsView.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/display/views/GameSettingsView.cpp.i
+.PHONY : src/graphics/display/views/GameSettingsView.cpp.i
+
+src/graphics/display/views/GameSettingsView.s: src/graphics/display/views/GameSettingsView.cpp.s
+.PHONY : src/graphics/display/views/GameSettingsView.s
+
+# target to generate assembly for a file
+src/graphics/display/views/GameSettingsView.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/display/views/GameSettingsView.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/display/views/GameSettingsView.cpp.s
+.PHONY : src/graphics/display/views/GameSettingsView.cpp.s
+
+src/graphics/display/views/GameView.obj: src/graphics/display/views/GameView.cpp.obj
+.PHONY : src/graphics/display/views/GameView.obj
+
+# target to build an object file
+src/graphics/display/views/GameView.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/display/views/GameView.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/display/views/GameView.cpp.obj
+.PHONY : src/graphics/display/views/GameView.cpp.obj
+
+src/graphics/display/views/GameView.i: src/graphics/display/views/GameView.cpp.i
+.PHONY : src/graphics/display/views/GameView.i
+
+# target to preprocess a source file
+src/graphics/display/views/GameView.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/display/views/GameView.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/display/views/GameView.cpp.i
+.PHONY : src/graphics/display/views/GameView.cpp.i
+
+src/graphics/display/views/GameView.s: src/graphics/display/views/GameView.cpp.s
+.PHONY : src/graphics/display/views/GameView.s
+
+# target to generate assembly for a file
+src/graphics/display/views/GameView.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/display/views/GameView.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/display/views/GameView.cpp.s
+.PHONY : src/graphics/display/views/GameView.cpp.s
+
+src/graphics/utils/RenderWrapper.obj: src/graphics/utils/RenderWrapper.cpp.obj
+.PHONY : src/graphics/utils/RenderWrapper.obj
+
+# target to build an object file
+src/graphics/utils/RenderWrapper.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/utils/RenderWrapper.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/utils/RenderWrapper.cpp.obj
+.PHONY : src/graphics/utils/RenderWrapper.cpp.obj
+
+src/graphics/utils/RenderWrapper.i: src/graphics/utils/RenderWrapper.cpp.i
+.PHONY : src/graphics/utils/RenderWrapper.i
+
+# target to preprocess a source file
+src/graphics/utils/RenderWrapper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/utils/RenderWrapper.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/utils/RenderWrapper.cpp.i
+.PHONY : src/graphics/utils/RenderWrapper.cpp.i
+
+src/graphics/utils/RenderWrapper.s: src/graphics/utils/RenderWrapper.cpp.s
+.PHONY : src/graphics/utils/RenderWrapper.s
+
+# target to generate assembly for a file
+src/graphics/utils/RenderWrapper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/utils/RenderWrapper.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/utils/RenderWrapper.cpp.s
+.PHONY : src/graphics/utils/RenderWrapper.cpp.s
+
+src/graphics/utils/RoundedRectangleShape.obj: src/graphics/utils/RoundedRectangleShape.cpp.obj
+.PHONY : src/graphics/utils/RoundedRectangleShape.obj
+
+# target to build an object file
+src/graphics/utils/RoundedRectangleShape.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/utils/RoundedRectangleShape.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/utils/RoundedRectangleShape.cpp.obj
+.PHONY : src/graphics/utils/RoundedRectangleShape.cpp.obj
+
+src/graphics/utils/RoundedRectangleShape.i: src/graphics/utils/RoundedRectangleShape.cpp.i
+.PHONY : src/graphics/utils/RoundedRectangleShape.i
+
+# target to preprocess a source file
+src/graphics/utils/RoundedRectangleShape.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/utils/RoundedRectangleShape.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/utils/RoundedRectangleShape.cpp.i
+.PHONY : src/graphics/utils/RoundedRectangleShape.cpp.i
+
+src/graphics/utils/RoundedRectangleShape.s: src/graphics/utils/RoundedRectangleShape.cpp.s
+.PHONY : src/graphics/utils/RoundedRectangleShape.s
+
+# target to generate assembly for a file
+src/graphics/utils/RoundedRectangleShape.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/graphics/utils/RoundedRectangleShape.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/graphics/utils/RoundedRectangleShape.cpp.s
+.PHONY : src/graphics/utils/RoundedRectangleShape.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -536,6 +883,57 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/tests/bot_test.obj: src/tests/bot_test.cpp.obj
+.PHONY : src/tests/bot_test.obj
+
+# target to build an object file
+src/tests/bot_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/tests/bot_test.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/tests/bot_test.cpp.obj
+.PHONY : src/tests/bot_test.cpp.obj
+
+src/tests/bot_test.i: src/tests/bot_test.cpp.i
+.PHONY : src/tests/bot_test.i
+
+# target to preprocess a source file
+src/tests/bot_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/tests/bot_test.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/tests/bot_test.cpp.i
+.PHONY : src/tests/bot_test.cpp.i
+
+src/tests/bot_test.s: src/tests/bot_test.cpp.s
+.PHONY : src/tests/bot_test.s
+
+# target to generate assembly for a file
+src/tests/bot_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sfml_test.dir\build.make CMakeFiles/sfml_test.dir/src/tests/bot_test.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/tests/bot_test.cpp.s
+.PHONY : src/tests/bot_test.cpp.s
+
+src/tests/components_test.obj: src/tests/components_test.cpp.obj
+.PHONY : src/tests/components_test.obj
+
+# target to build an object file
+src/tests/components_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/tests/components_test.cpp.obj
+.PHONY : src/tests/components_test.cpp.obj
+
+src/tests/components_test.i: src/tests/components_test.cpp.i
+.PHONY : src/tests/components_test.i
+
+# target to preprocess a source file
+src/tests/components_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/tests/components_test.cpp.i
+.PHONY : src/tests/components_test.cpp.i
+
+src/tests/components_test.s: src/tests/components_test.cpp.s
+.PHONY : src/tests/components_test.s
+
+# target to generate assembly for a file
+src/tests/components_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CellTest.dir\build.make CMakeFiles/CellTest.dir/src/tests/components_test.cpp.s
+.PHONY : src/tests/components_test.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -543,59 +941,95 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
 	@echo ... rebuild_cache
+	@echo ... CellTest
+	@echo ... gmock
+	@echo ... gmock_main
+	@echo ... gtest
+	@echo ... gtest_main
 	@echo ... sfml_test
 	@echo ... src/game/CantStop.obj
 	@echo ... src/game/CantStop.i
 	@echo ... src/game/CantStop.s
-	@echo ... src/game/components/Board.obj
-	@echo ... src/game/components/Board.i
-	@echo ... src/game/components/Board.s
-	@echo ... src/game/components/Button.obj
-	@echo ... src/game/components/Button.i
-	@echo ... src/game/components/Button.s
-	@echo ... src/game/components/Cell.obj
-	@echo ... src/game/components/Cell.i
-	@echo ... src/game/components/Cell.s
-	@echo ... src/game/components/Column.obj
-	@echo ... src/game/components/Column.i
-	@echo ... src/game/components/Column.s
-	@echo ... src/game/components/PairSelector.obj
-	@echo ... src/game/components/PairSelector.i
-	@echo ... src/game/components/PairSelector.s
-	@echo ... src/game/controller/BoardController.obj
-	@echo ... src/game/controller/BoardController.i
-	@echo ... src/game/controller/BoardController.s
+	@echo ... src/game/actors/Player.obj
+	@echo ... src/game/actors/Player.i
+	@echo ... src/game/actors/Player.s
+	@echo ... src/game/actors/players/Bot.obj
+	@echo ... src/game/actors/players/Bot.i
+	@echo ... src/game/actors/players/Bot.s
+	@echo ... src/game/actors/players/GreedyBot.obj
+	@echo ... src/game/actors/players/GreedyBot.i
+	@echo ... src/game/actors/players/GreedyBot.s
+	@echo ... src/game/actors/players/HesitantBot.obj
+	@echo ... src/game/actors/players/HesitantBot.i
+	@echo ... src/game/actors/players/HesitantBot.s
+	@echo ... src/game/actors/players/HumanPlayer.obj
+	@echo ... src/game/actors/players/HumanPlayer.i
+	@echo ... src/game/actors/players/HumanPlayer.s
+	@echo ... src/game/actors/players/IntelligentBot.obj
+	@echo ... src/game/actors/players/IntelligentBot.i
+	@echo ... src/game/actors/players/IntelligentBot.s
+	@echo ... src/game/actors/players/RandomBot.obj
+	@echo ... src/game/actors/players/RandomBot.i
+	@echo ... src/game/actors/players/RandomBot.s
+	@echo ... src/game/controller/CallbackAdapter.obj
+	@echo ... src/game/controller/CallbackAdapter.i
+	@echo ... src/game/controller/CallbackAdapter.s
 	@echo ... src/game/controller/DiceController.obj
 	@echo ... src/game/controller/DiceController.i
 	@echo ... src/game/controller/DiceController.s
 	@echo ... src/game/controller/PlayerController.obj
 	@echo ... src/game/controller/PlayerController.i
 	@echo ... src/game/controller/PlayerController.s
-	@echo ... src/game/controller/ViewController.obj
-	@echo ... src/game/controller/ViewController.i
-	@echo ... src/game/controller/ViewController.s
-	@echo ... src/game/player/ComputerPlayer.obj
-	@echo ... src/game/player/ComputerPlayer.i
-	@echo ... src/game/player/ComputerPlayer.s
-	@echo ... src/game/player/HumanPlayer.obj
-	@echo ... src/game/player/HumanPlayer.i
-	@echo ... src/game/player/HumanPlayer.s
-	@echo ... src/game/player/Player.obj
-	@echo ... src/game/player/Player.i
-	@echo ... src/game/player/Player.s
-	@echo ... src/game/view/GameView.obj
-	@echo ... src/game/view/GameView.i
-	@echo ... src/game/view/GameView.s
-	@echo ... src/game/wrapper/RenderWrapper.obj
-	@echo ... src/game/wrapper/RenderWrapper.i
-	@echo ... src/game/wrapper/RenderWrapper.s
-	@echo ... src/game/wrapper/RoundedRectangleShape.obj
-	@echo ... src/game/wrapper/RoundedRectangleShape.i
-	@echo ... src/game/wrapper/RoundedRectangleShape.s
+	@echo ... src/graphics/components/board/Board.obj
+	@echo ... src/graphics/components/board/Board.i
+	@echo ... src/graphics/components/board/Board.s
+	@echo ... src/graphics/components/board/Cell.obj
+	@echo ... src/graphics/components/board/Cell.i
+	@echo ... src/graphics/components/board/Cell.s
+	@echo ... src/graphics/components/board/Column.obj
+	@echo ... src/graphics/components/board/Column.i
+	@echo ... src/graphics/components/board/Column.s
+	@echo ... src/graphics/components/misc/Button.obj
+	@echo ... src/graphics/components/misc/Button.i
+	@echo ... src/graphics/components/misc/Button.s
+	@echo ... src/graphics/components/misc/pairing/PairSelector.obj
+	@echo ... src/graphics/components/misc/pairing/PairSelector.i
+	@echo ... src/graphics/components/misc/pairing/PairSelector.s
+	@echo ... src/graphics/controller/BoardController.obj
+	@echo ... src/graphics/controller/BoardController.i
+	@echo ... src/graphics/controller/BoardController.s
+	@echo ... src/graphics/controller/ViewController.obj
+	@echo ... src/graphics/controller/ViewController.i
+	@echo ... src/graphics/controller/ViewController.s
+	@echo ... src/graphics/display/views/GameResultView.obj
+	@echo ... src/graphics/display/views/GameResultView.i
+	@echo ... src/graphics/display/views/GameResultView.s
+	@echo ... src/graphics/display/views/GameSettingsView.obj
+	@echo ... src/graphics/display/views/GameSettingsView.i
+	@echo ... src/graphics/display/views/GameSettingsView.s
+	@echo ... src/graphics/display/views/GameView.obj
+	@echo ... src/graphics/display/views/GameView.i
+	@echo ... src/graphics/display/views/GameView.s
+	@echo ... src/graphics/utils/RenderWrapper.obj
+	@echo ... src/graphics/utils/RenderWrapper.i
+	@echo ... src/graphics/utils/RenderWrapper.s
+	@echo ... src/graphics/utils/RoundedRectangleShape.obj
+	@echo ... src/graphics/utils/RoundedRectangleShape.i
+	@echo ... src/graphics/utils/RoundedRectangleShape.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/tests/bot_test.obj
+	@echo ... src/tests/bot_test.i
+	@echo ... src/tests/bot_test.s
+	@echo ... src/tests/components_test.obj
+	@echo ... src/tests/components_test.i
+	@echo ... src/tests/components_test.s
 .PHONY : help
 
 

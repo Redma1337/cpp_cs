@@ -9,7 +9,7 @@ Bot::Bot()
 {}
 
 std::vector<int>
-Bot::getFirstPair(std::vector<int> roll, int sum) {
+Bot::getFirstPair(std::array<int, 4> roll, int sum) {
     std::vector<int> result = { -1, -1 };
     std::unordered_set<int> set;
     for (int i = 0; i < roll.size(); i++) {
@@ -24,28 +24,6 @@ Bot::getFirstPair(std::vector<int> roll, int sum) {
 
         set.insert(roll[i]);
     }
-    return result;
-}
-
-std::vector<int>
-Bot::getBestSelection(std::vector<int> roll) {
-    int bestSum = 0;
-    std::vector<int> result = { -1, -1 };
-    for (int sum : m_colValues) {
-        std::vector<int> s = getFirstPair(roll, sum);
-        if (s[0] != -1 && s[1] != -1) {
-            int currBestDiff = std::abs(7 - bestSum);
-            int sumDiff = std::abs(7 - sum);
-            if (currBestDiff > sumDiff) {
-                bestSum = sum;
-                result[0] = s[0];
-                result[1] = s[1];
-            }
-        }
-    }
-    result.push_back(3 - result[0]);
-    result.push_back(3 - result[1]);
-
     return result;
 }
 
