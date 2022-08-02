@@ -22,4 +22,5 @@ public:
     void placeRunner(PieceOwner color, int colIndex);
     void placeCamp(PieceOwner color, int colIndex);
     void removeAllRunners(PieceOwner color);
+    std::map<int, Column> getColumnContainer();
 };

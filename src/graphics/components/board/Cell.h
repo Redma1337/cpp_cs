@@ -25,5 +25,5 @@ public:
     void addCamp(PieceOwner color);
     void removeCamp(PieceOwner color);
 
-    bool hasPiece(PieceOwner color, PieceType type);
+    bool hasPiece(PieceOwner color, PieceType type) const;
 };

@@ -78,6 +78,6 @@ Cell::addCamp(PieceOwner color) {
 }
 
 bool
-Cell::hasPiece(PieceOwner color, PieceType type) {
+Cell::hasPiece(PieceOwner color, PieceType type) const {
     return (type == PieceType::TYPE_RUNNER && hasRunner()) || (type == PieceType::TYPE_CAMP && hasCamp(color));
 }

@@ -108,3 +108,7 @@ Board::removeAllRunners(PieceOwner color) {
     }
 }
 
+std::map<int, Column>
+Board::getColumnContainer() {
+  return m_columnContainer;
+}

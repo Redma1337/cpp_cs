@@ -35,5 +35,7 @@ public:
 
     void setLocked(bool state) override;
 
+    std::vector<Cell> getCellContainer();
+
     void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 };

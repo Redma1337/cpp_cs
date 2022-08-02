@@ -132,3 +132,8 @@ void Column::setLocked(bool state) {
     removePiece(PieceOwner::PLAYER_TWO, PieceType::TYPE_CAMP);
     Component::setLocked(state);
 }
+
+std::vector<Cell>
+Column::getCellContainer(){
+  return m_cellContainer;
+}
