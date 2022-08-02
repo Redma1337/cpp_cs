@@ -31,6 +31,7 @@ CantStop::setupBoardController() {
 
     m_playerController.setOnGameFinishListener([&](PieceOwner winner, std::string name){
         m_resultView->setWinner(name);
+        bool isLastRun = m_benchmark.isLastRun();
         if (m_benchmark.isRunning()) {
             m_benchmark.commitRun(winner);
         }
@@ -38,7 +39,11 @@ CantStop::setupBoardController() {
         if (m_benchmark.isRunning()) {
             m_viewController.setCurrentView(Menu::GAME_VIEW);
         } else {
-            m_viewController.setCurrentView(Menu::GAME_WON);
+            if (isLastRun) {
+                m_viewController.setCurrentView(Menu::GAME_BENCHMARK);
+            } else {
+                m_viewController.setCurrentView(Menu::GAME_WON);
+            }
         }
     });
 }
@@ -66,11 +71,17 @@ CantStop::setupRoutes() {
         m_viewController.setCurrentView(Menu::GAME_VIEW);
     });
 
+    m_benchmarkView = std::make_shared<BenchmarkResultView>([&] {
+        m_playerController.reset();
+        m_viewController.setCurrentView(Menu::GAME_SETTINGS);
+    }, m_benchmark);
+
     m_gameView = std::make_shared<GameView>(m_boardController, m_playerController);
 
     m_viewController.addView(Menu::GAME_VIEW, m_gameView);
     m_viewController.addView(Menu::GAME_WON, m_resultView);
     m_viewController.addView(Menu::GAME_SETTINGS, m_settingsView);
+    m_viewController.addView(Menu::GAME_BENCHMARK, m_settingsView);
 
     m_viewController.setCurrentView(Menu::GAME_SETTINGS);
 }

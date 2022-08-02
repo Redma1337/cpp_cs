@@ -6,24 +6,46 @@
 
 #include <vector>
 
-template <typename T>
 class Benchmark {
     int m_runCount;
     bool m_running;
-    std::vector<T> m_resultDataOne;
+
+    int m_firstPlayerWins;
+    int m_secondPlayerWins;
 public:
-    void commitRun(T data) {
+    void commitRun(PieceOwner data) {
         m_runCount--;
         m_running = !isFinished();
+        if (data == PieceOwner::PLAYER_ONE) {
+            m_firstPlayerWins++;
+        } else {
+            m_secondPlayerWins++;
+        }
     };
+
+    PieceOwner getWinner() const {
+        return m_firstPlayerWins < m_secondPlayerWins ? PieceOwner::PLAYER_ONE : PieceOwner::PLAYER_TWO;
+    }
+
+    float getWinnerPercentage() const {
+        return (m_secondPlayerWins + m_firstPlayerWins) / getWinnerAmount();
+    }
+
+    int getWinnerAmount() const {
+        return std::max(m_firstPlayerWins, m_secondPlayerWins);
+    }
+
+    float getFirstPlayerWins() {
+        return m_firstPlayerWins;
+    }
+
+    float getSecondPlayerWins() {
+        return m_secondPlayerWins;
+    }
 
     void setRunCount(int newCount) {
         m_runCount = newCount;
     }
-
-    int getRunCount() const {
-        return m_runCount;
-    };
 
     bool isLastRun() const {
         return m_runCount == 1;

@@ -8,5 +8,6 @@ enum class Menu {
     NONE,
     GAME_VIEW,
     GAME_WON,
+    GAME_BENCHMARK,
     GAME_SETTINGS,
 };
