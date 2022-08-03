@@ -5,6 +5,7 @@
 #pragma once
 
 #include <vector>
+#include <cmath>
 
 class Benchmark {
     int m_runCount;
@@ -12,6 +13,8 @@ class Benchmark {
 
     int m_firstPlayerWins;
     int m_secondPlayerWins;
+    std::string m_firstName;
+    std::string m_secondName;
 public:
     void commitRun(PieceOwner data) {
         m_runCount--;
@@ -23,28 +26,25 @@ public:
         }
     };
 
-    PieceOwner getWinner() const {
-        return m_firstPlayerWins < m_secondPlayerWins ? PieceOwner::PLAYER_ONE : PieceOwner::PLAYER_TWO;
+    float getPercentage(PieceOwner owner) const {
+        float total = m_firstPlayerWins + m_secondPlayerWins;
+        float perc = (owner == PieceOwner::PLAYER_ONE ? m_firstPlayerWins : m_secondPlayerWins);
+        float result = 100.f * (perc / total);
+        return result;
     }
 
-    float getWinnerPercentage() const {
-        return (m_secondPlayerWins + m_firstPlayerWins) / getWinnerAmount();
-    }
-
-    int getWinnerAmount() const {
-        return std::max(m_firstPlayerWins, m_secondPlayerWins);
-    }
-
-    float getFirstPlayerWins() {
+    int getFirstPlayerWins() const {
         return m_firstPlayerWins;
     }
 
-    float getSecondPlayerWins() {
+    int getSecondPlayerWins() const {
         return m_secondPlayerWins;
     }
 
     void setRunCount(int newCount) {
         m_runCount = newCount;
+        m_firstPlayerWins = 0;
+        m_secondPlayerWins = 0;
     }
 
     bool isLastRun() const {

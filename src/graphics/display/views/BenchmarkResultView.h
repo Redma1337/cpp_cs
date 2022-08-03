@@ -13,7 +13,7 @@ class BenchmarkResultView : public View {
     typedef std::function<void()> OpenSettingsScreenCallback;
     OpenSettingsScreenCallback m_openSettingsCallback;
 
-    Benchmark m_benchmark;
+    Benchmark &m_benchmark;
 
     Button m_backBtn;
     sf::Text m_firstPlayerResult;

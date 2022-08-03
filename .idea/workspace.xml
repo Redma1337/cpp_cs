@@ -21,17 +21,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0baa877b-8070-44f2-ac6d-f81cae353eb9" name="Changes" comment="fix: bugs with won columns&#10;feat: benchmarking &amp; intelligent bot">
+    <list default="true" id="0baa877b-8070-44f2-ac6d-f81cae353eb9" name="Changes" comment="feat: benchmarking implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/sfml_test.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sfml_test.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/CantStop.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/CantStop.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/CantStop.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/CantStop.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/benchmarking/Benchmark.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/benchmarking/Benchmark.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/controller/PlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/controller/PlayerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphics/display/MenuEnum.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/display/MenuEnum.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/controller/PlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/controller/PlayerController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/graphics/display/views/BenchmarkResultView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/display/views/BenchmarkResultView.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/graphics/display/views/BenchmarkResultView.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/display/views/BenchmarkResultView.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,27 +63,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "cmake.loaded.for.project": "true",
-    "ctest.advertisement.all.test.configuration.is.created": "true",
-    "last_opened_file_path": "C:/Users/weser/CLionProjects/cpp_cs/src/game/benchmarking",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CPPToolchains",
-    "structure.view.defaults.are.configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cmake.loaded.for.project&quot;: &quot;true&quot;,
+    &quot;ctest.advertisement.all.test.configuration.is.created&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/weser/CLionProjects/cpp_cs/src/game/benchmarking&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CPPToolchains&quot;,
+    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\weser\CLionProjects\cpp_cs\src\game\benchmarking" />
@@ -96,9 +97,9 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.sfml_test">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sfml_test" TARGET_NAME="gmock" CONFIG_NAME="Debug">
@@ -295,7 +296,8 @@
       <workItem from="1658347401178" duration="3464000" />
       <workItem from="1658691775547" duration="2737000" />
       <workItem from="1658759489387" duration="3833000" />
-      <workItem from="1659474515667" duration="4342000" />
+      <workItem from="1659474515667" duration="4516000" />
+      <workItem from="1659527158811" duration="5091000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1656663662329</created>
@@ -381,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659476924191</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: benchmarking implementation">
+      <created>1659479228840</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1659479228840</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,7 +420,8 @@
     <MESSAGE value="feat: Font loading &amp; string rendering" />
     <MESSAGE value="feat: better bot logic" />
     <MESSAGE value="fix: bugs with won columns&#10;feat: benchmarking &amp; intelligent bot" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: bugs with won columns&#10;feat: benchmarking &amp; intelligent bot" />
+    <MESSAGE value="feat: benchmarking implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: benchmarking implementation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -430,6 +440,11 @@
           <url>file://$PROJECT_DIR$/src/game/event/Observable.cpp</url>
           <line>13</line>
           <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/game/CantStop.cpp</url>
+          <line>60</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

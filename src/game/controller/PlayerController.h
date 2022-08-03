@@ -22,6 +22,7 @@ class PlayerController : public CallbackAdapter {
 
     ActionQueue m_actionQueue;
 
+    int m_waitDelay;
     std::string m_statusText;
 public:
     PlayerController();
@@ -38,4 +39,6 @@ public:
 
     bool isHumanMoving() const;
     std::string getCurrentStatus() const;
+
+    void setWaitDelay(int newDelay);
 };

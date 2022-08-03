@@ -9,7 +9,8 @@ PlayerController::PlayerController()
     :   m_currentPlayer{ 0 },
         m_actionQueue{},
         m_players{ },
-        m_statusText{ "Waiting..." }
+        m_statusText{ "Waiting..." },
+        m_waitDelay{ 1000 }
 {}
 
 void
@@ -24,7 +25,7 @@ PlayerController::update(PairSelector& selector) {
     PlayerAction currentAction = m_actionQueue.front();
     switch (currentAction) {
         case (PlayerAction::WAIT): {
-            std::this_thread::sleep_for(std::chrono::milliseconds(0));
+            std::this_thread::sleep_for(std::chrono::milliseconds(m_waitDelay));
             m_statusText = "Thinking...";
             break;
         }
@@ -119,8 +120,14 @@ PlayerController::getCurrentStatus() const {
     return getCurrentPlayer()->getName() + ": " + m_statusText;
 }
 
-void PlayerController::clearActions() {
+void
+PlayerController::clearActions() {
     m_actionQueue = ActionQueue();
+}
+
+void
+PlayerController::setWaitDelay(int newDelay) {
+    m_waitDelay = newDelay;
 }
 
 

@@ -58,14 +58,16 @@ CantStop::setupRoutes() {
 
     m_settingsView = std::make_shared<GameSettingsView>([&](auto one, auto two) {
         //handle the game start
+        m_playerController.setWaitDelay(1000);
         m_playerController.setPlayer(PieceOwner::PLAYER_ONE, one);
         m_playerController.setPlayer(PieceOwner::PLAYER_TWO, two);
         m_viewController.setCurrentView(Menu::GAME_VIEW);
     });
 
     m_settingsView->addBenchmarkStartedListener([&](auto one, auto two) {
-        m_benchmark.setRunCount(5);
+        m_benchmark.setRunCount(100);
         m_benchmark.setRunning(true);
+        m_playerController.setWaitDelay(0);
         m_playerController.setPlayer(PieceOwner::PLAYER_ONE, one);
         m_playerController.setPlayer(PieceOwner::PLAYER_TWO, two);
         m_viewController.setCurrentView(Menu::GAME_VIEW);
@@ -81,7 +83,7 @@ CantStop::setupRoutes() {
     m_viewController.addView(Menu::GAME_VIEW, m_gameView);
     m_viewController.addView(Menu::GAME_WON, m_resultView);
     m_viewController.addView(Menu::GAME_SETTINGS, m_settingsView);
-    m_viewController.addView(Menu::GAME_BENCHMARK, m_settingsView);
+    m_viewController.addView(Menu::GAME_BENCHMARK, m_benchmarkView);
 
     m_viewController.setCurrentView(Menu::GAME_SETTINGS);
 }

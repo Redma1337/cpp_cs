@@ -7,15 +7,15 @@
 
 BenchmarkResultView::BenchmarkResultView(const OpenSettingsScreenCallback &callback, Benchmark &benchmark)
     :   View(),
-        m_backBtn("Quit", {200, 50}, {400, 445}, true),
+        m_backBtn("Back", {200, 50}, {400, 445}, true),
         m_openSettingsCallback{ callback },
         m_benchmark{ benchmark }
 {
-    std::string text = "Player one wins: " + std::to_string(m_benchmark.getFirstPlayerWins());
-    m_firstPlayerResult = RenderWrapper::createCenteredString(text, { 400, 300 }, 30, sf::Color::White);
-
-    text = "Player two wins: " + std::to_string(m_benchmark.getSecondPlayerWins());
-    m_secondPlayerResult = RenderWrapper::createCenteredString(text, { 400, 350 }, 30, sf::Color::White);
+    m_firstPlayerResult = RenderWrapper::createCenteredString("", { 350, 300 }, 30, sf::Color::White);
+    m_secondPlayerResult = RenderWrapper::createCenteredString("", { 350, 350 }, 30, sf::Color::White);
+    m_backBtn.addActionListener([&](auto cords) {
+        m_openSettingsCallback();
+    });
 }
 
 void
@@ -31,7 +31,17 @@ BenchmarkResultView::draw(sf::RenderTarget &target, sf::RenderStates states) con
 }
 
 void
-BenchmarkResultView::onUpdate() {}
+BenchmarkResultView::onUpdate() {
+    std::string first = "Player one wins: " + std::to_string(m_benchmark.getFirstPlayerWins());
+    std::string second = "Player two wins: " + std::to_string(m_benchmark.getSecondPlayerWins());
+
+    std::string firstPerc = std::to_string(m_benchmark.getPercentage(PieceOwner::PLAYER_ONE));
+    std::string secondPerc = std::to_string(m_benchmark.getPercentage(PieceOwner::PLAYER_TWO));
+    first += " (" + firstPerc.substr(0, firstPerc.find(".")+3) + "%)";
+    second += " (" + secondPerc.substr(0, secondPerc.find(".")+3) + "%)";
+    m_firstPlayerResult.setString(first);
+    m_secondPlayerResult.setString(second);
+}
 
 void BenchmarkResultView::reload() {
 }
