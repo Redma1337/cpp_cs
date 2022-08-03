@@ -7,13 +7,7 @@
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
-    <generated>
-      <config projectName="sfml_test" targetName="gmock" />
-      <config projectName="sfml_test" targetName="gtest_main" />
-      <config projectName="sfml_test" targetName="gmock_main" />
-      <config projectName="sfml_test" targetName="gtest" />
-      <config projectName="sfml_test" targetName="sfml_test" />
-    </generated>
+    <generated />
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -23,16 +17,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0baa877b-8070-44f2-ac6d-f81cae353eb9" name="Changes" comment="feat: benchmarking implementation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/sfml_test.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/sfml_test.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/CantStop.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/CantStop.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/benchmarking/Benchmark.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/benchmarking/Benchmark.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/controller/PlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/controller/PlayerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/controller/PlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/controller/PlayerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphics/display/views/BenchmarkResultView.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/display/views/BenchmarkResultView.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphics/display/views/BenchmarkResultView.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/display/views/BenchmarkResultView.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +27,6 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
@@ -96,10 +80,16 @@
       <recent name="C:\Users\weser\CLionProjects\cpp\cpp_sfml_test\src" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.sfml_test">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+  <component name="RunManager" selected="CTest Application.All CTest">
+    <configuration name="sfml_test" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sfml_test" TARGET_NAME="sfml_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sfml_test" RUN_TARGET_NAME="sfml_test" TEST_MODE="SUITE_TEST">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sfml_test" TARGET_NAME="gmock" CONFIG_NAME="Debug">
@@ -118,11 +108,6 @@
       </method>
     </configuration>
     <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sfml_test" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="sfml_test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sfml_test" TARGET_NAME="sfml_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sfml_test" RUN_TARGET_NAME="sfml_test">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -257,12 +242,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="CMake Application.sfml_test" />
       <item itemvalue="CMake Application.gmock" />
       <item itemvalue="CMake Application.gmock_main" />
       <item itemvalue="CMake Application.gtest" />
       <item itemvalue="CMake Application.gtest_main" />
       <item itemvalue="CTest Application.All CTest" />
+      <item itemvalue="Google Test.sfml_test" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -298,6 +283,7 @@
       <workItem from="1658759489387" duration="3833000" />
       <workItem from="1659474515667" duration="4516000" />
       <workItem from="1659527158811" duration="5091000" />
+      <workItem from="1659534417083" duration="51000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1656663662329</created>
